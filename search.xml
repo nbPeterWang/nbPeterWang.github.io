@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[W1repo]]></title>
+      <url>https://nbPeterWang.github.io/%20/2018/07/30/W1repo/</url>
+      <content type="html"><![CDATA[<p>这周看过的Medium：<br>1、后端路线图，已Mark。<br>2、OOP的缺点，不无道理，但还未在生产中体会到。</p>
+<p>这周开始进入工作，逐渐熟悉业务。Mybaits还是很不错的，同时也用到了CVS。要记得，MyEclipse如果打开多个项目，<br>同名函数可能会产生干扰。还有就是对js和jsp的修改不用重启服务器，直接刷新页面即可。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Coding </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> weekly repo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[W0repo]]></title>
       <url>https://nbPeterWang.github.io/%20/2018/07/22/W0repo/</url>
       <content type="html"><![CDATA[<p>从今天开始写第一篇周记,主要是记录一周内的技术类的感悟和Medium读后感，如无意外不会附带任<br>何生活的内容。<br>这周看过的Medium印象深刻的有：<br>1、Pascal的那句名言：“All of humanity’s problems stem from man’s inability to<br>sit quietly in a room alone.” 确实击中了现代人的痛点，孤独是一个永恒的无法排解的伟大<br>话题。要学会利用独处，而不仅仅是慎独。对抗的思维会让孤独侵蚀并毁了你。<br>2、最重要的是解决问题的能力而不是语法。说到底还是逻辑能力。<br>3、根据<a href="https://hackernoon.com/learn-blockchains-by-building-one-117428612f46" target="_blank" rel="external">这篇</a>“Learn Blockchains by Building One”搞了一个简易的区块链，还是蛮有意思的。<br>明天开始实习了，希望能有所收获。</p>
