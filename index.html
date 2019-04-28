@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Words/">Words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/">start</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Words/">Words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/">start</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
                     </div>
                 </section>
                 
@@ -261,6 +261,141 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Everyday-Leetcode-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/28/Everyday-Leetcode-1/" class="article-date">
+      <time datetime="2019-04-28T13:12:16.000Z" itemprop="datePublished">2019-04-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/28/Everyday-Leetcode-1/">Everyday Leetcode 1</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1 Two Sum"></a>1 Two Sum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">        Map&lt;Integer,Integer&gt; ans= new HashMap&lt;&gt;();</div><div class="line">        for (int i=0; i&lt;nums.length;i++)&#123;</div><div class="line">          int diff=target-nums[i];</div><div class="line">              if (ans.containsKey(diff))</div><div class="line">              &#123;</div><div class="line">                  </div><div class="line">                  return new int[]&#123;ans.get(diff),i&#125;;</div><div class="line">              &#125;</div><div class="line">            ans.put(nums[i],i);</div><div class="line">          </div><div class="line">    &#125;</div><div class="line">       throw new IllegalArgumentException();</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>用到hashmap，大大提高了效率。 可以用throw new IlleaglArgumentException的办法跳过必须return的检查。</p>
+<h3 id="27-Remove-Element"><a href="#27-Remove-Element" class="headerlink" title="27    Remove Element"></a>27    Remove Element</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public int removeElement(int[] nums, int val) &#123;</div><div class="line">       int ans=0;</div><div class="line">        for(int i=0;i&lt;nums.length;i++)&#123;</div><div class="line">            if(nums[i]!=val)&#123;</div><div class="line">                nums[ans]=nums[i];</div><div class="line">                ans++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>没什么好说的。</p>
+<h3 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26    Remove Duplicates from Sorted Array"></a>26    Remove Duplicates from Sorted Array</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public int removeDuplicates(int[] nums) &#123;</div><div class="line">        int ans=0;</div><div class="line">        for(int i=0;i&lt;nums.length;i++)&#123;</div><div class="line">            if (nums[i]!=nums[ans])</div><div class="line">                nums[++ans]=nums[i];</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        return ++ans;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>没什么好说的。</p>
+<h3 id="80-Remove-Duplicates-from-Sorted-Array-II"><a href="#80-Remove-Duplicates-from-Sorted-Array-II" class="headerlink" title="80    Remove Duplicates from Sorted Array II"></a>80    Remove Duplicates from Sorted Array II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public int removeDuplicates(int[] nums) &#123;</div><div class="line">    int ans=0;</div><div class="line">    for (int i : nums)</div><div class="line">    &#123;</div><div class="line">        if (ans&lt;2 ||i&gt;nums[ans-2])</div><div class="line">            nums[ans++]=i;</div><div class="line">    &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>没什么好说的。</p>
+<h3 id="189-Rotate-Array"><a href="#189-Rotate-Array" class="headerlink" title="189    Rotate Array"></a>189    Rotate Array</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public void rotate(int[] nums, int k) &#123;</div><div class="line">        </div><div class="line">    k %= nums.length;</div><div class="line">    reverse(nums, 0, nums.length - 1);</div><div class="line">    reverse(nums, 0, k - 1);</div><div class="line">    reverse(nums, k, nums.length - 1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void reverse(int[] nums, int start, int end) &#123;</div><div class="line">    while (start &lt; end) &#123;</div><div class="line">        int temp = nums[start];</div><div class="line">        nums[start] = nums[end];</div><div class="line">        nums[end] = temp;</div><div class="line">        start++;</div><div class="line">        end--;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>k可能大于nums.length,所以就需要%=一下。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Leetcode-Record" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/28/Leetcode-Record/" class="article-date">
+      <time datetime="2019-04-28T13:06:44.000Z" itemprop="datePublished">2019-04-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/28/Leetcode-Record/">Leetcode Record</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li>[x] 1     Two Sum</li>
+<li>[x] 27    Remove Element</li>
+<li>[x] 26    Remove Duplicates from Sorted Array</li>
+<li>[x] 80    Remove Duplicates from Sorted Array II</li>
+<li>[x] 189    Rotate Array</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-普通人的19fall-cs-master-DIY总结" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -788,137 +923,9 @@
 
 
   
-    <article id="post-W14repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/10/29/W14repo/" class="article-date">
-      <time datetime="2018-10-29T10:46:10.000Z" itemprop="datePublished">2018-10-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/29/W14repo/">W14repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>最后一周，加油！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W13repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/10/22/W13repo/" class="article-date">
-      <time datetime="2018-10-22T03:46:39.000Z" itemprop="datePublished">2018-10-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/W13repo/">W13repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>单词差不多背完，开始刷题。<br>加油。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
