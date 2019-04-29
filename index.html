@@ -262,6 +262,71 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/29/Everyday-Leetcode-2/" class="article-date">
+      <time datetime="2019-04-29T10:45:00.000Z" itemprop="datePublished">2019-04-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/29/Everyday-Leetcode-2/">Everyday Leetcode 2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="41-First-Missing-Positive"><a href="#41-First-Missing-Positive" class="headerlink" title="41    First Missing Positive"></a>41    First Missing Positive</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import java.util.HashMap;</div><div class="line">class Solution &#123;</div><div class="line">    public int firstMissingPositive(int[] nums) &#123;</div><div class="line">        HashMap map = new HashMap&lt;&gt;();</div><div class="line">        for (int i:nums)&#123;</div><div class="line">            map.put(i,1);</div><div class="line">        &#125;</div><div class="line">        for (int j=1;j&lt;Integer.MAX_VALUE;j++)</div><div class="line">        &#123;</div><div class="line">            if (!map.containsKey(j))&#123;</div><div class="line">                return j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一道自己做出的Hard，可能是最简单的Hard。 faster than 83.02%，less than 86.32%.<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/29/Everyday-Leetcode-2/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -362,6 +427,11 @@
 <li>[x] 26    Remove Duplicates from Sorted Array</li>
 <li>[x] 80    Remove Duplicates from Sorted Array II</li>
 <li>[x] 189    Rotate Array</li>
+<li>[x] 41    First Missing Positive</li>
+<li>[x] 299    Bulls and Cows</li>
+<li>[x] 134    Gas Station</li>
+<li>[x] 274    H-Index</li>
+<li>[x] 275    H-Index II</li>
 </ul>
 
       
@@ -812,70 +882,6 @@
       
           
         <p>万事俱备，只差送分。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W15repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/05/W15repo/" class="article-date">
-      <time datetime="2018-11-05T03:48:53.000Z" itemprop="datePublished">2018-11-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/W15repo/">W15repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>全力投入申请，11月必须完成。</p>
 
       
     </div>
