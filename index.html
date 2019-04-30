@@ -262,6 +262,75 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/30/Everyday-Leetcode-3/" class="article-date">
+      <time datetime="2019-04-30T11:51:55.000Z" itemprop="datePublished">2019-04-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/30/Everyday-Leetcode-3/">Everyday Leetcode 3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="277-Find-the-Celebrity"><a href="#277-Find-the-Celebrity" class="headerlink" title="277    Find the Celebrity"></a>277    Find the Celebrity</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int findCelebrity(int n) &#123;</div><div class="line">        for (int i = 0, j = 0; i &lt; n; ++i) &#123;</div><div class="line">            for (j = 0; j &lt; n; ++j) &#123;</div><div class="line">                if (i != j &amp;&amp; (knows(i, j) || !knows(j, i))) break;</div><div class="line">            &#125;</div><div class="line">            if (j == n) return i;</div><div class="line">        &#125;</div><div class="line">        return -1;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>遍历，如果遇到 i认识j或者j不认识i就break，完整循环下来的就是celebrity。</p>
+<h3 id="217-Contains-Duplicate"><a href="#217-Contains-Duplicate" class="headerlink" title="217    Contains Duplicate"></a>217    Contains Duplicate</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import java.util.HashSet;</div><div class="line">class Solution &#123;</div><div class="line">    public boolean containsDuplicate(int[] nums) &#123;</div><div class="line">        HashSet&lt;Integer&gt; hs = new HashSet&lt;&gt;();</div><div class="line">        for(int i:nums)</div><div class="line">        &#123;</div><div class="line">            if(hs.contains(i)) return true;</div><div class="line">            else hs.add(i);</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>hashset遍历，如果包含就返回true，否则就加入hashset。</p>
+<h3 id="243-Shortest-Word-Distance"><a href="#243-Shortest-Word-Distance" class="headerlink" title="243    Shortest Word Distance"></a>243    Shortest Word Distance</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int shortestDistance(vector&lt;string&gt;&amp; words, string word1, string word2) &#123;</div><div class="line">        int p1 = -1, p2 = -1, res = INT_MAX;</div><div class="line">        for (int i = 0; i &lt; words.size(); ++i) &#123;</div><div class="line">            if (words[i] == word1) p1 = i;</div><div class="line">            else if (words[i] == word2) p2 = i;</div><div class="line">            if (p1 != -1 &amp;&amp; p2 != -1) res = min(res, abs(p1 - p2));</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>遍历一次数组找出p1,p2，得出结果。</p>
+<h3 id="244-Shortest-Word-Distance-II"><a href="#244-Shortest-Word-Distance-II" class="headerlink" title="244    Shortest Word Distance II"></a>244    Shortest Word Distance II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">class WordDistance &#123;</div><div class="line">public:</div><div class="line">    WordDistance(vector&lt;string&gt;&amp; words) &#123;</div><div class="line">        for (int i = 0; i &lt; words.size(); ++i) &#123;</div><div class="line">            m[words[i]].push_back(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    int shortest(string word1, string word2) &#123;</div><div class="line">        int res = INT_MAX;</div><div class="line">        for (int i = 0; i &lt; m[word1].size(); ++i) &#123;</div><div class="line">            for (int j = 0; j &lt; m[word2].size(); ++j) &#123;</div><div class="line">                res = min(res, abs(m[word1][i] - m[word2][j]));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">private:</div><div class="line">    unordered_map&lt;string, vector&lt;int&gt; &gt; m;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>hashmap解法。</p>
+<h3 id="245-Shortest-Word-Distance-III"><a href="#245-Shortest-Word-Distance-III" class="headerlink" title="245    Shortest Word Distance III"></a>245    Shortest Word Distance III</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int shortestWordDistance(vector&lt;string&gt;&amp; words, string word1, string word2) &#123;</div><div class="line">       int p1 = words.size(), p2 = -words.size(), res = INT_MAX;</div><div class="line">       for (int i = 0; i &lt; words.size(); ++i) &#123;</div><div class="line">           if (words[i] == word1) p1 = word1 == word2 ? p2 : i;</div><div class="line">           if (words[i] == word2) p2 = i;</div><div class="line">           res = min(res, abs(p1 - p2));</div><div class="line">       &#125;</div><div class="line">       return res;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>如果p1和p2相等，结果为p2-i。不相等则同243的做法。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -821,70 +890,6 @@
       
           
         <p>新的生活，新的苦练</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W16repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/11/W16repo/" class="article-date">
-      <time datetime="2018-11-11T14:05:59.000Z" itemprop="datePublished">2018-11-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/11/W16repo/">W16repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>万事俱备，只差送分。</p>
 
       
     </div>
