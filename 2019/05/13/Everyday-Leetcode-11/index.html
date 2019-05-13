@@ -15,16 +15,19 @@
 
 
 
-<meta name="description" content="28    Implement strStr()123456789101112public int strStr(String haystack, String needle) &amp;#123;       if(needle==null||needle.length()==0) return 0;       if(haystack.length()&amp;lt;needle.length()) retu">
+<meta name="description" content="344    Reverse String1234567public void reverseString(char[] s) &amp;#123;   for(int i=0,j=s.length-1;i&amp;lt;j;i++,j--)&amp;#123;     char temp=s[i];     s[i]=s[j];     s[j]=temp;     &amp;#125;   &amp;#125;
+头尾遍历并交换。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Everyday Leetcode 10">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/05/11/Everyday-Leetcode-10/index.html">
+<meta property="og:title" content="Everyday Leetcode 11">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/05/13/Everyday-Leetcode-11/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="28    Implement strStr()123456789101112public int strStr(String haystack, String needle) &amp;#123;       if(needle==null||needle.length()==0) return 0;       if(haystack.length()&amp;lt;needle.length()) retu">
-<meta property="og:updated_time" content="2019-05-11T12:23:24.705Z">
+<meta property="og:description" content="344    Reverse String1234567public void reverseString(char[] s) &amp;#123;   for(int i=0,j=s.length-1;i&amp;lt;j;i++,j--)&amp;#123;     char temp=s[i];     s[i]=s[j];     s[j]=temp;     &amp;#125;   &amp;#125;
+头尾遍历并交换。">
+<meta property="og:updated_time" content="2019-05-13T12:56:51.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Everyday Leetcode 10">
-<meta name="twitter:description" content="28    Implement strStr()123456789101112public int strStr(String haystack, String needle) &amp;#123;       if(needle==null||needle.length()==0) return 0;       if(haystack.length()&amp;lt;needle.length()) retu">
+<meta name="twitter:title" content="Everyday Leetcode 11">
+<meta name="twitter:description" content="344    Reverse String1234567public void reverseString(char[] s) &amp;#123;   for(int i=0,j=s.length-1;i&amp;lt;j;i++,j--)&amp;#123;     char temp=s[i];     s[i]=s[j];     s[j]=temp;     &amp;#125;   &amp;#125;
+头尾遍历并交换。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Everyday Leetcode 10 | 乐味</title>
+<title>Everyday Leetcode 11 | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +261,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Everyday-Leetcode-10" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-11" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/11/Everyday-Leetcode-10/" class="article-date">
-      <time datetime="2019-05-11T09:48:05.000Z" itemprop="datePublished">2019-05-11</time>
+      <a href="/2019/05/13/Everyday-Leetcode-11/" class="article-date">
+      <time datetime="2019-05-13T11:32:12.000Z" itemprop="datePublished">2019-05-13</time>
 </a>
 
 
@@ -277,7 +280,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Everyday Leetcode 10
+      Everyday Leetcode 11
     </h1>
   
 
@@ -298,16 +301,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28    Implement strStr()"></a>28    Implement strStr()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public int strStr(String haystack, String needle) &#123;</div><div class="line">       if(needle==null||needle.length()==0) return 0;</div><div class="line">       if(haystack.length()&lt;needle.length()) return -1;</div><div class="line">       for(int i=0;i&lt;=haystack.length()-needle.length();++i)&#123;</div><div class="line">           int j=0;</div><div class="line">           for(;j&lt;needle.length();++j)&#123;</div><div class="line">                if (haystack.charAt(i + j) != needle.charAt(j)) break;</div><div class="line">           &#125;</div><div class="line">           if (j == needle.length()) return i;</div><div class="line">           &#125;</div><div class="line">       return -1;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
-<p>如果有位置不等的就跳出循环，如果循环长度等于n长度就返回i。前面两个cornercase。<br><a id="more"></a></p>
-<h3 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14    Longest Common Prefix"></a>14    Longest Common Prefix</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public String longestCommonPrefix(String[] strs) &#123;</div><div class="line">       if (strs == null || strs.length == 0) return &quot;&quot;;</div><div class="line">       for (int j = 0; j &lt; strs[0].length(); ++j) &#123;</div><div class="line">           for (int i = 0; i &lt; strs.length; ++i) &#123;</div><div class="line">               if (j &gt;= strs[i].length() || strs[i].charAt(j) != strs[0].charAt(j)) &#123;</div><div class="line">                   return strs[i].substring(0, j); </div><div class="line">               &#125;   </div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       return strs[0];</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>如果不相等说明最长前缀已找到，否则最后返回第一个单词就是结果。</p>
-<h3 id="58-Length-of-Last-Word"><a href="#58-Length-of-Last-Word" class="headerlink" title="58    Length of Last Word"></a>58    Length of Last Word</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public int lengthOfLastWord(String s) &#123;</div><div class="line">   if(s.length()&lt;1) return 0;</div><div class="line">       int res=0;</div><div class="line">       int i=s.length()-1;</div><div class="line">       while(i&gt;=0&amp;&amp;s.charAt(i)==&apos; &apos;) i--;</div><div class="line">       while(i&gt;=0&amp;&amp;s.charAt(i)!=&apos; &apos;) &#123;</div><div class="line">           res++;</div><div class="line">           i--;</div><div class="line">       &#125;</div><div class="line">      return res;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>从末尾找齐，把空格去掉，再遇到空格就统计到这段为止的长度。注意i&gt;=0一定要在前面，不然会越界。</p>
-<h3 id="387-First-Unique-Character-in-a-String"><a href="#387-First-Unique-Character-in-a-String" class="headerlink" title="387    First Unique Character in a String"></a>387    First Unique Character in a String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"> public int firstUniqChar(String s) &#123;</div><div class="line">    if(s==null||s.length()&lt;1) return -1;</div><div class="line">    if(s.length()==1) return 0;</div><div class="line">    for(int i=0;i&lt;s.length();i++)&#123;</div><div class="line">        if(s.lastIndexOf(s.charAt(i))==i &amp;&amp;s.indexOf(s.charAt(i))==i) return i;</div><div class="line">      &#125;</div><div class="line">     return -1;</div><div class="line">    &#125;</div><div class="line">//5ms</div><div class="line">public int firstUniqChar(String s) &#123;</div><div class="line">    int[] count = new int[26];</div><div class="line">        </div><div class="line">        for (char c : s.toCharArray()) &#123;</div><div class="line">            count[c - &apos;a&apos;]++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        int i = 0;</div><div class="line">        for (char c : s.toCharArray()) &#123;</div><div class="line">            if (count[c- &apos;a&apos;] == 1) &#123;</div><div class="line">                return i;</div><div class="line">            &#125;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return -1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果first和lastindex都是i，说明是唯一的。<br>第二种解法，统计每个字母的个数，然后==1的就是唯一的。</p>
-<h3 id="383-Ransom-Note"><a href="#383-Ransom-Note" class="headerlink" title="383    Ransom Note"></a>383    Ransom Note</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public boolean canConstruct(String ransomNote, String magazine) &#123;</div><div class="line">    </div><div class="line">     int[] arr = new int[26];</div><div class="line">        for (int i = 0; i &lt; magazine.length(); i++) &#123;</div><div class="line">            arr[magazine.charAt(i) - &apos;a&apos;]++;</div><div class="line">        &#125;</div><div class="line">        for (int i = 0; i &lt; ransomNote.length(); i++) &#123;</div><div class="line">            if(--arr[ransomNote.charAt(i)-&apos;a&apos;] &lt; 0) &#123;</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">     &#125;</div></pre></td></tr></table></figure>
-<p>统计每个字母出现次数。如果–后小于0说明false 否则true。</p>
+        <h3 id="344-Reverse-String"><a href="#344-Reverse-String" class="headerlink" title="344    Reverse String"></a>344    Reverse String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public void reverseString(char[] s) &#123;</div><div class="line">   for(int i=0,j=s.length-1;i&lt;j;i++,j--)&#123;</div><div class="line">     char temp=s[i];</div><div class="line">     s[i]=s[j];</div><div class="line">     s[j]=temp;</div><div class="line">     &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>头尾遍历并交换。<br><a id="more"></a></p>
+<h3 id="151-Reverse-Words-in-a-String"><a href="#151-Reverse-Words-in-a-String" class="headerlink" title="151    Reverse Words in a String"></a>151    Reverse Words in a String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public String reverseWords(String s) &#123;</div><div class="line">        StringBuilder sb = new StringBuilder();</div><div class="line">        int n = s.length();</div><div class="line">        int i = n - 1;</div><div class="line">        while(i &gt;= 0) &#123;</div><div class="line">            if (s.charAt(i) == &apos; &apos;) &#123;i--; continue; &#125;;</div><div class="line">            int j = i - 1;</div><div class="line">            while(j &gt;= 0 &amp;&amp; s.charAt(j) != &apos; &apos;) j--;</div><div class="line">            sb.append(&quot; &quot;);</div><div class="line">            sb.append(s.substring(j + 1, i + 1));</div><div class="line">            i = j - 1;</div><div class="line">        &#125;</div><div class="line">        if (sb.length() &gt; 0) sb.deleteCharAt(0);</div><div class="line">        return sb.toString(); </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>同样两个指针，都从尾部开始，i遇到不是空格停下，j遇到空格停下，j+1到i+1为词。</p>
+<h3 id="186-Reverse-Words-in-a-String-II"><a href="#186-Reverse-Words-in-a-String-II" class="headerlink" title="186    Reverse Words in a String II"></a>186    Reverse Words in a String II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">同上</div></pre></td></tr></table></figure>
+<p>同上。</p>
+<h3 id="345-Reverse-Vowels-of-a-String"><a href="#345-Reverse-Vowels-of-a-String" class="headerlink" title="345    Reverse Vowels of a String"></a>345    Reverse Vowels of a String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"> public  boolean isVowel(char a)&#123;</div><div class="line">	    switch(a)&#123;</div><div class="line">	         case (&apos;a&apos;) : return true;</div><div class="line">	         case (&apos;e&apos;) : return true;</div><div class="line">	         case (&apos;i&apos;) : return true;</div><div class="line">	         case (&apos;o&apos;) : return true;</div><div class="line">	         case (&apos;u&apos;) : return true;</div><div class="line">	         case (&apos;A&apos;) : return true;</div><div class="line">	         case (&apos;E&apos;) : return true;</div><div class="line">	         case (&apos;I&apos;) : return true;</div><div class="line">	         case (&apos;O&apos;) : return true;</div><div class="line">	         case (&apos;U&apos;) : return true;</div><div class="line">	         default : return false;</div><div class="line">	    &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public  String reverseVowels(String s) &#123;</div><div class="line">	     if (s.length()&lt;2) return s;</div><div class="line">	</div><div class="line">	     char[] tab = s.toCharArray();</div><div class="line">	     int j = tab.length - 1;</div><div class="line">	     int i = 0;</div><div class="line">	</div><div class="line">	     while( i &lt; j ) &#123;</div><div class="line"></div><div class="line">		if (!isVowel(tab[i]))</div><div class="line">			i++;	</div><div class="line">		else &#123;</div><div class="line">			while (j!=i &amp;&amp; !isVowel(tab[j]))</div><div class="line">				j--;</div><div class="line">			</div><div class="line">			char temp = tab[i];</div><div class="line">			tab[i] = tab[j];</div><div class="line">			tab[j] = temp;</div><div class="line">			i++;</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return new String(tab);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先将string变为charArray，然后依然从头找元音，找到后再从未开始找。找到后交换。 最后返回new String。</p>
+<h3 id="205-Isomorphic-Strings"><a href="#205-Isomorphic-Strings" class="headerlink" title="205    Isomorphic Strings"></a>205    Isomorphic Strings</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public boolean isIsomorphic(String s, String t) &#123;</div><div class="line">        int[] m1 = new int[256];</div><div class="line">        int[] m2 = new int[256];</div><div class="line">        </div><div class="line">        for (int i = 0; i &lt; s.length(); i++) &#123;</div><div class="line">            if (m1[s.charAt(i)] != m2[t.charAt(i)]) return false;</div><div class="line">            m1[s.charAt(i)] = m2[t.charAt(i)] = i+1;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return true;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>可以用两个hashmap，但是时间不划算。可以用int[]代替，如果不相等说明次序不等。char可以表示成256的int（ascii）。</p>
 
       
     </div>
@@ -316,13 +319,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/11/Everyday-Leetcode-10/">Everyday Leetcode 10</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/13/Everyday-Leetcode-11/">Everyday Leetcode 11</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2019-05-11, 17:48:05</p>
-        <p><span>最后更新:</span>2019-05-11, 20:23:24</p>
+        <p><span>发布时间:</span>2019-05-13, 19:32:12</p>
+        <p><span>最后更新:</span>2019-05-13, 20:56:51</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/11/Everyday-Leetcode-10/" title="Everyday Leetcode 10">https://nbPeterWang.github.io/ /2019/05/11/Everyday-Leetcode-10/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/05/11/Everyday-Leetcode-10/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/13/Everyday-Leetcode-11/" title="Everyday Leetcode 11">https://nbPeterWang.github.io/ /2019/05/13/Everyday-Leetcode-11/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/05/13/Everyday-Leetcode-11/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -334,16 +337,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/13/Everyday-Leetcode-11/">
-                    Everyday Leetcode 11
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/10/Everyday-Leetcode-9/">
-                    Everyday Leetcode 9 
+                <a href="/2019/05/11/Everyday-Leetcode-10/">
+                    Everyday Leetcode 10
                 </a>
             </div>
         
@@ -355,7 +352,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#28-Implement-strStr"><span class="toc-number">1.</span> <span class="toc-text">28    Implement strStr()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Longest-Common-Prefix"><span class="toc-number">2.</span> <span class="toc-text">14    Longest Common Prefix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#58-Length-of-Last-Word"><span class="toc-number">3.</span> <span class="toc-text">58    Length of Last Word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#387-First-Unique-Character-in-a-String"><span class="toc-number">4.</span> <span class="toc-text">387    First Unique Character in a String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#383-Ransom-Note"><span class="toc-number">5.</span> <span class="toc-text">383    Ransom Note</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#344-Reverse-String"><span class="toc-number">1.</span> <span class="toc-text">344    Reverse String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#151-Reverse-Words-in-a-String"><span class="toc-number">2.</span> <span class="toc-text">151    Reverse Words in a String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#186-Reverse-Words-in-a-String-II"><span class="toc-number">3.</span> <span class="toc-text">186    Reverse Words in a String II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#345-Reverse-Vowels-of-a-String"><span class="toc-number">4.</span> <span class="toc-text">345    Reverse Vowels of a String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#205-Isomorphic-Strings"><span class="toc-number">5.</span> <span class="toc-text">205    Isomorphic Strings</span></a></li></ol>
         
     </div>
     <style>
@@ -391,7 +388,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 10　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 11　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -411,15 +408,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/13/Everyday-Leetcode-11/" title="上一篇: Everyday Leetcode 11">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/10/Everyday-Leetcode-9/" title="下一篇: Everyday Leetcode 9 ">
+            <a href="/2019/05/11/Everyday-Leetcode-10/" title="下一篇: Everyday Leetcode 10">
                 <i class="fa fa-angle-right"></i>
             </a>
         
