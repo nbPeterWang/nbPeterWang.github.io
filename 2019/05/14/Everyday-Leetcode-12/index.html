@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="本周重感冒，希望之后好好补上本周拉下的。上午文书，下午英语，晚上编程。加油。">
+<meta name="description" content="293    Flip Game123456789101112public generatePossibleNextMoves(string s) &amp;#123; StringBuilder sb = new StringBuilder();                for (int i = 1; i &amp;lt; s.length(); ++i) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="W4repo">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2018/08/19/W4repo/index.html">
+<meta property="og:title" content="Everyday Leetcode 12">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/05/14/Everyday-Leetcode-12/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="本周重感冒，希望之后好好补上本周拉下的。上午文书，下午英语，晚上编程。加油。">
-<meta property="og:updated_time" content="2018-08-19T10:26:43.620Z">
+<meta property="og:description" content="293    Flip Game123456789101112public generatePossibleNextMoves(string s) &amp;#123; StringBuilder sb = new StringBuilder();                for (int i = 1; i &amp;lt; s.length(); ++i) &amp;#123;">
+<meta property="og:updated_time" content="2019-05-14T11:34:54.090Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W4repo">
-<meta name="twitter:description" content="本周重感冒，希望之后好好补上本周拉下的。上午文书，下午英语，晚上编程。加油。">
+<meta name="twitter:title" content="Everyday Leetcode 12">
+<meta name="twitter:description" content="293    Flip Game123456789101112public generatePossibleNextMoves(string s) &amp;#123; StringBuilder sb = new StringBuilder();                for (int i = 1; i &amp;lt; s.length(); ++i) &amp;#123;">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>W4repo | 乐味</title>
+<title>Everyday Leetcode 12 | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-W4repo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-12" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/08/19/W4repo/" class="article-date">
-      <time datetime="2018-08-19T10:25:29.000Z" itemprop="datePublished">2018-08-19</time>
+      <a href="/2019/05/14/Everyday-Leetcode-12/" class="article-date">
+      <time datetime="2019-05-14T10:30:22.000Z" itemprop="datePublished">2019-05-14</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      W4repo
+      Everyday Leetcode 12
     </h1>
   
 
@@ -285,14 +285,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,7 +298,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本周重感冒，希望之后好好补上本周拉下的。上午文书，下午英语，晚上编程。<br>加油。</p>
+        <h3 id="293-Flip-Game"><a href="#293-Flip-Game" class="headerlink" title="293    Flip Game"></a>293    Flip Game</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public generatePossibleNextMoves(string s) &#123;</div><div class="line"> StringBuilder sb = new StringBuilder();</div><div class="line">        </div><div class="line">        for (int i = 1; i &lt; s.length(); ++i) &#123;</div><div class="line">            </div><div class="line">            if (s.charAt(i) == &apos;+&apos;&amp;&amp; scharAt(i - 1) == &apos;+&apos;) &#123;</div><div class="line">            sb.append(s.substring(0, i - 1) + &quot;--&quot; + s.substrting(i + 1)));</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return sb.toString(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>遍历 如果i和i-1都是加则加入字符串。</p>
+<h3 id="294-Flip-Game-II"><a href="#294-Flip-Game-II" class="headerlink" title="294    Flip Game II"></a>294    Flip Game II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">bool canWin(string s) &#123;</div><div class="line">        for (int i = 1; i &lt; s.size(); ++i) &#123;</div><div class="line">            if (s[i] == &apos;+&apos; &amp;&amp; s[i - 1] == &apos;+&apos; &amp;&amp; !canWin(s.substr(0, i - 1) + &quot;--&quot; + s.substr(i + 1))) &#123;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>递归调用如果将这两个位置变为–的字符串，如果返回false，说明当前玩家可以赢，结束循环返回false。</p>
+<h3 id="290-Word-Pattern"><a href="#290-Word-Pattern" class="headerlink" title="290    Word Pattern"></a>290    Word Pattern</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public boolean wordPattern(String pattern, String str) &#123;</div><div class="line">    String[] words = str.split(&quot; &quot;);</div><div class="line">    if (words.length != pattern.length())</div><div class="line">        return false;</div><div class="line">    Map index = new HashMap();</div><div class="line">    for (Integer i=0; i&lt;words.length; ++i)</div><div class="line">        if (index.put(pattern.charAt(i), i) != index.put(words[i], i))</div><div class="line">            return false;</div><div class="line">    return true;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>构建hashmap，和前面205原理一样。</p>
+<h3 id="242-Valid-Anagram"><a href="#242-Valid-Anagram" class="headerlink" title="242    Valid Anagram"></a>242    Valid Anagram</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public boolean isAnagram(String s, String t) &#123;</div><div class="line">        </div><div class="line">        if (s.length() != t.length()) return false;</div><div class="line"></div><div class="line">        int n = s.length();</div><div class="line">        int[] freq = new int[26];</div><div class="line"></div><div class="line">       </div><div class="line">        for (int i = 0; i &lt; n; i++) &#123;</div><div class="line">            freq[s.charAt(i) - &apos;a&apos;]++; </div><div class="line">        &#125;</div><div class="line"></div><div class="line">        for (int i = 0; i &lt; n; i++) &#123;</div><div class="line">            if (freq[t.charAt(i) - &apos;a&apos;]-- == 0) &#123;</div><div class="line">                return false;</div><div class="line">            &#125; </div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return true;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>建立单词表，两个for遍历。</p>
+<h3 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49    Group Anagrams"></a>49    Group Anagrams</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) &#123;</div><div class="line">   if (strs == null || strs.length == 0) return new ArrayList&lt;List&lt;String&gt;&gt;();</div><div class="line">       Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;String, List&lt;String&gt;&gt;();</div><div class="line">       for (String s : strs) &#123;</div><div class="line">           char[] ca = s.toCharArray();</div><div class="line">           Arrays.sort(ca);</div><div class="line">           String keyStr = String.valueOf(ca);</div><div class="line">           if (!map.containsKey(keyStr)) map.put(keyStr, new ArrayList&lt;String&gt;());</div><div class="line">           map.get(keyStr).add(s);</div><div class="line">       &#125;</div><div class="line">       return new ArrayList&lt;List&lt;String&gt;&gt;(map.values());</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>把每个字符串排序，这样得到的keyStr都一样，然后将同个key的字符串add进同一个list。</p>
 
       
     </div>
@@ -311,13 +316,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/08/19/W4repo/">W4repo</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/14/Everyday-Leetcode-12/">Everyday Leetcode 12</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2018-08-19, 18:25:29</p>
-        <p><span>最后更新:</span>2018-08-19, 18:26:43</p>
+        <p><span>发布时间:</span>2019-05-14, 18:30:22</p>
+        <p><span>最后更新:</span>2019-05-14, 19:34:54</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/08/19/W4repo/" title="W4repo">https://nbPeterWang.github.io/ /2018/08/19/W4repo/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2018/08/19/W4repo/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/14/Everyday-Leetcode-12/" title="Everyday Leetcode 12">https://nbPeterWang.github.io/ /2019/05/14/Everyday-Leetcode-12/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/05/14/Everyday-Leetcode-12/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,16 +334,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/08/27/W5repo/">
-                    W5repo
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/08/12/W3repo/">
-                    W3repo
+                <a href="/2019/05/13/Everyday-Leetcode-11/">
+                    Everyday Leetcode 11
                 </a>
             </div>
         
@@ -350,7 +349,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#293-Flip-Game"><span class="toc-number">1.</span> <span class="toc-text">293    Flip Game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#294-Flip-Game-II"><span class="toc-number">2.</span> <span class="toc-text">294    Flip Game II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#290-Word-Pattern"><span class="toc-number">3.</span> <span class="toc-text">290    Word Pattern</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#242-Valid-Anagram"><span class="toc-number">4.</span> <span class="toc-text">242    Valid Anagram</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#49-Group-Anagrams"><span class="toc-number">5.</span> <span class="toc-text">49    Group Anagrams</span></a></li></ol>
         
     </div>
     <style>
@@ -386,7 +385,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"W4repo　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 12　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -406,15 +405,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/08/27/W5repo/" title="上一篇: W5repo">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/08/12/W3repo/" title="下一篇: W3repo">
+            <a href="/2019/05/13/Everyday-Leetcode-11/" title="下一篇: Everyday Leetcode 11">
                 <i class="fa fa-angle-right"></i>
             </a>
         

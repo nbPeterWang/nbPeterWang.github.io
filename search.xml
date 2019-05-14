@@ -4,6 +4,30 @@
   
     
     <entry>
+      <title><![CDATA[Everyday Leetcode 12]]></title>
+      <url>https://nbPeterWang.github.io/%20/2019/05/14/Everyday-Leetcode-12/</url>
+      <content type="html"><![CDATA[<h3 id="293-Flip-Game"><a href="#293-Flip-Game" class="headerlink" title="293    Flip Game"></a>293    Flip Game</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public generatePossibleNextMoves(string s) &#123;</div><div class="line"> StringBuilder sb = new StringBuilder();</div><div class="line">        </div><div class="line">        for (int i = 1; i &lt; s.length(); ++i) &#123;</div><div class="line">            </div><div class="line">            if (s.charAt(i) == &apos;+&apos;&amp;&amp; scharAt(i - 1) == &apos;+&apos;) &#123;</div><div class="line">            sb.append(s.substring(0, i - 1) + &quot;--&quot; + s.substrting(i + 1)));</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return sb.toString(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>遍历 如果i和i-1都是加则加入字符串。</p>
+<h3 id="294-Flip-Game-II"><a href="#294-Flip-Game-II" class="headerlink" title="294    Flip Game II"></a>294    Flip Game II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">bool canWin(string s) &#123;</div><div class="line">        for (int i = 1; i &lt; s.size(); ++i) &#123;</div><div class="line">            if (s[i] == &apos;+&apos; &amp;&amp; s[i - 1] == &apos;+&apos; &amp;&amp; !canWin(s.substr(0, i - 1) + &quot;--&quot; + s.substr(i + 1))) &#123;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>递归调用如果将这两个位置变为–的字符串，如果返回false，说明当前玩家可以赢，结束循环返回false。</p>
+<h3 id="290-Word-Pattern"><a href="#290-Word-Pattern" class="headerlink" title="290    Word Pattern"></a>290    Word Pattern</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public boolean wordPattern(String pattern, String str) &#123;</div><div class="line">    String[] words = str.split(&quot; &quot;);</div><div class="line">    if (words.length != pattern.length())</div><div class="line">        return false;</div><div class="line">    Map index = new HashMap();</div><div class="line">    for (Integer i=0; i&lt;words.length; ++i)</div><div class="line">        if (index.put(pattern.charAt(i), i) != index.put(words[i], i))</div><div class="line">            return false;</div><div class="line">    return true;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>构建hashmap，和前面205原理一样。</p>
+<h3 id="242-Valid-Anagram"><a href="#242-Valid-Anagram" class="headerlink" title="242    Valid Anagram"></a>242    Valid Anagram</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public boolean isAnagram(String s, String t) &#123;</div><div class="line">        </div><div class="line">        if (s.length() != t.length()) return false;</div><div class="line"></div><div class="line">        int n = s.length();</div><div class="line">        int[] freq = new int[26];</div><div class="line"></div><div class="line">       </div><div class="line">        for (int i = 0; i &lt; n; i++) &#123;</div><div class="line">            freq[s.charAt(i) - &apos;a&apos;]++; </div><div class="line">        &#125;</div><div class="line"></div><div class="line">        for (int i = 0; i &lt; n; i++) &#123;</div><div class="line">            if (freq[t.charAt(i) - &apos;a&apos;]-- == 0) &#123;</div><div class="line">                return false;</div><div class="line">            &#125; </div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return true;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>建立单词表，两个for遍历。</p>
+<h3 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49    Group Anagrams"></a>49    Group Anagrams</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) &#123;</div><div class="line">   if (strs == null || strs.length == 0) return new ArrayList&lt;List&lt;String&gt;&gt;();</div><div class="line">       Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;String, List&lt;String&gt;&gt;();</div><div class="line">       for (String s : strs) &#123;</div><div class="line">           char[] ca = s.toCharArray();</div><div class="line">           Arrays.sort(ca);</div><div class="line">           String keyStr = String.valueOf(ca);</div><div class="line">           if (!map.containsKey(keyStr)) map.put(keyStr, new ArrayList&lt;String&gt;());</div><div class="line">           map.get(keyStr).add(s);</div><div class="line">       &#125;</div><div class="line">       return new ArrayList&lt;List&lt;String&gt;&gt;(map.values());</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>把每个字符串排序，这样得到的keyStr都一样，然后将同个key的字符串add进同一个list。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Everyday Leetcode 11]]></title>
       <url>https://nbPeterWang.github.io/%20/2019/05/13/Everyday-Leetcode-11/</url>
       <content type="html"><![CDATA[<h3 id="344-Reverse-String"><a href="#344-Reverse-String" class="headerlink" title="344    Reverse String"></a>344    Reverse String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public void reverseString(char[] s) &#123;</div><div class="line">   for(int i=0,j=s.length-1;i&lt;j;i++,j--)&#123;</div><div class="line">     char temp=s[i];</div><div class="line">     s[i]=s[j];</div><div class="line">     s[j]=temp;</div><div class="line">     &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
@@ -342,6 +366,11 @@
 <li>[x] 186    Reverse Words in a String II    </li>
 <li>[x] 345    Reverse Vowels of a String    </li>
 <li>[x] 205    Isomorphic Strings</li>
+<li>[x] 293    Flip Game    </li>
+<li>[x] 294    Flip Game II    </li>
+<li>[x] 290    Word Pattern    </li>
+<li>[x] 242    Valid Anagram    </li>
+<li>[x] 49    Group Anagrams</li>
 </ul>
 ]]></content>
       
