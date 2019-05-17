@@ -264,6 +264,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/03/Everyday-Leetcode-4/" class="article-date">
+      <time datetime="2019-05-03T10:41:50.000Z" itemprop="datePublished">2019-05-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/03/Everyday-Leetcode-4/">Everyday Leetcode 4</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55    Jump Game"></a>55    Jump Game</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">     public boolean canJump(int[] nums) &#123;</div><div class="line">        if(nums.length&lt;2)</div><div class="line">            return true;</div><div class="line">        if(nums[0]&lt;1)</div><div class="line">            return false;</div><div class="line">        int curr=nums[0];</div><div class="line">        for(int i =1;i&lt;nums.length;i++)&#123;</div><div class="line">            if(nums[i]&gt;=curr) curr=nums[i];   </div><div class="line">            else curr--;</div><div class="line">            if(curr&lt;=0&amp;&amp;i!=nums.length-1) return false;</div><div class="line">        &#125;</div><div class="line">        return true;        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>遍历数组，如果下一步能比current走得远就走，否则current-1（每一步花的距离）。如果current&lt;=0时还没有走到尽头，说明无法跳到。如果没有return false说明可以跳到。此处greedy比dp更好。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/03/Everyday-Leetcode-4/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -840,72 +907,6 @@
       
           
         <p>Go的sturct，面向对象，interface， 学习完成。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W17repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/18/W17repo/" class="article-date">
-      <time datetime="2018-11-18T09:34:41.000Z" itemprop="datePublished">2018-11-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/18/W17repo/">W17repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>新的生活，新的苦练</p>
 
       
     </div>

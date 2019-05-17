@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="万事俱备，只差送分。">
+<meta name="description" content="316    Remove Duplicate Letters123456789101112131415161718192021222324252627public String removeDuplicateLetters(String sr) &amp;#123;           int[] res = new int[26];    boolean[] visited = new boolean">
 <meta property="og:type" content="article">
-<meta property="og:title" content="W16repo">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2018/11/11/W16repo/index.html">
+<meta property="og:title" content="Everyday Leetcode 14">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/05/17/Everyday-Leetcode-14/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="万事俱备，只差送分。">
-<meta property="og:updated_time" content="2018-11-11T14:06:36.401Z">
+<meta property="og:description" content="316    Remove Duplicate Letters123456789101112131415161718192021222324252627public String removeDuplicateLetters(String sr) &amp;#123;           int[] res = new int[26];    boolean[] visited = new boolean">
+<meta property="og:updated_time" content="2019-05-17T11:57:53.849Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W16repo">
-<meta name="twitter:description" content="万事俱备，只差送分。">
+<meta name="twitter:title" content="Everyday Leetcode 14">
+<meta name="twitter:description" content="316    Remove Duplicate Letters123456789101112131415161718192021222324252627public String removeDuplicateLetters(String sr) &amp;#123;           int[] res = new int[26];    boolean[] visited = new boolean">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>W16repo | 乐味</title>
+<title>Everyday Leetcode 14 | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-W16repo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-14" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/11/W16repo/" class="article-date">
-      <time datetime="2018-11-11T14:05:59.000Z" itemprop="datePublished">2018-11-11</time>
+      <a href="/2019/05/17/Everyday-Leetcode-14/" class="article-date">
+      <time datetime="2019-05-17T11:05:59.000Z" itemprop="datePublished">2019-05-17</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      W16repo
+      Everyday Leetcode 14
     </h1>
   
 
@@ -285,14 +285,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,7 +298,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>万事俱备，只差送分。</p>
+        <h3 id="316-Remove-Duplicate-Letters"><a href="#316-Remove-Duplicate-Letters" class="headerlink" title="316    Remove Duplicate Letters"></a>316    Remove Duplicate Letters</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">public String removeDuplicateLetters(String sr) &#123;   </div><div class="line">        int[] res = new int[26]; </div><div class="line">   boolean[] visited = new boolean[26]; </div><div class="line">   char[] ch = sr.toCharArray();</div><div class="line">   for(char c: ch)&#123;  </div><div class="line">       res[c-&apos;a&apos;]++;</div><div class="line">   &#125;</div><div class="line">   Stack&lt;Character&gt; st = new Stack&lt;&gt;();</div><div class="line">   int index;</div><div class="line">   for(char s:ch)&#123; </div><div class="line">       index= s-&apos;a&apos;;</div><div class="line">       res[index]--;   </div><div class="line">       if(visited[index]) </div><div class="line">           continue;</div><div class="line">       while(!st.isEmpty() &amp;&amp; s&lt;st.peek() &amp;&amp; res[st.peek()-&apos;a&apos;]!=0)&#123; </div><div class="line">           visited[st.pop()-&apos;a&apos;]=false;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       st.push(s); </div><div class="line">       visited[index]=true;</div><div class="line">   &#125;</div><div class="line">   StringBuilder sb = new StringBuilder();</div><div class="line">   while(!st.isEmpty())&#123;</div><div class="line">       sb.insert(0,st.pop());</div><div class="line">   &#125;</div><div class="line">   return sb.toString();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>首先用char数组记录字符出现次数，然后遍历，如果该数字已经出现在序列中，continue不管它，如果比当前栈顶小，而且栈顶字符次数不为0，还会在后面出现，就弹出并置为false未出现，将当前字符压入栈中。最后按照栈的次序pop输出。</p>
+<h3 id="271-Encode-and-Decode-Strings"><a href="#271-Encode-and-Decode-Strings" class="headerlink" title="271    Encode and Decode Strings"></a>271    Encode and Decode Strings</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// Encodes a list of strings to a single string.</div><div class="line">    string encode(vector&lt;string&gt;&amp; strs) &#123;</div><div class="line">        string res = &quot;&quot;;</div><div class="line">        for (string str : strs) res += str + &apos;\0&apos;;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">    // Decodes a single string to a list of strings.</div><div class="line">    vector&lt;string&gt; decode(string s) &#123;</div><div class="line">        vector&lt;string&gt; res;</div><div class="line">        stringstream ss(s);</div><div class="line">        string t;</div><div class="line">        while (getline(ss, t, &apos;\0&apos;)) &#123;</div><div class="line">            res.push_back(t);</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在每个字符串的后面加上换行字符’\0’，其还属于一个字符串，这样我们在解码的时候，只要去查找这个换行字符就可以了。</p>
+<h3 id="168-Excel-Sheet-Column-Title"><a href="#168-Excel-Sheet-Column-Title" class="headerlink" title="168    Excel Sheet Column Title"></a>168    Excel Sheet Column Title</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public String convertToTitle(int n) &#123;</div><div class="line">      StringBuilder sb= new StringBuilder();</div><div class="line">      </div><div class="line"></div><div class="line">        while(n&gt;0)&#123;</div><div class="line">            n--;</div><div class="line">            sb.insert(0, (char)(&apos;A&apos; + n % 26));</div><div class="line">            n /= 26;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return sb.toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>相当于转换成26进制。</p>
+<h3 id="171-Excel-Sheet-Column-Number"><a href="#171-Excel-Sheet-Column-Number" class="headerlink" title="171    Excel Sheet Column Number"></a>171    Excel Sheet Column Number</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public int titleToNumber(String s) &#123;</div><div class="line">       </div><div class="line">     char[] ch = s.toCharArray();</div><div class="line">       int res=0;</div><div class="line">      for(int i=s.length()-1;i&gt;=0;i--)&#123;</div><div class="line">          int sq=s.length()-1-i;</div><div class="line">          int q=1;</div><div class="line">          while(sq&gt;0)&#123;</div><div class="line">              q*=26;</div><div class="line">              sq--;</div><div class="line">          &#125;</div><div class="line">       res+=(int)(ch[i]-&apos;A&apos;+1)*q;</div><div class="line">        &#125;</div><div class="line">       return res;</div><div class="line">   </div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>同上，反过来做。</p>
+<h3 id="13-Roman-to-Integer"><a href="#13-Roman-to-Integer" class="headerlink" title="13    Roman to Integer"></a>13    Roman to Integer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public int romanToInt(String s) &#123;</div><div class="line">       </div><div class="line">        int[] map = new int[256];</div><div class="line">        map[&apos;I&apos;] = 1; map[&apos;V&apos;] = 5; map[&apos;X&apos;] = 10; map[&apos;L&apos;] = 50; map[&apos;C&apos;] = 100; map[&apos;D&apos;] = 500; map[&apos;M&apos;] = 1000;</div><div class="line">        </div><div class="line">        int ret = 0, pre = 1;</div><div class="line">        for (int i = s.length()-1; i &gt;= 0; --i) &#123;</div><div class="line">            int cur = map[s.charAt(i)];</div><div class="line">            if (cur &lt; pre) ret -= cur;</div><div class="line">            else &#123;</div><div class="line">                pre = cur;</div><div class="line">                ret += cur;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ret;</div><div class="line">    </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>罗马数字的规则，如果小得放前面说明要减去前面这个。否则直接累加。</p>
 
       
     </div>
@@ -311,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/11/W16repo/">W16repo</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/17/Everyday-Leetcode-14/">Everyday Leetcode 14</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2018-11-11, 22:05:59</p>
-        <p><span>最后更新:</span>2018-11-11, 22:06:36</p>
+        <p><span>发布时间:</span>2019-05-17, 19:05:59</p>
+        <p><span>最后更新:</span>2019-05-17, 19:57:53</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/11/W16repo/" title="W16repo">https://nbPeterWang.github.io/ /2018/11/11/W16repo/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2018/11/11/W16repo/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/17/Everyday-Leetcode-14/" title="Everyday Leetcode 14">https://nbPeterWang.github.io/ /2019/05/17/Everyday-Leetcode-14/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/05/17/Everyday-Leetcode-14/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/18/W17repo/">
-                    W17repo
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/05/W15repo/">
-                    W15repo
+                <a href="/2019/05/15/Everyday-Leetcode-13/">
+                    Everyday Leetcode 13
                 </a>
             </div>
         
@@ -350,7 +350,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#316-Remove-Duplicate-Letters"><span class="toc-number">1.</span> <span class="toc-text">316    Remove Duplicate Letters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#271-Encode-and-Decode-Strings"><span class="toc-number">2.</span> <span class="toc-text">271    Encode and Decode Strings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#168-Excel-Sheet-Column-Title"><span class="toc-number">3.</span> <span class="toc-text">168    Excel Sheet Column Title</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#171-Excel-Sheet-Column-Number"><span class="toc-number">4.</span> <span class="toc-text">171    Excel Sheet Column Number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Roman-to-Integer"><span class="toc-number">5.</span> <span class="toc-text">13    Roman to Integer</span></a></li></ol>
         
     </div>
     <style>
@@ -386,7 +386,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"W16repo　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 14　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -427,15 +427,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/18/W17repo/" title="上一篇: W17repo">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/05/W15repo/" title="下一篇: W15repo">
+            <a href="/2019/05/15/Everyday-Leetcode-13/" title="下一篇: Everyday Leetcode 13">
                 <i class="fa fa-angle-right"></i>
             </a>
         
