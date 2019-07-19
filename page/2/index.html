@@ -264,6 +264,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/06/Everyday-Leetcode-7/" class="article-date">
+      <time datetime="2019-05-06T11:02:15.000Z" itemprop="datePublished">2019-05-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/06/Everyday-Leetcode-7/">Everyday Leetcode 7</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="239-Sliding-Window-Maximum"><a href="#239-Sliding-Window-Maximum" class="headerlink" title="239    Sliding Window Maximum"></a>239    Sliding Window Maximum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public int[] maxSlidingWindow(int[] a, int k) &#123;		</div><div class="line">		if (a == null || k &lt;= 0) &#123;</div><div class="line">			return new int[0];</div><div class="line">		&#125;</div><div class="line">		int n = a.length;</div><div class="line">		int[] r = new int[n-k+1];</div><div class="line">		int ri = 0;</div><div class="line">		// store index</div><div class="line">		Deque&lt;Integer&gt; q = new ArrayDeque&lt;&gt;();</div><div class="line">		for (int i = 0; i &lt; a.length; i++) &#123;</div><div class="line">			// remove numbers out of range k</div><div class="line">			while (!q.isEmpty() &amp;&amp; q.peek() &lt; i - k + 1) &#123;</div><div class="line">				q.poll();</div><div class="line">			&#125;</div><div class="line">			// remove smaller numbers in k range as they are useless</div><div class="line">			while (!q.isEmpty() &amp;&amp; a[q.peekLast()] &lt; a[i]) &#123;</div><div class="line">				q.pollLast();</div><div class="line">			&#125;</div><div class="line">			// q contains index... r contains content</div><div class="line">			q.offer(i);</div><div class="line">			if (i &gt;= k - 1) &#123;</div><div class="line">				r[ri++] = a[q.peek()];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return r;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>这题用到了不熟悉的数据结构Deque，用q保存整个数组的下标遍历整个数组，如果此时队列的首元素是i - k的话，表示此时窗口向右移了一步，则移除队首元素。然后比较队尾元素和将要进来的值，如果小的话就都移除，然后此时我们把队首元素加入结果中即可。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/06/Everyday-Leetcode-7/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -843,72 +910,6 @@
       
           
         <p>之前漏了一周，有点罪恶。这周回家了。回家后大概就刷cs61b、毕设和leetcode了。加油，2019<br>冲冲冲！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W20repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/12/10/W20repo/" class="article-date">
-      <time datetime="2018-12-10T03:04:17.000Z" itemprop="datePublished">2018-12-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/10/W20repo/">W20repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>本周学习Go三十六讲到9.</p>
 
       
     </div>
