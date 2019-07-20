@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Words/">Words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/">start</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Words/">Words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/">start</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
                     </div>
                 </section>
                 
@@ -263,6 +263,73 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Everyday-Leetcode-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/09/Everyday-Leetcode-8/" class="article-date">
+      <time datetime="2019-05-09T10:03:01.000Z" itemprop="datePublished">2019-05-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/09/Everyday-Leetcode-8/">Everyday Leetcode 8</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="238-Product-of-Array-Except-Self"><a href="#238-Product-of-Array-Except-Self" class="headerlink" title="238    Product of Array Except Self"></a>238    Product of Array Except Self</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public int[] productExceptSelf(int[] nums) &#123;</div><div class="line">       if(nums==null||nums.length&lt;=1) return null;</div><div class="line">        int[] res = new int[nums.length];</div><div class="line">       res[0] = 1;</div><div class="line">       for (int i = 1; i &lt; nums.length; i++) &#123;</div><div class="line">       res[i] = res[i - 1] * nums[i - 1];</div><div class="line">       &#125;</div><div class="line">       int right = 1;</div><div class="line">   for (int i = nums.length-1; i &gt;= 0; i--) &#123;</div><div class="line">       res[i] *= right;</div><div class="line">       right *= nums[i];</div><div class="line">        &#125;</div><div class="line">   return res;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>自己做的时候算错了，以为这样不是O（n），不过确实也很巧妙。第一遍遍历算i左边的累积，第二遍算i右边的累积。得出结果。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/09/Everyday-Leetcode-8/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-Everyday-Leetcode-7" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -861,72 +928,6 @@
         <p class="article-more-link">
           <a href="/2019/04/15/普通人的19fall-cs-master-DIY总结/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W22repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/12/23/W22repo/" class="article-date">
-      <time datetime="2018-12-23T05:01:15.000Z" itemprop="datePublished">2018-12-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/23/W22repo/">W22repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>之前漏了一周，有点罪恶。这周回家了。回家后大概就刷cs61b、毕设和leetcode了。加油，2019<br>冲冲冲！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
