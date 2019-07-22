@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="本周学习Go三十六讲到9.">
+<meta name="description" content="32    Longest Valid Parentheses12345678910111213141516171819public int longestValidParentheses(String s) &amp;#123;    char[] S = s.toCharArray();    int[] V = new int[S.length];    int open = 0;    int m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="W20repo">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2018/12/10/W20repo/index.html">
+<meta property="og:title" content="Everyday Leetcode 20">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/07/22/Everyday-Leetcode-20/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="本周学习Go三十六讲到9.">
-<meta property="og:updated_time" content="2018-12-10T03:05:02.157Z">
+<meta property="og:description" content="32    Longest Valid Parentheses12345678910111213141516171819public int longestValidParentheses(String s) &amp;#123;    char[] S = s.toCharArray();    int[] V = new int[S.length];    int open = 0;    int m">
+<meta property="og:updated_time" content="2019-07-22T10:09:27.359Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W20repo">
-<meta name="twitter:description" content="本周学习Go三十六讲到9.">
+<meta name="twitter:title" content="Everyday Leetcode 20">
+<meta name="twitter:description" content="32    Longest Valid Parentheses12345678910111213141516171819public int longestValidParentheses(String s) &amp;#123;    char[] S = s.toCharArray();    int[] V = new int[S.length];    int open = 0;    int m">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>W20repo | 乐味</title>
+<title>Everyday Leetcode 20 | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-W20repo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-20" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/10/W20repo/" class="article-date">
-      <time datetime="2018-12-10T03:04:17.000Z" itemprop="datePublished">2018-12-10</time>
+      <a href="/2019/07/22/Everyday-Leetcode-20/" class="article-date">
+      <time datetime="2019-07-22T08:23:33.000Z" itemprop="datePublished">2019-07-22</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      W20repo
+      Everyday Leetcode 20
     </h1>
   
 
@@ -285,14 +285,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,7 +298,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本周学习Go三十六讲到9.</p>
+        <h3 id="32-Longest-Valid-Parentheses"><a href="#32-Longest-Valid-Parentheses" class="headerlink" title="32    Longest Valid Parentheses"></a>32    Longest Valid Parentheses</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public int longestValidParentheses(String s) &#123;</div><div class="line">    char[] S = s.toCharArray();</div><div class="line">    int[] V = new int[S.length];</div><div class="line">    int open = 0;</div><div class="line">    int max = 0;</div><div class="line">    for (int i=0; i&lt;S.length; i++) &#123;</div><div class="line">        if (S[i] == &apos;(&apos;) open++;</div><div class="line">        if (S[i] == &apos;)&apos; &amp;&amp; open &gt; 0) &#123;</div><div class="line">            // matches found</div><div class="line">            V[i] = 2+ V[i-1];</div><div class="line">            // add matches from previous</div><div class="line">            if(i-V[i]&gt;0)</div><div class="line">                V[i] += V[i-V[i]];</div><div class="line">            open--;</div><div class="line">        &#125;</div><div class="line">        if (V[i] &gt; max) max = V[i];</div><div class="line">    &#125;</div><div class="line">    return max;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>dp,状态方程式为V[i] = 2+ V[i-1]+ previous matches V[i- (V[i-1] + 2) ] if S[i] = ‘)’ and ‘(‘ count &gt; 0。</p>
+<h3 id="241-Different-Ways-to-Add-Parentheses"><a href="#241-Different-Ways-to-Add-Parentheses" class="headerlink" title="241    Different Ways to Add Parentheses"></a>241    Different Ways to Add Parentheses</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">private Map&lt;String,List&lt;Integer&gt;&gt; memo = new HashMap&lt;&gt;();</div><div class="line">   public List&lt;Integer&gt; diffWaysToCompute(String input) &#123;</div><div class="line">       int len = input.length();</div><div class="line">       List&lt;Integer&gt; result = memo.get(input);</div><div class="line">       if (result != null) &#123; return result; &#125;</div><div class="line">       result = new ArrayList&lt;&gt;();</div><div class="line">       if (isDigit(input)) &#123;</div><div class="line">           result.add(Integer.parseInt(input));</div><div class="line">           memo.put(input,result);</div><div class="line">           return result;</div><div class="line">       &#125;</div><div class="line">       for (int i = 0; i &lt; len; i++) &#123;</div><div class="line">           char c = input.charAt(i);</div><div class="line">           if (c == &apos;+&apos; || c == &apos;-&apos; || c == &apos;*&apos;) &#123;</div><div class="line">               List&lt;Integer&gt; left = diffWaysToCompute(input.substring(0,i));</div><div class="line">               List&lt;Integer&gt; right = diffWaysToCompute(input.substring(i+1,len));</div><div class="line">               for (Integer il : left) &#123;</div><div class="line">                   for (Integer ir : right) &#123;</div><div class="line">                       switch (c) &#123;</div><div class="line">                           case &apos;+&apos;: result.add(il + ir); break;</div><div class="line">                           case &apos;-&apos;: result.add(il - ir); break;</div><div class="line">                           case &apos;*&apos;: result.add(il * ir); break;</div><div class="line">                       &#125;</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       memo.put(input,result);</div><div class="line">       return result;</div><div class="line">   &#125;</div><div class="line">   private boolean isDigit(String s) &#123;</div><div class="line">       for (Character c : s.toCharArray()) &#123;</div><div class="line">           if (!Character.isDigit(c)) &#123; return false; &#125;</div><div class="line">       &#125;</div><div class="line">       return true;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>首先维护一个private的hashmap用来储存。如果已经有结果直接返回，如果是数字，直接加入到memo并返回。遍历字符，将左边的和右边的都递归调用自身返回结果，然后根据当前符号计算，最后保存结果到hashmap。</p>
+<h3 id="301-Remove-Invalid-Parentheses"><a href="#301-Remove-Invalid-Parentheses" class="headerlink" title="301    Remove Invalid Parentheses"></a>301    Remove Invalid Parentheses</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public List&lt;String&gt; removeInvalidParentheses(String s) &#123;</div><div class="line">    List&lt;String&gt; ans = new ArrayList&lt;&gt;();</div><div class="line">    remove(s, ans, 0, 0, new char[]&#123;&apos;(&apos;, &apos;)&apos;&#125;);</div><div class="line">    return ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void remove(String s, List&lt;String&gt; ans, int last_i, int last_j,  char[] par) &#123;</div><div class="line">    for (int stack = 0, i = last_i; i &lt; s.length(); ++i) &#123;</div><div class="line">        if (s.charAt(i) == par[0]) stack++;</div><div class="line">        if (s.charAt(i) == par[1]) stack--;</div><div class="line">        if (stack &gt;= 0) continue;</div><div class="line">        for (int j = last_j; j &lt;= i; ++j)</div><div class="line">            if (s.charAt(j) == par[1] &amp;&amp; (j == last_j || s.charAt(j - 1) != par[1]))</div><div class="line">                remove(s.substring(0, j) + s.substring(j + 1, s.length()), ans, i, j, par);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    String reversed = new StringBuilder(s).reverse().toString();</div><div class="line">    if (par[0] == &apos;(&apos;) // finished left to right</div><div class="line">        remove(reversed, ans, 0, 0, new char[]&#123;&apos;)&apos;, &apos;(&apos;&#125;);</div><div class="line">    else // finished right to left</div><div class="line">        ans.add(reversed);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>stack遇到左括号自增1，遇到右括号自减1。当stack&lt;0时，从上一个删除的位置开始遍历。当当前字符为右括号而且是第一个右括号，删除当前右括号并递归。后面将字符串反转，如果par是左括号，则调用递归函数传入反向括号来删除多的左括号。否则说明已经反转，可以直接加入结果了。</p>
+<h3 id="392-Is-Subsequence"><a href="#392-Is-Subsequence" class="headerlink" title="392    Is Subsequence"></a>392    Is Subsequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public boolean isSubsequence(String s, String t) </div><div class="line">  &#123;</div><div class="line">      if(t.length() &lt; s.length()) return false;</div><div class="line">      int prev = 0;</div><div class="line">      for(int i = 0; i &lt; s.length();i++)</div><div class="line">      &#123;</div><div class="line">          char tempChar = s.charAt(i);</div><div class="line">          prev = t.indexOf(tempChar,prev);</div><div class="line">          if(prev == -1) return false;</div><div class="line">          prev++;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      return true;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>使用string的indexOf，每次都检索是否从当前位置开始，是否有s的字符在t中。</p>
+<h3 id="115-Distinct-Subsequences"><a href="#115-Distinct-Subsequences" class="headerlink" title="115    Distinct Subsequences"></a>115    Distinct Subsequences</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public int numDistinct(String S, String T) &#123;</div><div class="line">   int[][] mem = new int[T.length()+1][S.length()+1];</div><div class="line">   for(int j=0; j&lt;=S.length(); j++) &#123;</div><div class="line">       mem[0][j] = 1;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   </div><div class="line">   for(int i=0; i&lt;T.length(); i++) &#123;</div><div class="line">       for(int j=0; j&lt;S.length(); j++) &#123;</div><div class="line">           if(T.charAt(i) == S.charAt(j)) &#123;</div><div class="line">               mem[i+1][j+1] = mem[i][j] + mem[i+1][j];</div><div class="line">           &#125; else &#123;</div><div class="line">               mem[i+1][j+1] = mem[i+1][j];</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   return mem[T.length()][S.length()];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>dp 。dp[i][j] = dp[i-1][j] + dp[i-1][j-1]</p>
 
       
     </div>
@@ -311,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/10/W20repo/">W20repo</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/22/Everyday-Leetcode-20/">Everyday Leetcode 20</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2018-12-10, 11:04:17</p>
-        <p><span>最后更新:</span>2018-12-10, 11:05:02</p>
+        <p><span>发布时间:</span>2019-07-22, 16:23:33</p>
+        <p><span>最后更新:</span>2019-07-22, 18:09:27</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/10/W20repo/" title="W20repo">https://nbPeterWang.github.io/ /2018/12/10/W20repo/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2018/12/10/W20repo/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/22/Everyday-Leetcode-20/" title="Everyday Leetcode 20">https://nbPeterWang.github.io/ /2019/07/22/Everyday-Leetcode-20/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/07/22/Everyday-Leetcode-20/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/23/W22repo/">
-                    W22repo
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/02/W19repo/">
-                    W19repo
+                <a href="/2019/07/21/Everyday-Leetcode-19/">
+                    Everyday Leetcode 19
                 </a>
             </div>
         
@@ -350,7 +350,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#32-Longest-Valid-Parentheses"><span class="toc-number">1.</span> <span class="toc-text">32    Longest Valid Parentheses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#241-Different-Ways-to-Add-Parentheses"><span class="toc-number">2.</span> <span class="toc-text">241    Different Ways to Add Parentheses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#301-Remove-Invalid-Parentheses"><span class="toc-number">3.</span> <span class="toc-text">301    Remove Invalid Parentheses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#392-Is-Subsequence"><span class="toc-number">4.</span> <span class="toc-text">392    Is Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#115-Distinct-Subsequences"><span class="toc-number">5.</span> <span class="toc-text">115    Distinct Subsequences</span></a></li></ol>
         
     </div>
     <style>
@@ -386,7 +386,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"W20repo　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 20　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -427,15 +427,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/23/W22repo/" title="上一篇: W22repo">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/12/02/W19repo/" title="下一篇: W19repo">
+            <a href="/2019/07/21/Everyday-Leetcode-19/" title="下一篇: Everyday Leetcode 19">
                 <i class="fa fa-angle-right"></i>
             </a>
         
