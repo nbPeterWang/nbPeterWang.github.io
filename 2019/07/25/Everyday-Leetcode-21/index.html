@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://nbPeterWang.github.io/ /2019/07/25/Everyday-Leetcode-21/index.html">
 <meta property="og:site_name" content="乐味">
 <meta property="og:description" content="7    Reverse Integer12345678910public int reverse(int x) &amp;#123;          long rev= 0;        while( x != 0)&amp;#123;            rev= rev*10 + x % 10;            x= x/10;            if( rev &amp;gt; Integer.M">
-<meta property="og:updated_time" content="2019-07-25T07:06:15.476Z">
+<meta property="og:updated_time" content="2019-07-25T07:21:21.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Everyday Leetcode 21">
 <meta name="twitter:description" content="7    Reverse Integer12345678910public int reverse(int x) &amp;#123;          long rev= 0;        while( x != 0)&amp;#123;            rev= rev*10 + x % 10;            x= x/10;            if( rev &amp;gt; Integer.M">
@@ -307,8 +307,8 @@
 <p>如果该位小于9就+1返回，否则=0.这样可以完成进位。</p>
 <h3 id="8-String-to-Integer-atoi"><a href="#8-String-to-Integer-atoi" class="headerlink" title="8    String to Integer (atoi)"></a>8    String to Integer (atoi)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> public int myAtoi(String str) &#123;</div><div class="line">	if (str.isEmpty())</div><div class="line">		return 0;</div><div class="line">	str = str.trim();</div><div class="line">      if (str.isEmpty())</div><div class="line">		return 0;</div><div class="line">	int i = 0, ans = 0, sign = 1, len = str.length();</div><div class="line">	if (str.charAt(i) == &apos;-&apos; || str.charAt(i) == &apos;+&apos;)</div><div class="line">		sign = str.charAt(i++) == &apos;+&apos; ? 1 : -1;</div><div class="line">	for (; i &lt; len; ++i) &#123;</div><div class="line">		int tmp = str.charAt(i) - &apos;0&apos;;</div><div class="line">		if (tmp &lt; 0 || tmp &gt; 9)</div><div class="line">			break;</div><div class="line">		if (ans &gt; Integer.MAX_VALUE / 10</div><div class="line">				|| (ans == Integer.MAX_VALUE / 10 &amp;&amp; Integer.MAX_VALUE % 10 &lt; tmp))</div><div class="line">			return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;</div><div class="line">		else</div><div class="line">			ans = ans * 10 + tmp;</div><div class="line">	&#125;</div><div class="line">	return sign * ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>首先，handle空字串，去掉空格后再handle，否则会越界。后面当ans越界时返回正无穷或负无穷。ans每次*10再加上tmp。</p>
-<h3 id="258-Add-Digits"><a href="#258-Add-Digits" class="headerlink" title="258    Add Digits"></a>258    Add Digits</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public int addDigits(int num) &#123;</div><div class="line">        if (num == 0)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        if (num % 9 == 0)&#123;</div><div class="line">            return 9;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            return num % 9;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>返回0，9或对9取余的结果即可。</p>
+<h3 id="258-Add-Digits"><a href="#258-Add-Digits" class="headerlink" title="258    Add Digits"></a>258    Add Digits</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public int addDigits(int num) &#123;</div><div class="line">        return (num!=0 &amp;&amp; num%9==0) ? 9 : num%9;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>返回9或对9取余的结果即可。</p>
 
       
     </div>
@@ -320,7 +320,7 @@
         <p><span>本文标题:</span><a href="/2019/07/25/Everyday-Leetcode-21/">Everyday Leetcode 21</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
         <p><span>发布时间:</span>2019-07-25, 14:00:08</p>
-        <p><span>最后更新:</span>2019-07-25, 15:06:15</p>
+        <p><span>最后更新:</span>2019-07-25, 15:21:21</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/07/25/Everyday-Leetcode-21/" title="Everyday Leetcode 21">https://nbPeterWang.github.io/ /2019/07/25/Everyday-Leetcode-21/</a>
             <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/07/25/Everyday-Leetcode-21/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
