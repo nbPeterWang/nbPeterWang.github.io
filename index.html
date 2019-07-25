@@ -264,6 +264,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-21" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/25/Everyday-Leetcode-21/" class="article-date">
+      <time datetime="2019-07-25T06:00:08.000Z" itemprop="datePublished">2019-07-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/25/Everyday-Leetcode-21/">Everyday Leetcode 21</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7    Reverse Integer"></a>7    Reverse Integer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public int reverse(int x) &#123;</div><div class="line">          long rev= 0;</div><div class="line">        while( x != 0)&#123;</div><div class="line">            rev= rev*10 + x % 10;</div><div class="line">            x= x/10;</div><div class="line">            if( rev &gt; Integer.MAX_VALUE || rev &lt; Integer.MIN_VALUE)</div><div class="line">                return 0;</div><div class="line">        &#125;</div><div class="line">        return (int) rev;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/25/Everyday-Leetcode-21/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-20" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -871,76 +937,9 @@
 
 
   
-    <article id="post-Everyday-Leetcode-11" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/13/Everyday-Leetcode-11/" class="article-date">
-      <time datetime="2019-05-13T11:32:12.000Z" itemprop="datePublished">2019-05-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/13/Everyday-Leetcode-11/">Everyday Leetcode 11</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="344-Reverse-String"><a href="#344-Reverse-String" class="headerlink" title="344    Reverse String"></a>344    Reverse String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public void reverseString(char[] s) &#123;</div><div class="line">   for(int i=0,j=s.length-1;i&lt;j;i++,j--)&#123;</div><div class="line">     char temp=s[i];</div><div class="line">     s[i]=s[j];</div><div class="line">     s[j]=temp;</div><div class="line">     &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>头尾遍历并交换。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/13/Everyday-Leetcode-11/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
