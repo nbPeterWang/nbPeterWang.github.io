@@ -264,6 +264,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-22" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/02/Everyday-Leetcode-22/" class="article-date">
+      <time datetime="2019-08-02T05:15:29.000Z" itemprop="datePublished">2019-08-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/02/Everyday-Leetcode-22/">Everyday Leetcode 22</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67    Add Binary"></a>67    Add Binary</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public String addBinary(String a, String b) &#123;</div><div class="line">      StringBuilder sb = new StringBuilder();</div><div class="line">        int i=a.length()-1, j=b.length()-1, memo=0;</div><div class="line">        while(j&gt;=0 || i&gt;=0)&#123;</div><div class="line">        int sum= memo;</div><div class="line">        if(i&gt;=0) sum+= a.charAt(i--)-&apos;0&apos;;</div><div class="line">        if(j&gt;=0) sum+= b.charAt(j--)-&apos;0&apos;;</div><div class="line">        memo=sum/2;</div><div class="line">        sb.append(sum%2);</div><div class="line">        &#125;</div><div class="line">        if(memo!=0) sb.append(memo);</div><div class="line">        return sb.reverse().toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>从右往左计算，每一位算出当前位的和再对2取余，就是这一位的结果，最后把第一位的结果加入到StringBuilder再反向输出。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/08/02/Everyday-Leetcode-22/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-21" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -850,73 +917,6 @@
       
         <p class="article-more-link">
           <a href="/2019/05/15/Everyday-Leetcode-13/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-12" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/14/Everyday-Leetcode-12/" class="article-date">
-      <time datetime="2019-05-14T10:30:22.000Z" itemprop="datePublished">2019-05-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/14/Everyday-Leetcode-12/">Everyday Leetcode 12</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="293-Flip-Game"><a href="#293-Flip-Game" class="headerlink" title="293    Flip Game"></a>293    Flip Game</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public generatePossibleNextMoves(string s) &#123;</div><div class="line"> StringBuilder sb = new StringBuilder();</div><div class="line">        </div><div class="line">        for (int i = 1; i &lt; s.length(); ++i) &#123;</div><div class="line">            </div><div class="line">            if (s.charAt(i) == &apos;+&apos;&amp;&amp; scharAt(i - 1) == &apos;+&apos;) &#123;</div><div class="line">            sb.append(s.substring(0, i - 1) + &quot;--&quot; + s.substrting(i + 1)));</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return sb.toString(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>遍历 如果i和i-1都是加则加入字符串。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/14/Everyday-Leetcode-12/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

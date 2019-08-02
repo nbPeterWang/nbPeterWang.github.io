@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="75    Sort Colors123456789101112131415161718192021222324252627282930313233public void sortColors(int[] nums) &amp;#123;    // 1-pass    int p1 = 0, p2 = nums.length - 1, index = 0;    while (index &amp;lt;= p">
+<meta name="description" content="67    Add Binary12345678910111213public String addBinary(String a, String b) &amp;#123;      StringBuilder sb = new StringBuilder();        int i=a.length()-1, j=b.length()-1, memo=0;        while(j&amp;gt;=0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Everyday Leetcode 9 ">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/05/10/Everyday-Leetcode-9/index.html">
+<meta property="og:title" content="Everyday Leetcode 22">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/08/02/Everyday-Leetcode-22/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="75    Sort Colors123456789101112131415161718192021222324252627282930313233public void sortColors(int[] nums) &amp;#123;    // 1-pass    int p1 = 0, p2 = nums.length - 1, index = 0;    while (index &amp;lt;= p">
-<meta property="og:updated_time" content="2019-05-10T13:05:53.552Z">
+<meta property="og:description" content="67    Add Binary12345678910111213public String addBinary(String a, String b) &amp;#123;      StringBuilder sb = new StringBuilder();        int i=a.length()-1, j=b.length()-1, memo=0;        while(j&amp;gt;=0">
+<meta property="og:updated_time" content="2019-08-02T11:27:10.947Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Everyday Leetcode 9 ">
-<meta name="twitter:description" content="75    Sort Colors123456789101112131415161718192021222324252627282930313233public void sortColors(int[] nums) &amp;#123;    // 1-pass    int p1 = 0, p2 = nums.length - 1, index = 0;    while (index &amp;lt;= p">
+<meta name="twitter:title" content="Everyday Leetcode 22">
+<meta name="twitter:description" content="67    Add Binary12345678910111213public String addBinary(String a, String b) &amp;#123;      StringBuilder sb = new StringBuilder();        int i=a.length()-1, j=b.length()-1, memo=0;        while(j&amp;gt;=0">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Everyday Leetcode 9  | 乐味</title>
+<title>Everyday Leetcode 22 | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Everyday-Leetcode-9" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-22" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/10/Everyday-Leetcode-9/" class="article-date">
-      <time datetime="2019-05-10T10:35:14.000Z" itemprop="datePublished">2019-05-10</time>
+      <a href="/2019/08/02/Everyday-Leetcode-22/" class="article-date">
+      <time datetime="2019-08-02T05:15:29.000Z" itemprop="datePublished">2019-08-02</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Everyday Leetcode 9 
+      Everyday Leetcode 22
     </h1>
   
 
@@ -298,16 +298,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="75-Sort-Colors"><a href="#75-Sort-Colors" class="headerlink" title="75    Sort Colors"></a>75    Sort Colors</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">public void sortColors(int[] nums) &#123;</div><div class="line">    // 1-pass</div><div class="line">    int p1 = 0, p2 = nums.length - 1, index = 0;</div><div class="line">    while (index &lt;= p2) &#123;</div><div class="line">        if (nums[index] == 0) &#123;</div><div class="line">            nums[index] = nums[p1];</div><div class="line">            nums[p1] = 0;</div><div class="line">            p1++;</div><div class="line">        &#125;</div><div class="line">        if (nums[index] == 2) &#123;</div><div class="line">            nums[index] = nums[p2];</div><div class="line">            nums[p2] = 2;</div><div class="line">            p2--;</div><div class="line">            index--;</div><div class="line">        &#125;</div><div class="line">        index++;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//2pass</div><div class="line">public void sortColors(int[] nums) &#123;</div><div class="line">        int rc=0,wc=0,bc=0;</div><div class="line">        for(int i=0;i&lt;nums.length;i++)&#123;</div><div class="line">            if(nums[i]==0) rc++;</div><div class="line">            else if(nums[i]==1) wc++;</div><div class="line">            else if(nums[i]==2) bc++;</div><div class="line">        &#125;</div><div class="line">        for(int j=0;j&lt;nums.length;j++)&#123;</div><div class="line">        if(rc&gt;0)&#123;nums[j]=0;rc--;&#125;</div><div class="line">        else  if(wc&gt;0)&#123;nums[j]=1;wc--;&#125;</div><div class="line">        else   if(bc&gt;0)&#123;nums[j]=2;bc--;&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>1pass方法，在头部插入0，在尾部插入2，其他1不动。<br>2pass，统计数目然后重新写入。<br><a id="more"></a></p>
-<h3 id="283-Move-Zeroes"><a href="#283-Move-Zeroes" class="headerlink" title="283    Move Zeroes"></a>283    Move Zeroes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> public void moveZeroes(int[] nums) &#123;</div><div class="line">         </div><div class="line">    if (nums == null || nums.length == 0) return;        </div><div class="line"></div><div class="line">    int insertPos = 0;</div><div class="line">    for (int num: nums) &#123;</div><div class="line">        if (num != 0) nums[insertPos++] = num;</div><div class="line">    &#125;        </div><div class="line"></div><div class="line">    while (insertPos &lt; nums.length) &#123;</div><div class="line">        nums[insertPos++] = 0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果不等于0则在前面开始插入，然后补足0。</p>
-<h3 id="376-Wiggle-Subsequence"><a href="#376-Wiggle-Subsequence" class="headerlink" title="376    Wiggle Subsequence"></a>376    Wiggle Subsequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public int wiggleMaxLength(int[] nums) &#123;</div><div class="line">        if (nums.length &lt; 2) return nums.length;</div><div class="line">        int up = 1;</div><div class="line">        int down = 1;</div><div class="line">        </div><div class="line">        for (int i = 1; i &lt; nums.length; i++) &#123;</div><div class="line">            if (nums[i] &gt; nums[i - 1]) &#123;</div><div class="line">                up = down + 1;</div><div class="line">            &#125;</div><div class="line">            else if (nums[i] &lt; nums[i - 1]) &#123;</div><div class="line">                down = up + 1;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return Math.max(up, down); </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>很巧妙的做法，设置up和down，只有符合wiggle的才会递增，不然停滞，最后输出max即可。</p>
-<h3 id="280-Wiggle-Sort"><a href="#280-Wiggle-Sort" class="headerlink" title="280    Wiggle Sort"></a>280    Wiggle Sort</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">void wiggleSort(vector&lt;int&gt; &amp;nums) &#123;</div><div class="line">       if (nums.size() &lt;= 1) return;</div><div class="line">       for (int i = 1; i &lt; nums.size(); ++i) &#123;</div><div class="line">           if ((i % 2 == 1 &amp;&amp; nums[i] &lt; nums[i - 1]) || (i % 2 == 0 &amp;&amp; nums[i] &gt; nums[i - 1])) &#123;</div><div class="line">               swap(nums[i], nums[i - 1]);</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>如果不符合条件就和前面的交换。</p>
-<h3 id="324-Wiggle-Sort-II"><a href="#324-Wiggle-Sort-II" class="headerlink" title="324    Wiggle Sort II"></a>324    Wiggle Sort II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public void wiggleSort(int[] nums) &#123;</div><div class="line">       int[] copy = new int[nums.length];</div><div class="line">       Arrays.sort(nums);</div><div class="line">       for(int i = 0; i &lt; nums.length; i++) copy[i] = nums[i];</div><div class="line">       int index = 1;</div><div class="line">       for(int i = nums.length - 1; i &gt; (nums.length - 1) / 2; i--)&#123;</div><div class="line">           nums[index] = copy[i];</div><div class="line">           index += 2;</div><div class="line">       &#125;</div><div class="line">       index = 0;</div><div class="line">       for(int i = (nums.length - 1) / 2; i &gt;= 0; i--)&#123;</div><div class="line">           nums[index] = copy[i];</div><div class="line">           index += 2;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>首先将数组排序，然后复制数组，将后半部分的数组每2个插入，前半部分的数组也每2个插入。</p>
+        <h3 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67    Add Binary"></a>67    Add Binary</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public String addBinary(String a, String b) &#123;</div><div class="line">      StringBuilder sb = new StringBuilder();</div><div class="line">        int i=a.length()-1, j=b.length()-1, memo=0;</div><div class="line">        while(j&gt;=0 || i&gt;=0)&#123;</div><div class="line">        int sum= memo;</div><div class="line">        if(i&gt;=0) sum+= a.charAt(i--)-&apos;0&apos;;</div><div class="line">        if(j&gt;=0) sum+= b.charAt(j--)-&apos;0&apos;;</div><div class="line">        memo=sum/2;</div><div class="line">        sb.append(sum%2);</div><div class="line">        &#125;</div><div class="line">        if(memo!=0) sb.append(memo);</div><div class="line">        return sb.reverse().toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>从右往左计算，每一位算出当前位的和再对2取余，就是这一位的结果，最后把第一位的结果加入到StringBuilder再反向输出。<br><a id="more"></a></p>
+<h3 id="43-Multiply-Strings"><a href="#43-Multiply-Strings" class="headerlink" title="43    Multiply Strings"></a>43    Multiply Strings</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public String multiply(String num1, String num2) &#123;</div><div class="line">      int n=num1.length(), m=num2.length();</div><div class="line">      int[] pos= new int[m + n];</div><div class="line">      if(num1.length()==0 ||num2.length()==0) return &quot;0&quot;;</div><div class="line">        for(int i=n-1;i&gt;=0;i--)</div><div class="line">            for(int j=m-1;j&gt;=0;j--)&#123;</div><div class="line">                int res=(num1.charAt(i)-&apos;0&apos;)* (num2.charAt(j)-&apos;0&apos;);</div><div class="line">                int p1=i+j, p2=i+j+1;</div><div class="line">                int sum= res+=pos[p2];</div><div class="line">                pos[p1]+=sum/10;</div><div class="line">                pos[p2]=(sum)%10;</div><div class="line">            &#125;</div><div class="line">         StringBuilder sb = new StringBuilder();</div><div class="line">    for(int p : pos) if(!(sb.length() == 0 &amp;&amp; p == 0)) sb.append(p);</div><div class="line">    return sb.length() == 0 ? &quot;0&quot; : sb.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>计算每一位的结果并将进位的结果每次都累加。</p>
+<h3 id="29-Divide-Two-Integers"><a href="#29-Divide-Two-Integers" class="headerlink" title="29    Divide Two Integers"></a>29    Divide Two Integers</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public int divide(int dividend, int divisor) &#123;       </div><div class="line">      if(dividend ==  Integer.MIN_VALUE &amp;&amp; divisor == -1)&#123;</div><div class="line">          return Integer.MAX_VALUE;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      boolean isNeg = (dividend &lt; 0) ^ (divisor &lt; 0);</div><div class="line">      if(dividend &gt; 0) dividend = -dividend;</div><div class="line">      if(divisor &gt; 0) divisor = -divisor;</div><div class="line">         </div><div class="line">      return isNeg? -div(dividend, divisor) : div(dividend, divisor);</div><div class="line">  &#125;</div><div class="line">  public int div(int divid, int divis)&#123;</div><div class="line">      if(divid &gt; divis) return 0;</div><div class="line">      int curSum = divis &lt;&lt; 1, prevSum = divis, q = 1;</div><div class="line">      </div><div class="line">      while(divid &lt;= curSum &amp;&amp; curSum &lt; prevSum)&#123;</div><div class="line">          prevSum = curSum;</div><div class="line">          curSum &lt;&lt;= 1; q &lt;&lt;= 1;</div><div class="line">      &#125;</div><div class="line">      return q + div(divid - prevSum, divis);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>每次将divisor×2，如果大于dividend就返回之前的结果+差的结果。</p>
+<h3 id="69-Sqrt-x"><a href="#69-Sqrt-x" class="headerlink" title="69    Sqrt(x)"></a>69    Sqrt(x)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public int mySqrt(int x) &#123;</div><div class="line">      int i = 1;</div><div class="line">      int j = x;</div><div class="line">      int ans = 0;</div><div class="line">      while (i &lt;=j)&#123;</div><div class="line">          int mid = i + (j-i)/2;</div><div class="line">          if (mid &lt;= x/mid)&#123;</div><div class="line">              i = mid +1;</div><div class="line">              ans = mid;</div><div class="line">          &#125;</div><div class="line">          else</div><div class="line">              j = mid-1;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      return ans;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>二分法，当i小于j的时候，每次mid都=左指针+左右指针距离的的1/2，找到最接近x的n*n。</p>
+<h3 id="50-Pow-x-n"><a href="#50-Pow-x-n" class="headerlink" title="50    Pow(x, n)"></a>50    Pow(x, n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public double myPow(double x, int n) &#123;</div><div class="line">       if(n == 0)</div><div class="line">           return 1;</div><div class="line">       if(n&lt;0)&#123;</div><div class="line">           if(n == Integer.MIN_VALUE) &#123;</div><div class="line">           n += 2;</div><div class="line">       &#125;</div><div class="line">       n = -n;</div><div class="line">       x = 1/x;</div><div class="line">       &#125;</div><div class="line">       return (n%2 == 0) ? myPow(x*x, n/2) : x*myPow(x*x, n/2);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>每次都递归调用自身 n每次/2，要注意MIN_VALUE的情况会溢出，所以n+=2。</p>
 
       
     </div>
@@ -316,13 +316,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/10/Everyday-Leetcode-9/">Everyday Leetcode 9 </a></p>
+        <p><span>本文标题:</span><a href="/2019/08/02/Everyday-Leetcode-22/">Everyday Leetcode 22</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2019-05-10, 18:35:14</p>
-        <p><span>最后更新:</span>2019-05-10, 21:05:53</p>
+        <p><span>发布时间:</span>2019-08-02, 13:15:29</p>
+        <p><span>最后更新:</span>2019-08-02, 19:27:10</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/10/Everyday-Leetcode-9/" title="Everyday Leetcode 9 ">https://nbPeterWang.github.io/ /2019/05/10/Everyday-Leetcode-9/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/05/10/Everyday-Leetcode-9/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/08/02/Everyday-Leetcode-22/" title="Everyday Leetcode 22">https://nbPeterWang.github.io/ /2019/08/02/Everyday-Leetcode-22/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/08/02/Everyday-Leetcode-22/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -334,16 +334,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/11/Everyday-Leetcode-10/">
-                    Everyday Leetcode 10
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/09/Everyday-Leetcode-8/">
-                    Everyday Leetcode 8
+                <a href="/2019/07/25/Everyday-Leetcode-21/">
+                    Everyday Leetcode 21
                 </a>
             </div>
         
@@ -355,7 +349,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#75-Sort-Colors"><span class="toc-number">1.</span> <span class="toc-text">75    Sort Colors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#283-Move-Zeroes"><span class="toc-number">2.</span> <span class="toc-text">283    Move Zeroes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#376-Wiggle-Subsequence"><span class="toc-number">3.</span> <span class="toc-text">376    Wiggle Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#280-Wiggle-Sort"><span class="toc-number">4.</span> <span class="toc-text">280    Wiggle Sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#324-Wiggle-Sort-II"><span class="toc-number">5.</span> <span class="toc-text">324    Wiggle Sort II</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#67-Add-Binary"><span class="toc-number">1.</span> <span class="toc-text">67    Add Binary</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-Multiply-Strings"><span class="toc-number">2.</span> <span class="toc-text">43    Multiply Strings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#29-Divide-Two-Integers"><span class="toc-number">3.</span> <span class="toc-text">29    Divide Two Integers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#69-Sqrt-x"><span class="toc-number">4.</span> <span class="toc-text">69    Sqrt(x)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#50-Pow-x-n"><span class="toc-number">5.</span> <span class="toc-text">50    Pow(x, n)</span></a></li></ol>
         
     </div>
     <style>
@@ -391,7 +385,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 9 　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 22　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -432,15 +426,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/11/Everyday-Leetcode-10/" title="上一篇: Everyday Leetcode 10">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/09/Everyday-Leetcode-8/" title="下一篇: Everyday Leetcode 8">
+            <a href="/2019/07/25/Everyday-Leetcode-21/" title="下一篇: Everyday Leetcode 21">
                 <i class="fa fa-angle-right"></i>
             </a>
         
