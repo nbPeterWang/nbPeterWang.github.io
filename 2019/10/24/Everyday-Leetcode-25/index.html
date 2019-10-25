@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="DL已确认，接下来搞定PS和CV。GRE加油！！">
+<meta name="description" content="113    Path Sum II1234567891011121314151617181920public List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; pathSum(TreeNode root, int sum) &amp;#123;    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt;ret = new ArrayList&amp;lt;List&amp;lt;Integer&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="W11repo">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2018/10/07/W11repo/index.html">
+<meta property="og:title" content="Everyday Leetcode 25">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/10/24/Everyday-Leetcode-25/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="DL已确认，接下来搞定PS和CV。GRE加油！！">
-<meta property="og:updated_time" content="2018-10-07T11:41:39.030Z">
+<meta property="og:description" content="113    Path Sum II1234567891011121314151617181920public List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; pathSum(TreeNode root, int sum) &amp;#123;    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt;ret = new ArrayList&amp;lt;List&amp;lt;Integer&amp;">
+<meta property="og:updated_time" content="2019-10-25T02:25:45.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W11repo">
-<meta name="twitter:description" content="DL已确认，接下来搞定PS和CV。GRE加油！！">
+<meta name="twitter:title" content="Everyday Leetcode 25">
+<meta name="twitter:description" content="113    Path Sum II1234567891011121314151617181920public List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; pathSum(TreeNode root, int sum) &amp;#123;    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt;ret = new ArrayList&amp;lt;List&amp;lt;Integer&amp;">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>W11repo | 乐味</title>
+<title>Everyday Leetcode 25 | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-W11repo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-25" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/10/07/W11repo/" class="article-date">
-      <time datetime="2018-10-07T23:40:09.000Z" itemprop="datePublished">2018-10-07</time>
+      <a href="/2019/10/24/Everyday-Leetcode-25/" class="article-date">
+      <time datetime="2019-10-25T00:08:51.000Z" itemprop="datePublished">2019-10-24</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      W11repo
+      Everyday Leetcode 25
     </h1>
   
 
@@ -285,14 +285,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,7 +298,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>DL已确认，接下来搞定PS和CV。<br>GRE加油！！</p>
+        <h3 id="113-Path-Sum-II"><a href="#113-Path-Sum-II" class="headerlink" title="113    Path Sum II"></a>113    Path Sum II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public List&lt;List&lt;Integer&gt;&gt; pathSum(TreeNode root, int sum) &#123;</div><div class="line">    List&lt;List&lt;Integer&gt;&gt;ret = new ArrayList&lt;List&lt;Integer&gt;&gt;(); </div><div class="line">    List&lt;Integer&gt; cur = new ArrayList&lt;Integer&gt;(); </div><div class="line">    pathSum(root, sum, cur, ret);</div><div class="line">    return ret;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void pathSum(TreeNode root, int sum, List&lt;Integer&gt;cur, List&lt;List&lt;Integer&gt;&gt;ret)&#123;</div><div class="line">    if (root == null)&#123;</div><div class="line">        return; </div><div class="line">    &#125;</div><div class="line">    cur.add(root.val);</div><div class="line">    if (root.left == null &amp;&amp; root.right == null &amp;&amp; root.val == sum)&#123;</div><div class="line">        ret.add(new ArrayList(cur));</div><div class="line">    &#125;else&#123;</div><div class="line">        pathSum(root.left, sum - root.val, cur, ret);</div><div class="line">        pathSum(root.right, sum - root.val, cur, ret);</div><div class="line">    &#125;</div><div class="line">    cur.remove(cur.size()-1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Using ArrayList to save the result, if find pathsum, add to the ret.</p>
+<h3 id="129-Sum-Root-to-Leaf-Numbers"><a href="#129-Sum-Root-to-Leaf-Numbers" class="headerlink" title="129    Sum Root to Leaf Numbers"></a>129    Sum Root to Leaf Numbers</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public int sumNumbers(TreeNode root) &#123;</div><div class="line">	return sum(root, 0);</div><div class="line">&#125;</div><div class="line"></div><div class="line">public int sum(TreeNode n, int s)&#123;</div><div class="line">	if (n == null) return 0;</div><div class="line">	if (n.right == null &amp;&amp; n.left == null) return s*10 + n.val;</div><div class="line">	return sum(n.left, s*10 + n.val) + sum(n.right, s*10 + n.val);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Everytime we should return result * 10 plus the value of node, then we do the recursion.</p>
+<h3 id="298-Binary-Tree-Longest-Consecutive-Sequence"><a href="#298-Binary-Tree-Longest-Consecutive-Sequence" class="headerlink" title="298    Binary Tree Longest Consecutive Sequence"></a>298    Binary Tree Longest Consecutive Sequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">private int max = 0;</div><div class="line">    public int longestConsecutive(TreeNode root) &#123;</div><div class="line">        if(root == null) return 0;</div><div class="line">        helper(root, 0, root.val);</div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void helper(TreeNode root, int cur, int target)&#123;</div><div class="line">        if(root == null) return;</div><div class="line">        if(root.val == target) cur++;</div><div class="line">        else cur = 1;</div><div class="line">        max = Math.max(cur, max);</div><div class="line">        helper(root.left, cur, root.val + 1);</div><div class="line">        helper(root.right, cur, root.val + 1);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>using private variable max to save the maximum result of longest Consecutive.</p>
+<h3 id="111-Minimum-Depth-of-Binary-Tree"><a href="#111-Minimum-Depth-of-Binary-Tree" class="headerlink" title="111    Minimum Depth of Binary Tree"></a>111    Minimum Depth of Binary Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> public static int minDepth(TreeNode root) &#123;</div><div class="line">	if (root == null)	return 0;</div><div class="line">	if (root.left == null)	return minDepth(root.right) + 1;</div><div class="line">	if (root.right == null) return minDepth(root.left) + 1;</div><div class="line">	return Math.min(minDepth(root.left),minDepth(root.right)) + 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>using DFS.</p>
+<h3 id="104-Maximum-Depth-of-Binary-Tree"><a href="#104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="104    Maximum Depth of Binary Tree"></a>104    Maximum Depth of Binary Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public int maxDepth(TreeNode root) &#123;</div><div class="line">        return root==null? 0 : Math.max(maxDepth(root.left), maxDepth(root.right))+1;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>using DFS.</p>
 
       
     </div>
@@ -311,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/10/07/W11repo/">W11repo</a></p>
+        <p><span>本文标题:</span><a href="/2019/10/24/Everyday-Leetcode-25/">Everyday Leetcode 25</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2018-10-07, 19:40:09</p>
-        <p><span>最后更新:</span>2018-10-07, 07:41:39</p>
+        <p><span>发布时间:</span>2019-10-24, 20:08:51</p>
+        <p><span>最后更新:</span>2019-10-24, 22:25:45</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/10/07/W11repo/" title="W11repo">https://nbPeterWang.github.io/ /2018/10/07/W11repo/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2018/10/07/W11repo/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/10/24/Everyday-Leetcode-25/" title="Everyday Leetcode 25">https://nbPeterWang.github.io/ /2019/10/24/Everyday-Leetcode-25/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/10/24/Everyday-Leetcode-25/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/10/14/W12repo/">
-                    W12repo
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/10/01/W10repo/">
-                    W10repo
+                <a href="/2019/10/19/Everyday-Leetcode-24/">
+                    Everyday Leetcode 24
                 </a>
             </div>
         
@@ -350,7 +350,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#113-Path-Sum-II"><span class="toc-number">1.</span> <span class="toc-text">113    Path Sum II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#129-Sum-Root-to-Leaf-Numbers"><span class="toc-number">2.</span> <span class="toc-text">129    Sum Root to Leaf Numbers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#298-Binary-Tree-Longest-Consecutive-Sequence"><span class="toc-number">3.</span> <span class="toc-text">298    Binary Tree Longest Consecutive Sequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#111-Minimum-Depth-of-Binary-Tree"><span class="toc-number">4.</span> <span class="toc-text">111    Minimum Depth of Binary Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#104-Maximum-Depth-of-Binary-Tree"><span class="toc-number">5.</span> <span class="toc-text">104    Maximum Depth of Binary Tree</span></a></li></ol>
         
     </div>
     <style>
@@ -386,7 +386,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"W11repo　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 25　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -427,15 +427,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/10/14/W12repo/" title="上一篇: W12repo">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/10/01/W10repo/" title="下一篇: W10repo">
+            <a href="/2019/10/19/Everyday-Leetcode-24/" title="下一篇: Everyday Leetcode 24">
                 <i class="fa fa-angle-right"></i>
             </a>
         

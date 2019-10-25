@@ -264,6 +264,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-25" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/24/Everyday-Leetcode-25/" class="article-date">
+      <time datetime="2019-10-25T00:08:51.000Z" itemprop="datePublished">2019-10-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/24/Everyday-Leetcode-25/">Everyday Leetcode 25</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="113-Path-Sum-II"><a href="#113-Path-Sum-II" class="headerlink" title="113    Path Sum II"></a>113    Path Sum II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public List&lt;List&lt;Integer&gt;&gt; pathSum(TreeNode root, int sum) &#123;</div><div class="line">    List&lt;List&lt;Integer&gt;&gt;ret = new ArrayList&lt;List&lt;Integer&gt;&gt;(); </div><div class="line">    List&lt;Integer&gt; cur = new ArrayList&lt;Integer&gt;(); </div><div class="line">    pathSum(root, sum, cur, ret);</div><div class="line">    return ret;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void pathSum(TreeNode root, int sum, List&lt;Integer&gt;cur, List&lt;List&lt;Integer&gt;&gt;ret)&#123;</div><div class="line">    if (root == null)&#123;</div><div class="line">        return; </div><div class="line">    &#125;</div><div class="line">    cur.add(root.val);</div><div class="line">    if (root.left == null &amp;&amp; root.right == null &amp;&amp; root.val == sum)&#123;</div><div class="line">        ret.add(new ArrayList(cur));</div><div class="line">    &#125;else&#123;</div><div class="line">        pathSum(root.left, sum - root.val, cur, ret);</div><div class="line">        pathSum(root.right, sum - root.val, cur, ret);</div><div class="line">    &#125;</div><div class="line">    cur.remove(cur.size()-1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/10/24/Everyday-Leetcode-25/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-24" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -846,77 +912,6 @@
         <p class="article-more-link">
           <a href="/2019/05/26/Everyday-Leetcode-16/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-15" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/18/Everyday-Leetcode-15/" class="article-date">
-      <time datetime="2019-05-18T21:57:20.000Z" itemprop="datePublished">2019-05-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/18/Everyday-Leetcode-15/">Everyday Leetcode 15</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="12-Integer-to-Roman"><a href="#12-Integer-to-Roman" class="headerlink" title="12    Integer to Roman"></a>12    Integer to Roman</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public String intToRoman(int num) &#123;</div><div class="line">       int[] values = &#123;1000,900,500,400,100,90,50,40,10,9,5,4,1&#125;;</div><div class="line">   String[] strs = &#123;&quot;M&quot;,&quot;CM&quot;,&quot;D&quot;,&quot;CD&quot;,&quot;C&quot;,&quot;XC&quot;,&quot;L&quot;,&quot;XL&quot;,&quot;X&quot;,&quot;IX&quot;,&quot;V&quot;,&quot;IV&quot;,&quot;I&quot;&#125;;</div><div class="line">   </div><div class="line">   StringBuilder sb = new StringBuilder();</div><div class="line">   </div><div class="line">   for(int i=0;i&lt;values.length;i++) &#123;</div><div class="line">       while(num &gt;= values[i]) &#123;</div><div class="line">           num -= values[i];</div><div class="line">           sb.append(strs[i]);</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   return sb.toString();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>从高到低判断是否符合罗马数字大小，符合则减去一该数字并加入字符到结果。</p>
-<h3 id="273-Integer-to-English-Words"><a href="#273-Integer-to-English-Words" class="headerlink" title="273    Integer to English Words"></a>273    Integer to English Words</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">private final String[] belowTen = new String[] &#123;&quot;&quot;, &quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;, &quot;Seven&quot;, &quot;Eight&quot;, &quot;Nine&quot;&#125;;</div><div class="line">    private final String[] belowTwenty = new String[] &#123;&quot;Ten&quot;, &quot;Eleven&quot;, &quot;Twelve&quot;, &quot;Thirteen&quot;, &quot;Fourteen&quot;, &quot;Fifteen&quot;, &quot;Sixteen&quot;, &quot;Seventeen&quot;, &quot;Eighteen&quot;, &quot;Nineteen&quot;&#125;;</div><div class="line">    private final String[] belowHundred = new String[] &#123;&quot;&quot;, &quot;Ten&quot;, &quot;Twenty&quot;, &quot;Thirty&quot;, &quot;Forty&quot;, &quot;Fifty&quot;, &quot;Sixty&quot;, &quot;Seventy&quot;, &quot;Eighty&quot;, &quot;Ninety&quot;&#125;;</div><div class="line">    </div><div class="line">    public String numberToWords(int num) &#123;</div><div class="line">        if (num == 0) return &quot;Zero&quot;;</div><div class="line">        return helper(num); </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    private String helper(int num) &#123;</div><div class="line">        String result = new String();</div><div class="line">        if (num &lt; 10) result = belowTen[num];</div><div class="line">        else if (num &lt; 20) result = belowTwenty[num -10];</div><div class="line">        else if (num &lt; 100) result = belowHundred[num/10] + &quot; &quot; + helper(num % 10);</div><div class="line">        else if (num &lt; 1000) result = helper(num/100) + &quot; Hundred &quot; +  helper(num % 100);</div><div class="line">        else if (num &lt; 1000000) result = helper(num/1000) + &quot; Thousand &quot; +  helper(num % 1000);</div><div class="line">        else if (num &lt; 1000000000) result = helper(num/1000000) + &quot; Million &quot; +  helper(num % 1000000);</div><div class="line">        else result = helper(num/1000000000) + &quot; Billion &quot; + helper(num % 1000000000);</div><div class="line">        return result.trim();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>构建单词表（记得开头有“”)，然后根据大小else if，记得可以递归调用自身。</p>
-<h3 id="246-Strobogrammatic-Number"><a href="#246-Strobogrammatic-Number" class="headerlink" title="246    Strobogrammatic Number"></a>246    Strobogrammatic Number</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">bool isStrobogrammatic(string num) &#123;</div><div class="line">       unordered_map&lt;char, char&gt; m &#123;&#123;&apos;0&apos;, &apos;0&apos;&#125;, &#123;&apos;1&apos;, &apos;1&apos;&#125;, &#123;&apos;8&apos;, &apos;8&apos;&#125;, &#123;&apos;6&apos;, &apos;9&apos;&#125;, &#123;&apos;9&apos;, &apos;6&apos;&#125;&#125;;</div><div class="line">       for (int i = 0; i &lt;= num.size() / 2; ++i) &#123;</div><div class="line">           if (m[num[i]] != num[num.size() - i - 1]) return false;</div><div class="line">       &#125;</div><div class="line">       return true;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>如果对应两个位置不满足对称要求，返回false。</p>
-<h3 id="247-Strobogrammatic-Number-II"><a href="#247-Strobogrammatic-Number-II" class="headerlink" title="247    Strobogrammatic Number II"></a>247    Strobogrammatic Number II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">vector&lt;string&gt; findStrobogrammatic(int n) &#123;</div><div class="line">      return find(n, n);</div><div class="line">  &#125;</div><div class="line">  vector&lt;string&gt; find(int m, int n) &#123;</div><div class="line">      if (m == 0) return &#123;&quot;&quot;&#125;;</div><div class="line">      if (m == 1) return &#123;&quot;0&quot;, &quot;1&quot;, &quot;8&quot;&#125;;</div><div class="line">      vector&lt;string&gt; t = find(m - 2, n), res;</div><div class="line">      for (auto a : t) &#123;</div><div class="line">          if (m != n) res.push_back(&quot;0&quot; + a + &quot;0&quot;);</div><div class="line">          res.push_back(&quot;1&quot; + a + &quot;1&quot;);</div><div class="line">          res.push_back(&quot;6&quot; + a + &quot;9&quot;);</div><div class="line">          res.push_back(&quot;8&quot; + a + &quot;8&quot;);</div><div class="line">          res.push_back(&quot;9&quot; + a + &quot;6&quot;);</div><div class="line">      &#125;</div><div class="line">      return res;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p>从m=0层开始，一层一层往上加的，需要注意的是当加到了n层的时候，左右两边不能加[0 0]。</p>
-<h3 id="68-Text-Justification"><a href="#68-Text-Justification" class="headerlink" title="68    Text Justification"></a>68    Text Justification</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public List&lt;String&gt; fullJustify(String[] words, int maxWidth) &#123;</div><div class="line">      List&lt;String&gt; res = new ArrayList&lt;&gt;();</div><div class="line">      int i=0;</div><div class="line">      while (i&lt;words.length)&#123;</div><div class="line">          int width=0, I=i;</div><div class="line">          while (I&lt;words.length &amp;&amp; width+words[I].length()+(I-i)&lt;=maxWidth)</div><div class="line">              width+=words[I++].length();</div><div class="line">          int space=1, extra=0;</div><div class="line">          if (I-i!=1 &amp;&amp; I!=words.length)&#123;</div><div class="line">              space=(maxWidth-width)/(I-i-1);</div><div class="line">              extra=(maxWidth-width)%(I-i-1);</div><div class="line">          &#125;</div><div class="line">          StringBuilder line= new StringBuilder(words[i++]);</div><div class="line">          while (i&lt;I)&#123;</div><div class="line">              for (int s= space; s&gt;0; s--) line.append(&quot; &quot;);</div><div class="line">              if (extra--&gt;0) line.append(&quot; &quot;);</div><div class="line">              line.append(words[i++]);</div><div class="line">          &#125;</div><div class="line">          for (int s= maxWidth-line.length(); s&gt;0; s--) line.append(&quot; &quot;);</div><div class="line">          res.add(line.toString());</div><div class="line">      &#125;</div><div class="line">      return res;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p>当width小于maxwidth时，加word到改行，然后再后面补空格如果空格数不是2的倍数，那么左边的空间里要比右边的空间里多加入一个空格，那么我们只需要用总的空格数除以空间个数。能除尽最好，说明能平均分配，除不尽的话就多加个空格放在左边的空间里。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>

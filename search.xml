@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[Everyday Leetcode 25]]></title>
+      <url>https://nbPeterWang.github.io/%20/2019/10/24/Everyday-Leetcode-25/</url>
+      <content type="html"><![CDATA[<h3 id="113-Path-Sum-II"><a href="#113-Path-Sum-II" class="headerlink" title="113    Path Sum II"></a>113    Path Sum II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public List&lt;List&lt;Integer&gt;&gt; pathSum(TreeNode root, int sum) &#123;</div><div class="line">    List&lt;List&lt;Integer&gt;&gt;ret = new ArrayList&lt;List&lt;Integer&gt;&gt;(); </div><div class="line">    List&lt;Integer&gt; cur = new ArrayList&lt;Integer&gt;(); </div><div class="line">    pathSum(root, sum, cur, ret);</div><div class="line">    return ret;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void pathSum(TreeNode root, int sum, List&lt;Integer&gt;cur, List&lt;List&lt;Integer&gt;&gt;ret)&#123;</div><div class="line">    if (root == null)&#123;</div><div class="line">        return; </div><div class="line">    &#125;</div><div class="line">    cur.add(root.val);</div><div class="line">    if (root.left == null &amp;&amp; root.right == null &amp;&amp; root.val == sum)&#123;</div><div class="line">        ret.add(new ArrayList(cur));</div><div class="line">    &#125;else&#123;</div><div class="line">        pathSum(root.left, sum - root.val, cur, ret);</div><div class="line">        pathSum(root.right, sum - root.val, cur, ret);</div><div class="line">    &#125;</div><div class="line">    cur.remove(cur.size()-1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Using ArrayList to save the result, if find pathsum, add to the ret.</p>
+<h3 id="129-Sum-Root-to-Leaf-Numbers"><a href="#129-Sum-Root-to-Leaf-Numbers" class="headerlink" title="129    Sum Root to Leaf Numbers"></a>129    Sum Root to Leaf Numbers</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public int sumNumbers(TreeNode root) &#123;</div><div class="line">	return sum(root, 0);</div><div class="line">&#125;</div><div class="line"></div><div class="line">public int sum(TreeNode n, int s)&#123;</div><div class="line">	if (n == null) return 0;</div><div class="line">	if (n.right == null &amp;&amp; n.left == null) return s*10 + n.val;</div><div class="line">	return sum(n.left, s*10 + n.val) + sum(n.right, s*10 + n.val);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Everytime we should return result * 10 plus the value of node, then we do the recursion.</p>
+<h3 id="298-Binary-Tree-Longest-Consecutive-Sequence"><a href="#298-Binary-Tree-Longest-Consecutive-Sequence" class="headerlink" title="298    Binary Tree Longest Consecutive Sequence"></a>298    Binary Tree Longest Consecutive Sequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">private int max = 0;</div><div class="line">    public int longestConsecutive(TreeNode root) &#123;</div><div class="line">        if(root == null) return 0;</div><div class="line">        helper(root, 0, root.val);</div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void helper(TreeNode root, int cur, int target)&#123;</div><div class="line">        if(root == null) return;</div><div class="line">        if(root.val == target) cur++;</div><div class="line">        else cur = 1;</div><div class="line">        max = Math.max(cur, max);</div><div class="line">        helper(root.left, cur, root.val + 1);</div><div class="line">        helper(root.right, cur, root.val + 1);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>using private variable max to save the maximum result of longest Consecutive.</p>
+<h3 id="111-Minimum-Depth-of-Binary-Tree"><a href="#111-Minimum-Depth-of-Binary-Tree" class="headerlink" title="111    Minimum Depth of Binary Tree"></a>111    Minimum Depth of Binary Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> public static int minDepth(TreeNode root) &#123;</div><div class="line">	if (root == null)	return 0;</div><div class="line">	if (root.left == null)	return minDepth(root.right) + 1;</div><div class="line">	if (root.right == null) return minDepth(root.left) + 1;</div><div class="line">	return Math.min(minDepth(root.left),minDepth(root.right)) + 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>using DFS.</p>
+<h3 id="104-Maximum-Depth-of-Binary-Tree"><a href="#104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="104    Maximum Depth of Binary Tree"></a>104    Maximum Depth of Binary Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public int maxDepth(TreeNode root) &#123;</div><div class="line">        return root==null? 0 : Math.max(maxDepth(root.left), maxDepth(root.right))+1;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>using DFS.</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Everyday Leetcode 24]]></title>
       <url>https://nbPeterWang.github.io/%20/2019/10/19/Everyday-Leetcode-24/</url>
       <content type="html"><![CDATA[<h3 id="100-Same-Tree"><a href="#100-Same-Tree" class="headerlink" title="100    Same Tree"></a>100    Same Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public boolean isSameTree(TreeNode p, TreeNode q) &#123;</div><div class="line">        if (p == null || q == null) return p == q;</div><div class="line">   return p.val == q.val &amp;&amp; isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
@@ -747,6 +772,11 @@
 <li>[x] 226    Invert Binary Tree    </li>
 <li>[x] 257    Binary Tree Paths    </li>
 <li>[x] 112    Path Sum</li>
+<li>[x] 113    Path Sum II    </li>
+<li>[x] 129    Sum Root to Leaf Numbers    </li>
+<li>[x] 298    Binary Tree Longest Consecutive Sequence    </li>
+<li>[x] 111    Minimum Depth of Binary Tree</li>
+<li>[x] 104    Maximum Depth of Binary Tree</li>
 </ul>
 ]]></content>
       
