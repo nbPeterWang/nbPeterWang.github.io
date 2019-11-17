@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Peter Wang">
+
+
+
+<meta name="description" content="128    Longest Consecutive Sequence1234567891011121314public int longestConsecutive(int[] nums) &amp;#123;        int res = 0;        Set&amp;lt;Integer&amp;gt; s = new HashSet&amp;lt;Integer&amp;gt;();        for (int n">
+<meta name="keywords" content="Leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Everyday Leetcode 6">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/05/05/Everyday-Leetcode-6/index.html">
+<meta property="og:site_name" content="乐味">
+<meta property="og:description" content="128    Longest Consecutive Sequence1234567891011121314public int longestConsecutive(int[] nums) &amp;#123;        int res = 0;        Set&amp;lt;Integer&amp;gt; s = new HashSet&amp;lt;Integer&amp;gt;();        for (int n">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-17T22:00:12.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Everyday Leetcode 6">
+<meta name="twitter:description" content="128    Longest Consecutive Sequence1234567891011121314public int longestConsecutive(int[] nums) &amp;#123;        int res = 0;        Set&amp;lt;Integer&amp;gt; s = new HashSet&amp;lt;Integer&amp;gt;();        for (int n">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="乐味" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Everyday Leetcode 6 | 乐味</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/0.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Peter Wang</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Wang&#39;s Blog</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/nbpeterwang@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/nbPeterWang" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Words/">Words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/">start</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://leeemask.com">Leeemask</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">Ne te quaesiveris extra.</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Peter Wang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/0.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Peter Wang</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Wang&#39;s Blog</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/nbpeterwang@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/nbPeterWang" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/05/Everyday-Leetcode-6/" class="article-date">
+      <time datetime="2019-05-05T16:57:24.000Z" itemprop="datePublished">2019-05-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Everyday Leetcode 6
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="128-Longest-Consecutive-Sequence"><a href="#128-Longest-Consecutive-Sequence" class="headerlink" title="128    Longest Consecutive Sequence"></a>128    Longest Consecutive Sequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public int longestConsecutive(int[] nums) &#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        Set&lt;Integer&gt; s = new HashSet&lt;Integer&gt;();</span><br><span class="line">        for (int num : nums) s.add(num);</span><br><span class="line">        for (int num : nums) &#123;</span><br><span class="line">            if (s.remove(num)) &#123;</span><br><span class="line">                int pre = num - 1, next = num + 1;</span><br><span class="line">                while (s.remove(pre)) --pre;</span><br><span class="line">                while (s.remove(next)) ++next;</span><br><span class="line">                res = Math.max(res, next - pre - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>首先都加入到hashset中，遍历nums，如果有，则remove，然后一个个remove前一个和后一个数，得出最大序列长度。<br><a id="more"></a></p>
+<h3 id="164-Maximum-Gap"><a href="#164-Maximum-Gap" class="headerlink" title="164    Maximum Gap"></a>164    Maximum Gap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">//我的做法，先排序。 faster than 37.82%，less than 85.87%。</span><br><span class="line"> public int maximumGap(int[] nums) &#123;</span><br><span class="line">        if(nums.length&lt;2||nums==null) return 0;</span><br><span class="line">        int res=0;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">         if(nums.length==2)return nums[1]-nums[0];</span><br><span class="line">        for(int i=0;i&lt;=nums.length-2;i++)&#123;</span><br><span class="line">        res=Math.max(res,nums[i+1]-nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">//桶排序</span><br><span class="line">public int maximumGap(int[] nums)&#123;</span><br><span class="line">   if (num == null || num.length &lt; 2)</span><br><span class="line">        return 0;</span><br><span class="line">    // get the max and min value of the array</span><br><span class="line">    int min = num[0];</span><br><span class="line">    int max = num[0];</span><br><span class="line">    for (int i:num) &#123;</span><br><span class="line">        min = Math.min(min, i);</span><br><span class="line">        max = Math.max(max, i);</span><br><span class="line">    &#125;</span><br><span class="line">    // the minimum possibale gap, ceiling of the integer division</span><br><span class="line">    int gap = (int)Math.ceil((double)(max - min)/(num.length - 1));</span><br><span class="line">    int[] bucketsMIN = new int[num.length - 1]; // store the min value in that bucket</span><br><span class="line">    int[] bucketsMAX = new int[num.length - 1]; // store the max value in that bucket</span><br><span class="line">    Arrays.fill(bucketsMIN, Integer.MAX_VALUE);</span><br><span class="line">    Arrays.fill(bucketsMAX, Integer.MIN_VALUE);</span><br><span class="line">    // put numbers into buckets</span><br><span class="line">    for (int i:num) &#123;</span><br><span class="line">        if (i == min || i == max)</span><br><span class="line">            continue;</span><br><span class="line">        int idx = (i - min) / gap; // index of the right position in the buckets</span><br><span class="line">        bucketsMIN[idx] = Math.min(i, bucketsMIN[idx]);</span><br><span class="line">        bucketsMAX[idx] = Math.max(i, bucketsMAX[idx]);</span><br><span class="line">    &#125;</span><br><span class="line">    // scan the buckets for the max gap</span><br><span class="line">    int maxGap = Integer.MIN_VALUE;</span><br><span class="line">    int previous = min;</span><br><span class="line">    for (int i = 0; i &lt; num.length - 1; i++) &#123;</span><br><span class="line">        if (bucketsMIN[i] == Integer.MAX_VALUE &amp;&amp; bucketsMAX[i] == Integer.MIN_VALUE)</span><br><span class="line">            // empty bucket</span><br><span class="line">            continue;</span><br><span class="line">        // min value minus the previous value is the current gap</span><br><span class="line">        maxGap = Math.max(maxGap, bucketsMIN[i] - previous);</span><br><span class="line">        // update previous bucket value</span><br><span class="line">        previous = bucketsMAX[i];</span><br><span class="line">    &#125;</span><br><span class="line">    maxGap = Math.max(maxGap, max - previous); // updata the final max value gap</span><br><span class="line">    return maxGap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先进行桶排序，然后遍历桶，算出并记录最大的gap，returnmaxGap。</p>
+<h3 id="287-Find-the-Duplicate-Number"><a href="#287-Find-the-Duplicate-Number" class="headerlink" title="287    Find the Duplicate Number"></a>287    Find the Duplicate Number</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//我的解法，比较朴素。</span><br><span class="line"> public int findDuplicate(int[] nums) &#123;</span><br><span class="line">        if(nums==null||nums.length&lt;1) return 0;</span><br><span class="line">        if(nums.length==2) return nums[0];</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        for(int i=0;i&lt;nums.length-1;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[i]==nums[i+1]) return nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">//击败100%解法。</span><br><span class="line"> public int findDuplicate(int[] nums) &#123;</span><br><span class="line">        if (nums.length &gt; 1)&#123;</span><br><span class="line">		int slow = nums[0];</span><br><span class="line">		int fast = nums[nums[0]];</span><br><span class="line">		while (slow != fast)&#123;</span><br><span class="line">			slow = nums[slow];</span><br><span class="line">			fast = nums[nums[fast]];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		fast = 0;</span><br><span class="line">		while (fast != slow)&#123;</span><br><span class="line">			fast = nums[fast];</span><br><span class="line">			slow = nums[slow];</span><br><span class="line">		&#125;</span><br><span class="line">		return slow;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用两个指针，fast每次走两步，slow每次走一步，fast==slow时说明在环中，只要找到环的起始位置，此时fast为0,同步搜索。再次相等时就是答案。</p>
+<h3 id="4-Median-of-Two-Sorted-Arrays"><a href="#4-Median-of-Two-Sorted-Arrays" class="headerlink" title="4    Median of Two Sorted Arrays"></a>4    Median of Two Sorted Arrays</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public double findMedianSortedArrays(int[] nums1, int[] nums2) &#123;</span><br><span class="line">       int m = nums1.length, n = nums2.length, left = (m + n + 1) / 2, right = (m + n + 2) / 2;</span><br><span class="line">       return (findKth(nums1, nums2, left) + findKth(nums1, nums2, right)) / 2.0;</span><br><span class="line">   &#125;</span><br><span class="line">   int findKth(int[] nums1, int[] nums2, int k) &#123;</span><br><span class="line">       int m = nums1.length, n = nums2.length;</span><br><span class="line">       if (m == 0) return nums2[k - 1];</span><br><span class="line">       if (n == 0) return nums1[k - 1];</span><br><span class="line">       if (k == 1) return Math.min(nums1[0], nums2[0]);</span><br><span class="line">       int i = Math.min(m, k / 2), j = Math.min(n, k / 2);</span><br><span class="line">       if (nums1[i - 1] &gt; nums2[j - 1]) &#123;</span><br><span class="line">           return findKth(nums1, Arrays.copyOfRange(nums2, j, n), k - j);</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">           return findKth(Arrays.copyOfRange(nums1, i, m), nums2, k - i);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>首先我们要判断数组是否为空，为空的话，直接在另一个数组找第K个即可。还有一种情况是当 K = 1 时，表示我们要找第一个元素，只要比较两个数组的第一个元素，返回较小的那个即可。这里我们分别取出两个数组的第 K/2 个数字的位置坐标i和j，为了避免数组没有第 K/2 个数组的情况，我们每次都和数组长度做比较，取出较小值。</p>
+<h3 id="289-Game-of-Life"><a href="#289-Game-of-Life" class="headerlink" title="289    Game of Life"></a>289    Game of Life</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public void gameOfLife(int[][] board) &#123;</span><br><span class="line">    if (board == null || board.length == 0) return;</span><br><span class="line">    int m = board.length, n = board[0].length;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; m; i++) &#123;</span><br><span class="line">        for (int j = 0; j &lt; n; j++) &#123;</span><br><span class="line">            int lives = liveNeighbors(board, m, n, i, j);</span><br><span class="line"></span><br><span class="line">            // In the beginning, every 2nd bit is 0;</span><br><span class="line">            // So we only need to care about when will the 2nd bit become 1.</span><br><span class="line">            if (board[i][j] == 1 &amp;&amp; lives &gt;= 2 &amp;&amp; lives &lt;= 3) &#123;  </span><br><span class="line">                board[i][j] = 3; // Make the 2nd bit 1: 01 ---&gt; 11</span><br><span class="line">            &#125;</span><br><span class="line">            if (board[i][j] == 0 &amp;&amp; lives == 3) &#123;</span><br><span class="line">                board[i][j] = 2; // Make the 2nd bit 1: 00 ---&gt; 10</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; m; i++) &#123;</span><br><span class="line">        for (int j = 0; j &lt; n; j++) &#123;</span><br><span class="line">            board[i][j] &gt;&gt;= 1;  // Get the 2nd state.</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public int liveNeighbors(int[][] board, int m, int n, int i, int j) &#123;</span><br><span class="line">    int lives = 0;</span><br><span class="line">    for (int x = Math.max(i - 1, 0); x &lt;= Math.min(i + 1, m - 1); x++) &#123;</span><br><span class="line">        for (int y = Math.max(j - 1, 0); y &lt;= Math.min(j + 1, n - 1); y++) &#123;</span><br><span class="line">            lives += board[x][y] &amp; 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    lives -= board[i][j] &amp; 1;</span><br><span class="line">    return lives;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用1234纪录状态，&gt;&gt;1 来获得最终状态。 liveNeighbors统计周边活着的邻居。</p>
+<h3 id="57-Insert-Interval"><a href="#57-Insert-Interval" class="headerlink" title="57    Insert Interval"></a>57    Insert Interval</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public int[][] insert(int[][] intervals, int[] newInterval) &#123;</span><br><span class="line">        // Time : O(n) Space : O(n)</span><br><span class="line">        if(newInterval == null) return intervals;</span><br><span class="line">        int[][] list = new int[intervals.length + 1][2];</span><br><span class="line">        int i = 0;</span><br><span class="line">        int idx = 0;</span><br><span class="line">        while(i &lt; intervals.length &amp;&amp; intervals[i][1] &lt; newInterval[0]) &#123;</span><br><span class="line">            list[idx][0] = intervals[i][0];</span><br><span class="line">            list[idx++][1] = intervals[i++][1];</span><br><span class="line">        &#125;</span><br><span class="line">        while(i &lt; intervals.length &amp;&amp; intervals[i][0] &lt;= newInterval[1]) &#123;</span><br><span class="line">            newInterval[0] = Math.min(newInterval[0], intervals[i][0]);</span><br><span class="line">            newInterval[1] = Math.max(newInterval[1], intervals[i++][1]);</span><br><span class="line">        &#125;</span><br><span class="line">        list[idx][0] = newInterval[0];</span><br><span class="line">        list[idx++][1] = newInterval[1];</span><br><span class="line">        while(i &lt; intervals.length) &#123;</span><br><span class="line">            list[idx][0] = intervals[i][0];</span><br><span class="line">            list[idx++][1] = intervals[i++][1];</span><br><span class="line">        &#125;</span><br><span class="line">        int[][] res = new int[idx][2];</span><br><span class="line">        for(int j = 0; j &lt; idx; j++) &#123;</span><br><span class="line">            res[j][0] = list[j][0];</span><br><span class="line">            res[j][1] = list[j][1];</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>首先如果原来的interval的第i个数对的第2个数小于newInterval的第一个数，说明不重叠，直接加入新的list。如果原来的interval的第i个数对的第1个数小于等于newInterval的第二个数，说明重叠，将两边的最小和最大值记录到newinterval。然后插入list。最后将interval剩下的值都插入list，再将list的前idx个数对取出，就是答案。</p>
+<h3 id="56-Merge-Intervals"><a href="#56-Merge-Intervals" class="headerlink" title="56    Merge Intervals"></a>56    Merge Intervals</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public int[][] merge(int[][] intervals) &#123;</span><br><span class="line">        List&lt;int[]&gt; arr = new ArrayList&lt;&gt;();</span><br><span class="line">        Arrays.sort(intervals, new Comparator&lt;int[]&gt;()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public int compare(int[] a, int[] b)&#123;</span><br><span class="line">                return a[0] - b[0];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        for(int i = 0; i &lt; intervals.length;i++)&#123;</span><br><span class="line">            int[] interval = new int[2];</span><br><span class="line">            interval[0] = intervals[i][0];</span><br><span class="line">            int max = intervals[i][1];</span><br><span class="line">            while(i &lt; intervals.length-1 &amp;&amp; max &gt;= intervals[i+1][0])&#123;</span><br><span class="line">                max = Math.max(max, intervals[i+1][1]);</span><br><span class="line">                i=i+1;</span><br><span class="line">            &#125;</span><br><span class="line">            interval[1] = max;</span><br><span class="line">            arr.add(interval);</span><br><span class="line">        &#125;</span><br><span class="line">        int[][] answer = new int[arr.size()][2];</span><br><span class="line">        for(int i = 0; i &lt; arr.size(); i++)&#123;</span><br><span class="line">            answer[i] = arr.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        return answer;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>重写了compare方法，返回第一个数相减的结果。然后将intervals排序，遍历每个数对，记录最大值max，实现把重叠的merge的操作，将每个数对加入arr。</p>
+<h3 id="252-Meeting-Rooms"><a href="#252-Meeting-Rooms" class="headerlink" title="252    Meeting Rooms"></a>252    Meeting Rooms</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//被锁只能找C++解法</span><br><span class="line">bool canAttendMeetings(vector&lt;Interval&gt;&amp; intervals) &#123;</span><br><span class="line">        sort(intervals.begin(), intervals.end(), [](const Interval &amp;a, const Interval &amp;b)&#123;return a.start &lt; b.start;&#125;);</span><br><span class="line">        for (int i = 1; i &lt; intervals.size(); ++i) &#123;</span><br><span class="line">            if (intervals[i].start &lt; intervals[i - 1].end) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>先排序，如果区间的开始小于前一个区间的结束说明重叠。</p>
+<h3 id="253-Meeting-Rooms-II"><a href="#253-Meeting-Rooms-II" class="headerlink" title="253    Meeting Rooms II"></a>253    Meeting Rooms II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//被锁只能找C++解法</span><br><span class="line">int minMeetingRooms(vector&lt;Interval&gt;&amp; intervals) &#123;</span><br><span class="line">        map&lt;int, int&gt; m;</span><br><span class="line">        for (auto a : intervals) &#123;</span><br><span class="line">            ++m[a.start];</span><br><span class="line">            --m[a.end];</span><br><span class="line">        &#125;</span><br><span class="line">        int rooms = 0, res = 0;</span><br><span class="line">        for (auto it : m) &#123;</span><br><span class="line">            res = max(res, rooms += it.second);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>遍历时间区间，对于起始时间，映射值自增1，对于结束时间，映射值自减1，然后定义结果变量 res，和房间数 rooms，遍历 TreeMap，时间从小到大，房间数每次加上映射值，然后更新结果 res，遇到起始时间，映射是正数，则房间数会增加，如果一个时间是一个会议的结束时间，也是另一个会议的开始时间，则映射值先减后加仍为0，并不用分配新的房间，而结束时间的映射值为负数更不会增加房间数。</p>
+<h3 id="352-Data-Stream-as-Disjoint-Intervals"><a href="#352-Data-Stream-as-Disjoint-Intervals" class="headerlink" title="352    Data Stream as Disjoint Intervals"></a>352    Data Stream as Disjoint Intervals</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">//老题目用Interval时</span><br><span class="line">class SummaryRanges &#123;</span><br><span class="line"></span><br><span class="line">    /** Initialize your data structure here. */</span><br><span class="line">     Map&lt;Integer, Interval&gt; smap;</span><br><span class="line">    Map&lt;Integer, Interval&gt; emap;</span><br><span class="line">    Set&lt;Integer&gt; added;</span><br><span class="line"></span><br><span class="line">    public SummaryRanges() &#123;</span><br><span class="line">        smap = new TreeMap&lt;&gt;();</span><br><span class="line">        emap = new TreeMap&lt;&gt;();</span><br><span class="line">        added = new HashSet&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void addNum(int val) &#123;</span><br><span class="line">        </span><br><span class="line">        if(added.contains(val)) return;</span><br><span class="line">        added.add(val);</span><br><span class="line">        </span><br><span class="line">        Interval s = smap.get(val+1);</span><br><span class="line">        Interval e = emap.get(val-1);</span><br><span class="line">        </span><br><span class="line">        smap.remove(val+1);</span><br><span class="line">        emap.remove(val-1);</span><br><span class="line"> </span><br><span class="line">        Interval n = new Interval(e!=null?e.start:val, s!=null?s.end:val);</span><br><span class="line">        smap.put(n.start, n);</span><br><span class="line">        emap.put(n.end, n);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public List&lt;Interval&gt; getIntervals() &#123;</span><br><span class="line">        return new ArrayList&lt;&gt;(smap.values());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//新题目用int[][]时</span><br><span class="line">class SummaryRanges &#123;</span><br><span class="line">    </span><br><span class="line">    List&lt;int[]&gt; intervals;</span><br><span class="line"></span><br><span class="line">    /** Initialize your data structure here. */</span><br><span class="line">    public SummaryRanges() &#123;</span><br><span class="line">        intervals = new ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void addNum(int val) &#123;</span><br><span class="line">        boolean find = false;</span><br><span class="line">        for (int[] interval : intervals) &#123;</span><br><span class="line">            if (val == interval[0] - 1) &#123;</span><br><span class="line">                interval[0] = val;</span><br><span class="line">                find = true;</span><br><span class="line">            &#125; else if (val == interval[1] + 1) &#123;</span><br><span class="line">                interval[1] = val;</span><br><span class="line">                find = true;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (!find) &#123;</span><br><span class="line">            int[] tmp = new int[2];</span><br><span class="line">            tmp[0] = val;</span><br><span class="line">            tmp[1] = val;</span><br><span class="line">            intervals.add(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public int[][] getIntervals() &#123;</span><br><span class="line">        Collections.sort(intervals, (a, b) -&gt; &#123;</span><br><span class="line">            if (a[0] == b[0]) &#123;</span><br><span class="line">                return a[1] - b[1];</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                return a[0] - b[0];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        //merge</span><br><span class="line">        List&lt;int[]&gt; merged = new ArrayList&lt;&gt;();</span><br><span class="line">        int[] prev = null;</span><br><span class="line">        for (int[] cur : intervals) &#123;</span><br><span class="line">            if (prev == null || cur[0] &gt; prev[1] + 1) &#123;</span><br><span class="line">                merged.add(cur);</span><br><span class="line">                prev = cur;</span><br><span class="line">            &#125; else if (cur[1] &gt; prev[1]) &#123;</span><br><span class="line">                prev[1] = cur[1];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        intervals = merged;</span><br><span class="line">        int[][] res = new int[merged.size()][2];</span><br><span class="line">        for (int i = 0; i &lt; merged.size(); i++) &#123;</span><br><span class="line">            res[i] = merged.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当addNum时， 先从startmap和endmap里面尝试get，如果有就用原来的start/end值作为新的区间，没有就用val作为新的区间并put进smap和emap。新题目思想一样，多了在getInterval中 merg等等过程，如果cur[0]大于前一个的end+1或者前一个为null则直接add，否则前一个的end为现在的end。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/05/05/Everyday-Leetcode-6/">Everyday Leetcode 6</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
+        <p><span>发布时间:</span>2019-05-05, 12:57:24</p>
+        <p><span>最后更新:</span>2019-11-17, 17:00:12</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/05/Everyday-Leetcode-6/" title="Everyday Leetcode 6">https://nbPeterWang.github.io/ /2019/05/05/Everyday-Leetcode-6/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/05/05/Everyday-Leetcode-6/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/05/06/Everyday-Leetcode-7/">
+                    Everyday Leetcode 7
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/05/04/Everyday-Leetcode-5/">
+                    Everyday Leetcode 5
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#128-Longest-Consecutive-Sequence"><span class="toc-number">1.</span> <span class="toc-text">128    Longest Consecutive Sequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#164-Maximum-Gap"><span class="toc-number">2.</span> <span class="toc-text">164    Maximum Gap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#287-Find-the-Duplicate-Number"><span class="toc-number">3.</span> <span class="toc-text">287    Find the Duplicate Number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Median-of-Two-Sorted-Arrays"><span class="toc-number">4.</span> <span class="toc-text">4    Median of Two Sorted Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#289-Game-of-Life"><span class="toc-number">5.</span> <span class="toc-text">289    Game of Life</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#57-Insert-Interval"><span class="toc-number">6.</span> <span class="toc-text">57    Insert Interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#56-Merge-Intervals"><span class="toc-number">7.</span> <span class="toc-text">56    Merge Intervals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#252-Meeting-Rooms"><span class="toc-number">8.</span> <span class="toc-text">252    Meeting Rooms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#253-Meeting-Rooms-II"><span class="toc-number">9.</span> <span class="toc-text">253    Meeting Rooms II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#352-Data-Stream-as-Disjoint-Intervals"><span class="toc-number">10.</span> <span class="toc-text">352    Data Stream as Disjoint Intervals</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 6　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "r19nR2NtPvsmBDW34z8xSgzF-gzGzoHsz",
+            app_key: "elE7rY8GSvFWVx1DcWpQl7fs",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
+    }
+</script>
+    
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/05/06/Everyday-Leetcode-7/" title="上一篇: Everyday Leetcode 7">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/05/04/Everyday-Leetcode-5/" title="下一篇: Everyday Leetcode 5">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/24/Everyday-Leetcode-25/">Everyday Leetcode 25</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/19/Everyday-Leetcode-24/">Everyday Leetcode 24</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/10/Everyday-Leetcode-23/">Everyday Leetcode 23</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/02/Everyday-Leetcode-22/">Everyday Leetcode 22</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/25/Everyday-Leetcode-21/">Everyday Leetcode 21</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/22/Everyday-Leetcode-20/">Everyday Leetcode 20</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/21/Everyday-Leetcode-19/">Everyday Leetcode 19</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/20/Everyday-Leetcode-18/">Everyday Leetcode 18</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/19/Everyday-Leetcode-17/">Everyday Leetcode 17</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/26/Everyday-Leetcode-16/">Everyday Leetcode 16</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/18/Everyday-Leetcode-15/">Everyday Leetcode 15</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/17/Everyday-Leetcode-14/">Everyday Leetcode 14</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/15/Everyday-Leetcode-13/">Everyday Leetcode 13</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/14/Everyday-Leetcode-12/">Everyday Leetcode 12</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/13/Everyday-Leetcode-11/">Everyday Leetcode 11</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/Everyday-Leetcode-10/">Everyday Leetcode 10</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/10/Everyday-Leetcode-9/">Everyday Leetcode 9 </a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/09/Everyday-Leetcode-8/">Everyday Leetcode 8</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/Everyday-Leetcode-7/">Everyday Leetcode 7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Everyday-Leetcode-6/">Everyday Leetcode 6</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/04/Everyday-Leetcode-5/">Everyday Leetcode 5</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/03/Everyday-Leetcode-4/">Everyday Leetcode 4</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/30/Everyday-Leetcode-3/">Everyday Leetcode 3</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/29/Everyday-Leetcode-2/">Everyday Leetcode 2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/28/Everyday-Leetcode-1/">Everyday Leetcode 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/28/Leetcode-Record/">Leetcode Record</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/15/普通人的19fall-cs-master-DIY总结/">普通人的19fall cs master DIY总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/23/W22repo/">W22repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/10/W20repo/">W20repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/02/W19repo/">W19repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/25/W18repo/">W18repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/W17repo/">W17repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/11/W16repo/">W16repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/W15repo/">W15repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/29/W14repo/">W14repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/W13repo/">W13repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/W12repo/">W12repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/07/W11repo/">W11repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/01/W10repo/">W10repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/24/W9repo/">W9repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/19/W8repo/">W8repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/09/W7repo/">W7repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/W6repo/">W6repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/W5repo/">W5repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/19/W4repo/">W4repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/12/W3repo/">W3repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/W2repo/">W2repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/30/W1repo/">W1repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/22/W0repo/">W0repo</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/07/一战总结/">一战总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/26/3月总结/">3月总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/Words-Success-Work/">Words-Success & Work</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/Words-Technology/">Words-Technology & Media</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/01/Words/">Words</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/test1/">Let's start from here</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2019 Peter Wang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
