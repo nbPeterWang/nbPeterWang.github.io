@@ -1,10 +1,12 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags: [Leetcode]
+tags: 
 ---
+
 ###
 ```
+
 ```
 <!-- more -->
 
