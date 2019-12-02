@@ -265,6 +265,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/05/Everyday-Leetcode-6/" class="article-date">
+      <time datetime="2019-05-05T16:57:24.000Z" itemprop="datePublished">2019-05-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/05/Everyday-Leetcode-6/">Everyday Leetcode 6</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="128-Longest-Consecutive-Sequence"><a href="#128-Longest-Consecutive-Sequence" class="headerlink" title="128    Longest Consecutive Sequence"></a>128    Longest Consecutive Sequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public int longestConsecutive(int[] nums) &#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        Set&lt;Integer&gt; s = new HashSet&lt;Integer&gt;();</span><br><span class="line">        for (int num : nums) s.add(num);</span><br><span class="line">        for (int num : nums) &#123;</span><br><span class="line">            if (s.remove(num)) &#123;</span><br><span class="line">                int pre = num - 1, next = num + 1;</span><br><span class="line">                while (s.remove(pre)) --pre;</span><br><span class="line">                while (s.remove(next)) ++next;</span><br><span class="line">                res = Math.max(res, next - pre - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>首先都加入到hashset中，遍历nums，如果有，则remove，然后一个个remove前一个和后一个数，得出最大序列长度。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/05/Everyday-Leetcode-6/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -843,72 +910,6 @@
       
           
         <p>本周学习Go三十六讲到9.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W19repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/12/02/W19repo/" class="article-date">
-      <time datetime="2018-12-02T19:18:57.000Z" itemprop="datePublished">2018-12-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/02/W19repo/">W19repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>本周学习了Go的http包相关</p>
 
       
     </div>

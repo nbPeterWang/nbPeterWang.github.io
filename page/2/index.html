@@ -265,6 +265,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-16" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/26/Everyday-Leetcode-16/" class="article-date">
+      <time datetime="2019-05-26T23:17:30.000Z" itemprop="datePublished">2019-05-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/26/Everyday-Leetcode-16/">Everyday Leetcode 16</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="65-Valid-Number"><a href="#65-Valid-Number" class="headerlink" title="65    Valid Number"></a>65    Valid Number</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public boolean isNumber(String s) &#123;</span><br><span class="line">        s = s.trim();</span><br><span class="line">       boolean pointSeen = false;</span><br><span class="line">       boolean eSeen = false;</span><br><span class="line">       boolean numberSeen = false;</span><br><span class="line">       for(int i=0; i&lt;s.length(); i++) &#123;</span><br><span class="line">           if(&apos;0&apos; &lt;= s.charAt(i) &amp;&amp; s.charAt(i) &lt;= &apos;9&apos;) &#123;</span><br><span class="line">               numberSeen = true;</span><br><span class="line">           &#125; else if(s.charAt(i) == &apos;.&apos;) &#123;</span><br><span class="line">               if(eSeen || pointSeen)</span><br><span class="line">                   return false;</span><br><span class="line">               pointSeen = true;</span><br><span class="line">           &#125; else if(s.charAt(i) == &apos;e&apos;) &#123;</span><br><span class="line">               if(eSeen || !numberSeen)</span><br><span class="line">                   return false;</span><br><span class="line">               numberSeen = false;</span><br><span class="line">               eSeen = true;</span><br><span class="line">           &#125; else if(s.charAt(i) == &apos;-&apos; || s.charAt(i) == &apos;+&apos;) &#123;</span><br><span class="line">               if(i != 0 &amp;&amp; s.charAt(i-1) != &apos;e&apos;)</span><br><span class="line">                   return false;</span><br><span class="line">           &#125; else</span><br><span class="line">               return false;</span><br><span class="line">       &#125;</span><br><span class="line">       return numberSeen;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/26/Everyday-Leetcode-16/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-15" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -851,73 +917,6 @@
       
         <p class="article-more-link">
           <a href="/2019/05/06/Everyday-Leetcode-7/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/05/Everyday-Leetcode-6/" class="article-date">
-      <time datetime="2019-05-05T16:57:24.000Z" itemprop="datePublished">2019-05-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/05/Everyday-Leetcode-6/">Everyday Leetcode 6</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="128-Longest-Consecutive-Sequence"><a href="#128-Longest-Consecutive-Sequence" class="headerlink" title="128    Longest Consecutive Sequence"></a>128    Longest Consecutive Sequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public int longestConsecutive(int[] nums) &#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        Set&lt;Integer&gt; s = new HashSet&lt;Integer&gt;();</span><br><span class="line">        for (int num : nums) s.add(num);</span><br><span class="line">        for (int num : nums) &#123;</span><br><span class="line">            if (s.remove(num)) &#123;</span><br><span class="line">                int pre = num - 1, next = num + 1;</span><br><span class="line">                while (s.remove(pre)) --pre;</span><br><span class="line">                while (s.remove(next)) ++next;</span><br><span class="line">                res = Math.max(res, next - pre - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>首先都加入到hashset中，遍历nums，如果有，则remove，然后一个个remove前一个和后一个数，得出最大序列长度。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/05/Everyday-Leetcode-6/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
