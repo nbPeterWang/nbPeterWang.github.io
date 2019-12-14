@@ -27,7 +27,7 @@ public void pathSum(TreeNode root, int sum, List<Integer>cur, List<List<Integer>
 }
 ```
 <!--more-->
-Using ArrayList to save the result, if find pathsum, add to the ret.
+Using ArrayList to save the result, if find pathsum, add to the ret. Test.
 
 ### 129	Sum Root to Leaf Numbers	
 ```
