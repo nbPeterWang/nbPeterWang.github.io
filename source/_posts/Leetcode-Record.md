@@ -139,3 +139,8 @@ tags: [Leetcode]
 * [x] 298	Binary Tree Longest Consecutive Sequence	
 * [x] 111	Minimum Depth of Binary Tree
 * [x] 104	Maximum Depth of Binary Tree
+* [x] 110   Balanced Binary Tree
+* [x] 235   Lowest Common Ancestor of a Binary Search Tree 	
+* [x] 236   Lowest Common Ancestor of a Binary Tree	
+* [x] 108   Convert Sorted Array to Binary Search tree
+* [x] 109   Convert Sorted List to Binary Search tree
