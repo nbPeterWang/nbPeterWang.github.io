@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="238    Product of Array Except Self1234567891011121314public int[] productExceptSelf(int[] nums) &amp;#123;       if(nums==null||nums.length&amp;lt;=1) return null;        int[] res = new int[nums.length];">
+<meta name="description" content="173    Binary Search Tree Iterator1234567891011121314151617181920212223242526272829class BSTIterator &amp;#123;    private Stack&amp;lt;TreeNode&amp;gt; stack = new Stack&amp;lt;TreeNode&amp;gt;();        public BSTItera">
 <meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Everyday Leetcode 8">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/05/09/Everyday-Leetcode-8/index.html">
+<meta property="og:title" content="Everyday Leetcode 27">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/12/16/Everyday-Leetcode-27/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="238    Product of Array Except Self1234567891011121314public int[] productExceptSelf(int[] nums) &amp;#123;       if(nums==null||nums.length&amp;lt;=1) return null;        int[] res = new int[nums.length];">
+<meta property="og:description" content="173    Binary Search Tree Iterator1234567891011121314151617181920212223242526272829class BSTIterator &amp;#123;    private Stack&amp;lt;TreeNode&amp;gt; stack = new Stack&amp;lt;TreeNode&amp;gt;();        public BSTItera">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-17T22:00:12.074Z">
+<meta property="og:updated_time" content="2019-12-16T21:59:23.674Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Everyday Leetcode 8">
-<meta name="twitter:description" content="238    Product of Array Except Self1234567891011121314public int[] productExceptSelf(int[] nums) &amp;#123;       if(nums==null||nums.length&amp;lt;=1) return null;        int[] res = new int[nums.length];">
+<meta name="twitter:title" content="Everyday Leetcode 27">
+<meta name="twitter:description" content="173    Binary Search Tree Iterator1234567891011121314151617181920212223242526272829class BSTIterator &amp;#123;    private Stack&amp;lt;TreeNode&amp;gt; stack = new Stack&amp;lt;TreeNode&amp;gt;();        public BSTItera">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Everyday Leetcode 8 | 乐味</title>
+<title>Everyday Leetcode 27 | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -260,11 +260,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Everyday-Leetcode-8" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Everyday-Leetcode-27" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/09/Everyday-Leetcode-8/" class="article-date">
-      <time datetime="2019-05-09T22:03:01.000Z" itemprop="datePublished">2019-05-09</time>
+      <a href="/2019/12/16/Everyday-Leetcode-27/" class="article-date">
+      <time datetime="2019-12-16T20:08:42.000Z" itemprop="datePublished">2019-12-16</time>
 </a>
 
 
@@ -279,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Everyday Leetcode 8
+      Everyday Leetcode 27
     </h1>
   
 
@@ -300,16 +300,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="238-Product-of-Array-Except-Self"><a href="#238-Product-of-Array-Except-Self" class="headerlink" title="238    Product of Array Except Self"></a>238    Product of Array Except Self</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public int[] productExceptSelf(int[] nums) &#123;</span><br><span class="line">       if(nums==null||nums.length&lt;=1) return null;</span><br><span class="line">        int[] res = new int[nums.length];</span><br><span class="line">       res[0] = 1;</span><br><span class="line">       for (int i = 1; i &lt; nums.length; i++) &#123;</span><br><span class="line">       res[i] = res[i - 1] * nums[i - 1];</span><br><span class="line">       &#125;</span><br><span class="line">       int right = 1;</span><br><span class="line">   for (int i = nums.length-1; i &gt;= 0; i--) &#123;</span><br><span class="line">       res[i] *= right;</span><br><span class="line">       right *= nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">   return res;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>自己做的时候算错了，以为这样不是O（n），不过确实也很巧妙。第一遍遍历算i左边的累积，第二遍算i右边的累积。得出结果。<br><a id="more"></a></p>
-<h3 id="152-Maximum-Product-Subarray"><a href="#152-Maximum-Product-Subarray" class="headerlink" title="152    Maximum Product Subarray"></a>152    Maximum Product Subarray</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public int maxProduct(int[] nums) &#123;</span><br><span class="line">    int maxSum = nums[0];</span><br><span class="line">    int currentMax = nums[0];</span><br><span class="line">    int currentMin = nums[0];</span><br><span class="line"></span><br><span class="line">    for (int i = 1; i &lt; nums.length; i++) &#123;</span><br><span class="line">        if (nums[i] &lt; 0)&#123;</span><br><span class="line">        int tmp = currentMax;</span><br><span class="line">        currentMax = currentMin;</span><br><span class="line">        currentMin = tmp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        currentMax = Math.max(nums[i], currentMax * nums[i]);</span><br><span class="line">        currentMin = Math.min(nums[i], currentMin * nums[i]);</span><br><span class="line">        maxSum = Math.max(maxSum, currentMax);</span><br><span class="line">    &#125;</span><br><span class="line">        return maxSum;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>如果小于0则交换currentMax和min，将到现在为止最大和最小的乘积都保存下来。注意比较的是nums[i]和nums[i]*currentMax/min，这样相当于可以从nums[i]重新开始算乘积。</p>
-<h3 id="228-Summary-Ranges"><a href="#228-Summary-Ranges" class="headerlink" title="228    Summary Ranges"></a>228    Summary Ranges</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;String&gt; summaryRanges(int[] nums) &#123;</span><br><span class="line">        List&lt;String&gt; list=new ArrayList();</span><br><span class="line">	if(nums.length==1)&#123;</span><br><span class="line">		list.add(nums[0]+&quot;&quot;);</span><br><span class="line">		return list;</span><br><span class="line">	&#125;</span><br><span class="line">    for(int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">    	int a=nums[i];</span><br><span class="line">    	while(i+1&lt;nums.length&amp;&amp;(nums[i+1]-nums[i])==1)&#123;</span><br><span class="line">    		i++;</span><br><span class="line">    	&#125;</span><br><span class="line">    	if(a!=nums[i])&#123;</span><br><span class="line">    		list.add(a+&quot;-&gt;&quot;+nums[i]);</span><br><span class="line">    	&#125;else&#123;</span><br><span class="line">    		list.add(a+&quot;&quot;);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return list;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>如果能构成连续的就一直走到底。如果走过了就输出-&gt;， 没走过就输出原有的a。太巧妙。</p>
-<h3 id="163-Missing-Ranges"><a href="#163-Missing-Ranges" class="headerlink" title="163    Missing Ranges"></a>163    Missing Ranges</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;string&gt; findMissingRanges(vector&lt;int&gt;&amp; nums, int lower, int upper) &#123;</span><br><span class="line">       vector&lt;string&gt; res;</span><br><span class="line">       int l = lower;</span><br><span class="line">       for (int i = 0; i &lt;= nums.size(); ++i) &#123;</span><br><span class="line">           int r = (i &lt; nums.size() &amp;&amp; nums[i] &lt;= upper) ? nums[i] : upper + 1;</span><br><span class="line">           if (l == r) ++l;</span><br><span class="line">           else if (r &gt; l) &#123;</span><br><span class="line">               res.push_back(r - l == 1 ? to_string(l) : to_string(l) + &quot;-&gt;&quot; + to_string(r - 1));</span><br><span class="line">               l = r + 1;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return res;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>我们首先将lower赋给l，然后开始遍历nums数组，如果i小于nums长度且当前数字小于等于upper，我们让r等于当前数字，否则如果当i等于nums的长度时或者当前数字大于upper时，将r赋为upper+1。然后判断l和r的值，若相同，l自增1，否则当r大于l时，说明缺失空间存在，我们看l和r是否差1，如果是，说明只缺失了一个数字，若不是，则说明缺失了一个区间，我们分别加上数字或者区间即可。</p>
-<h3 id="88-Merge-Sorted-Array"><a href="#88-Merge-Sorted-Array" class="headerlink" title="88    Merge Sorted Array"></a>88    Merge Sorted Array</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void merge(int[] nums1, int m, int[] nums2, int n) &#123;</span><br><span class="line">   int i=m-1, j=n-1, k=m+n-1;</span><br><span class="line">    while (i&gt;-1 &amp;&amp; j&gt;-1) nums1[k--]= (nums1[i]&gt;nums2[j]) ? nums1[i--] : nums2[j--];</span><br><span class="line">    while (j&gt;-1)         nums1[k--]=nums2[j--];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>精妙之处在于两个while的条件。首先肯定如果i先遍历完，j还没有遍历完的话，是可以在下个循环全部插入的。 如果j先遍历完，说明插入完成，剩下的i已经在nums1里了，这就是巧妙之处。</p>
+        <h3 id="173-Binary-Search-Tree-Iterator"><a href="#173-Binary-Search-Tree-Iterator" class="headerlink" title="173    Binary Search Tree Iterator"></a>173    Binary Search Tree Iterator</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class BSTIterator &#123;</span><br><span class="line"></span><br><span class="line">    private Stack&lt;TreeNode&gt; stack = new Stack&lt;TreeNode&gt;();</span><br><span class="line">    </span><br><span class="line">    public BSTIterator(TreeNode root) &#123;</span><br><span class="line">        pushAll(root);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** @return the next smallest number */</span><br><span class="line">    public int next() &#123;</span><br><span class="line">        TreeNode temp = stack.pop();</span><br><span class="line">        pushAll(temp.right);</span><br><span class="line">        return temp.val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** @return whether we have a next smallest number */</span><br><span class="line">    public boolean hasNext() &#123;</span><br><span class="line">        return !stack.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void pushAll(TreeNode root)&#123;</span><br><span class="line">        while(root!=null)&#123;</span><br><span class="line">            stack.push(root);</span><br><span class="line">            root = root.left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Time complexity (next): average O(1). Using stack.</p>
+<h3 id="230-Kth-Smallest-Element-in-a-BST"><a href="#230-Kth-Smallest-Element-in-a-BST" class="headerlink" title="230 Kth Smallest Element in a BST"></a>230 Kth Smallest Element in a BST</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">---- using Stack</span><br><span class="line">class Solution &#123;</span><br><span class="line">    private Stack&lt;TreeNode&gt; stack = new Stack&lt;TreeNode&gt;();</span><br><span class="line">    public int kthSmallest(TreeNode root, int k) &#123;</span><br><span class="line">        helper(root);</span><br><span class="line">        int ans = 0;</span><br><span class="line">        for(int i = 0; i &lt; k; ++i)&#123;</span><br><span class="line">            TreeNode temp = stack.pop();</span><br><span class="line">            helper(temp.right);</span><br><span class="line">            ans = temp.val;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    public void helper(TreeNode root)&#123;</span><br><span class="line">        while(root != null)&#123;</span><br><span class="line">            stack.push(root);</span><br><span class="line">            root = root.left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---- DFS inorder recursive</span><br><span class="line">private static int number = 0;</span><br><span class="line">  private static int count = 0;</span><br><span class="line"></span><br><span class="line">  public int kthSmallest(TreeNode root, int k) &#123;</span><br><span class="line">      count = k;</span><br><span class="line">      helper(root);</span><br><span class="line">      return number;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  public void helper(TreeNode n) &#123;</span><br><span class="line">      if (n.left != null) helper(n.left);</span><br><span class="line">      count--;</span><br><span class="line">      if (count == 0) &#123;</span><br><span class="line">          number = n.val;</span><br><span class="line">          return;</span><br><span class="line">      &#125;</span><br><span class="line">      if (n.right != null) helper(n.right);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>Time complexity: O(n) using DFS inorder recursive</p>
+<h3 id="297-Serialize-and-Deserialize-Binary-Tree"><a href="#297-Serialize-and-Deserialize-Binary-Tree" class="headerlink" title="297 Serialize and Deserialize Binary Tree"></a>297 Serialize and Deserialize Binary Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public String serialize(TreeNode root) &#123;</span><br><span class="line">       return serial(new StringBuilder(), root).toString();</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   // Generate preorder string</span><br><span class="line">   private StringBuilder serial(StringBuilder str, TreeNode root) &#123;</span><br><span class="line">       if (root == null) return str.append(&quot;#&quot;);</span><br><span class="line">       str.append(root.val).append(&quot;,&quot;);</span><br><span class="line">       serial(str, root.left).append(&quot;,&quot;);</span><br><span class="line">       serial(str, root.right);</span><br><span class="line">       return str;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   public TreeNode deserialize(String data) &#123;</span><br><span class="line">       return deserial(new LinkedList&lt;&gt;(Arrays.asList(data.split(&quot;,&quot;))));</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   // Use queue to simplify position move</span><br><span class="line">   private TreeNode deserial(Queue&lt;String&gt; q) &#123;</span><br><span class="line">       String val = q.poll();</span><br><span class="line">       if (&quot;#&quot;.equals(val)) return null;</span><br><span class="line">       TreeNode root = new TreeNode(Integer.valueOf(val));</span><br><span class="line">       root.left = deserial(q);</span><br><span class="line">       root.right = deserial(q);</span><br><span class="line">       return root;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>DFS recursive. Time complexity is O(n);</p>
+<h3 id="285-Inorder-Successor-in-BST"><a href="#285-Inorder-Successor-in-BST" class="headerlink" title="285    Inorder Successor in BST"></a>285    Inorder Successor in BST</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> public TreeNode inorderSuccessor(TreeNode root, TreeNode p) &#123;</span><br><span class="line">  if (root == null)</span><br><span class="line">    return null;</span><br><span class="line"></span><br><span class="line">  if (root.val &lt;= p.val) &#123;</span><br><span class="line">    return inorderSuccessor(root.right, p);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    TreeNode left = inorderSuccessor(root.left, p);</span><br><span class="line">    return (left != null) ? left : root;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>inorder recursive. Time Complexity: O(h)</p>
+<h3 id="270-Closest-Binary-Search-Tree-Value"><a href="#270-Closest-Binary-Search-Tree-Value" class="headerlink" title="270    Closest Binary Search Tree Value"></a>270    Closest Binary Search Tree Value</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public int closestValue(TreeNode root, double target) &#123;</span><br><span class="line">   int ret = root.val;   </span><br><span class="line">   while(root != null)&#123;</span><br><span class="line">       if(Math.abs(target - root.val) &lt; Math.abs(target - ret))&#123;</span><br><span class="line">           ret = root.val;</span><br><span class="line">       &#125;      </span><br><span class="line">       root = root.val &gt; target? root.left: root.right;</span><br><span class="line">   &#125;     </span><br><span class="line">   return ret;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>iterative. Time Complexity:O(h)</p>
 
       
     </div>
@@ -318,13 +319,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/09/Everyday-Leetcode-8/">Everyday Leetcode 8</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/16/Everyday-Leetcode-27/">Everyday Leetcode 27</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2019-05-09, 18:03:01</p>
-        <p><span>最后更新:</span>2019-11-17, 17:00:12</p>
+        <p><span>发布时间:</span>2019-12-16, 15:08:42</p>
+        <p><span>最后更新:</span>2019-12-16, 16:59:23</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/09/Everyday-Leetcode-8/" title="Everyday Leetcode 8">https://nbPeterWang.github.io/ /2019/05/09/Everyday-Leetcode-8/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/05/09/Everyday-Leetcode-8/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/16/Everyday-Leetcode-27/" title="Everyday Leetcode 27">https://nbPeterWang.github.io/ /2019/12/16/Everyday-Leetcode-27/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/12/16/Everyday-Leetcode-27/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -336,16 +337,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/10/Everyday-Leetcode-9/">
-                    Everyday Leetcode 9 
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/06/Everyday-Leetcode-7/">
-                    Everyday Leetcode 7
+                <a href="/2019/12/02/Everyday-Leetcode-26/">
+                    Everyday Leetcode 26
                 </a>
             </div>
         
@@ -357,7 +352,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#238-Product-of-Array-Except-Self"><span class="toc-number">1.</span> <span class="toc-text">238    Product of Array Except Self</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#152-Maximum-Product-Subarray"><span class="toc-number">2.</span> <span class="toc-text">152    Maximum Product Subarray</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#228-Summary-Ranges"><span class="toc-number">3.</span> <span class="toc-text">228    Summary Ranges</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#163-Missing-Ranges"><span class="toc-number">4.</span> <span class="toc-text">163    Missing Ranges</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#88-Merge-Sorted-Array"><span class="toc-number">5.</span> <span class="toc-text">88    Merge Sorted Array</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#173-Binary-Search-Tree-Iterator"><span class="toc-number">1.</span> <span class="toc-text">173    Binary Search Tree Iterator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#230-Kth-Smallest-Element-in-a-BST"><span class="toc-number">2.</span> <span class="toc-text">230 Kth Smallest Element in a BST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#297-Serialize-and-Deserialize-Binary-Tree"><span class="toc-number">3.</span> <span class="toc-text">297 Serialize and Deserialize Binary Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#285-Inorder-Successor-in-BST"><span class="toc-number">4.</span> <span class="toc-text">285    Inorder Successor in BST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#270-Closest-Binary-Search-Tree-Value"><span class="toc-number">5.</span> <span class="toc-text">270    Closest Binary Search Tree Value</span></a></li></ol>
         
     </div>
     <style>
@@ -393,7 +388,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 8　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Everyday Leetcode 27　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -434,15 +429,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/10/Everyday-Leetcode-9/" title="上一篇: Everyday Leetcode 9 ">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/06/Everyday-Leetcode-7/" title="下一篇: Everyday Leetcode 7">
+            <a href="/2019/12/02/Everyday-Leetcode-26/" title="下一篇: Everyday Leetcode 26">
                 <i class="fa fa-angle-right"></i>
             </a>
         
