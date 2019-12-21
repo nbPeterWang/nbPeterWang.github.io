@@ -186,7 +186,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Words/">Words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/">start</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Amazon/">Amazon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Words/">Words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/">start</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
                     </div>
                 </section>
                 
@@ -264,6 +264,74 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Rush-to-Amazon" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/20/Rush-to-Amazon/" class="article-date">
+      <time datetime="2019-12-20T23:38:07.000Z" itemprop="datePublished">2019-12-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/20/Rush-to-Amazon/">Rush to Amazon</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>Amazon tag leetcode</p>
+<h3 id="42-Trapping-Rain-Water"><a href="#42-Trapping-Rain-Water" class="headerlink" title="42 Trapping Rain Water"></a>42 Trapping Rain Water</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int trap(int[] A) &#123;</span><br><span class="line">        int a = 0;</span><br><span class="line">        int b = A.length - 1;</span><br><span class="line">        int max = 0;</span><br><span class="line">        int leftmax = 0;</span><br><span class="line">        int rightmax = 0;</span><br><span class="line">        while( a &lt;= b)&#123;</span><br><span class="line">            leftmax = Math.max(leftmax, A[a]);</span><br><span class="line">            rightmax = Math.max(rightmax, A[b]);</span><br><span class="line">            if(leftmax &lt; rightmax)&#123;</span><br><span class="line">                max += (leftmax - A[a]);</span><br><span class="line">                a++;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                max += (rightmax - A[b]);</span><br><span class="line">                b--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>For every iteration, just move one of two pointers. If leftmax is less than rightmax, move left pointer. Otherwise, move right pointer. By each move, we can count the rain water at pointer’s current column.<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/20/Rush-to-Amazon/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-Everyday-Leetcode-27" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -842,77 +910,6 @@
         <p class="article-more-link">
           <a href="/2019/07/21/Everyday-Leetcode-19/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-18" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/20/Everyday-Leetcode-18/" class="article-date">
-      <time datetime="2019-07-20T23:39:11.000Z" itemprop="datePublished">2019-07-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/Everyday-Leetcode-18/">Everyday Leetcode 18</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="266-Palindrome-Permutation"><a href="#266-Palindrome-Permutation" class="headerlink" title="266    Palindrome Permutation"></a>266    Palindrome Permutation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bool canPermutePalindrome(string s) &#123;</span><br><span class="line">        unordered_map&lt;char, int&gt; m;</span><br><span class="line">        int cnt = 0;</span><br><span class="line">        for (auto a : s) ++m[a];</span><br><span class="line">        for (auto a : m) &#123;</span><br><span class="line">            if (a.second % 2 == 1) ++cnt;</span><br><span class="line">        &#125;</span><br><span class="line">        return cnt == 0 || (s.size() % 2 == 1 &amp;&amp; cnt == 1);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>创建字符串的hashmap，字符是key，出现次数是value。统计出现次数为奇数的字符个数，如果为0则可以全排列回文，如果为1且只有1个字符出现奇数次，也可以全排列回文。<br><!-- mroe --></p>
-<h3 id="5-Longest-Palindromic-Substring"><a href="#5-Longest-Palindromic-Substring" class="headerlink" title="5    Longest Palindromic Substring"></a>5    Longest Palindromic Substring</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public String longestPalindrome(String s) &#123;</span><br><span class="line">       String res = &quot;&quot;;</span><br><span class="line">       int currLength = 0;</span><br><span class="line">       for(int i=0;i&lt;s.length();i++)&#123;</span><br><span class="line">           if(isPalindrome(s,i-currLength-1,i))&#123;</span><br><span class="line">               res = s.substring(i-currLength-1,i+1);</span><br><span class="line">               currLength = currLength+2;</span><br><span class="line">           &#125;</span><br><span class="line">           else if(isPalindrome(s,i-currLength,i))&#123;</span><br><span class="line">               res = s.substring(i-currLength,i+1);</span><br><span class="line">               currLength = currLength+1;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return res;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   public boolean isPalindrome(String s, int begin, int end)&#123;</span><br><span class="line">       if(begin&lt;0) return false;</span><br><span class="line">       while(begin&lt;end)&#123;</span><br><span class="line">       	if(s.charAt(begin++)!=s.charAt(end--)) return false;</span><br><span class="line">       &#125;</span><br><span class="line">       return true;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>首先写一个判断是否为回文的辅助函数，然后遍历，判断从当前右指针到前面length+1或者+2长度的字符串是否回文，是的话就更新长度，保存res。最后返回res。</p>
-<h3 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9    Palindrome Number"></a>9    Palindrome Number</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public boolean isPalindrome(int x) &#123;</span><br><span class="line">       if (x &lt; 0) return false;</span><br><span class="line"></span><br><span class="line">   int p = x; </span><br><span class="line">   int q = 0; </span><br><span class="line">   </span><br><span class="line">   while (p &gt;= 10)&#123;</span><br><span class="line">       q *=10; </span><br><span class="line">       q += p%10; </span><br><span class="line">       p /=10; </span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   return q == x / 10 &amp;&amp; p == x % 10;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>p为x的第一位，q为x的逆序少去个位数。判断他们和原数字是否相等</p>
-<h3 id="214-Shortest-Palindrome"><a href="#214-Shortest-Palindrome" class="headerlink" title="214    Shortest Palindrome"></a>214    Shortest Palindrome</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public String shortestPalindrome(String s) &#123;</span><br><span class="line">    String temp = s + &quot;#&quot; + new StringBuilder(s).reverse().toString();</span><br><span class="line">    int[] table = getTable(temp);</span><br><span class="line"></span><br><span class="line">    return new StringBuilder(s.substring(table[table.length - 1])).reverse().toString() + s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public int[] getTable(String s)&#123;</span><br><span class="line">    int[] table = new int[s.length()];</span><br><span class="line"></span><br><span class="line">    int index = 0;</span><br><span class="line">    for(int i = 1; i &lt; s.length(); )&#123;</span><br><span class="line">        if(s.charAt(index) == s.charAt(i))&#123;</span><br><span class="line">            table[i] = ++index;</span><br><span class="line">            i++;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            if(index &gt; 0)&#123;</span><br><span class="line">                index = table[index-1];</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                index = 0;</span><br><span class="line">                i ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return table;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们把s和其转置r连接起来，中间加上一个其他字符，形成一个新的字符串t，我们还需要一个和t长度相同的一位数组 table，其中 table[i] 表示从 t[i] 到开头的子串的相同前缀后缀的个数，具体可参考 KMP 算法中解释。最后我们把不相同的个数对应的字符串添加到s之前即可。</p>
-<h3 id="336-Palindrome-Pairs"><a href="#336-Palindrome-Pairs" class="headerlink" title="336    Palindrome Pairs"></a>336    Palindrome Pairs</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">class TrieNode &#123;</span><br><span class="line">    TrieNode[] next;</span><br><span class="line">    int index;</span><br><span class="line">    List&lt;Integer&gt; list;</span><br><span class="line">    	</span><br><span class="line">    TrieNode() &#123;</span><br><span class="line">    	next = new TrieNode[26];</span><br><span class="line">    	index = -1;</span><br><span class="line">    	list = new ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">public List&lt;List&lt;Integer&gt;&gt; palindromePairs(String[] words) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    TrieNode root = new TrieNode();</span><br><span class="line">    for (int i = 0; i &lt; words.length; i++) addWord(root, words[i], i);</span><br><span class="line">    for (int i = 0; i &lt; words.length; i++) search(words, i, root, res);</span><br><span class="line">    </span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">private void addWord(TrieNode root, String word, int index) &#123;</span><br><span class="line">    for (int i = word.length() - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">        int j = word.charAt(i) - &apos;a&apos;;</span><br><span class="line">    	if (root.next[j] == null) root.next[j] = new TrieNode();</span><br><span class="line">    	if (isPalindrome(word, 0, i)) root.list.add(index);</span><br><span class="line">    	root = root.next[j];</span><br><span class="line">    &#125;</span><br><span class="line">    	</span><br><span class="line">    root.list.add(index);</span><br><span class="line">    root.index = index;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">private void search(String[] words, int i, TrieNode root, List&lt;List&lt;Integer&gt;&gt; res) &#123;</span><br><span class="line">    for (int j = 0; j &lt; words[i].length(); j++) &#123;	</span><br><span class="line">    	if (root.index &gt;= 0 &amp;&amp; root.index != i &amp;&amp; isPalindrome(words[i], j, words[i].length() - 1)) &#123;</span><br><span class="line">    	    res.add(Arrays.asList(i, root.index));</span><br><span class="line">    	&#125;</span><br><span class="line">    		</span><br><span class="line">    	root = root.next[words[i].charAt(j) - &apos;a&apos;];</span><br><span class="line">      	if (root == null) return;</span><br><span class="line">    &#125;</span><br><span class="line">    	</span><br><span class="line">    for (int j : root.list) &#123;</span><br><span class="line">    	if (i == j) continue;</span><br><span class="line">    	res.add(Arrays.asList(i, j));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">private boolean isPalindrome(String word, int i, int j) &#123;</span><br><span class="line">    while (i &lt; j) &#123;</span><br><span class="line">    	if (word.charAt(i++) != word.charAt(j--)) return false;</span><br><span class="line">    &#125;</span><br><span class="line">    	</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用Trie来保存字符串。构建Trie树，将每个word和每步是否是回文的结果保存进去，随后再遍历查找，如果是从j到最后的回文串则加入该键值对到res，最后把list中本来就是回文的也加入res。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>

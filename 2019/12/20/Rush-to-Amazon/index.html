@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="这周结束了实习，也算有点收获。对jsp的认识更深入了。正式准备申请了。希望之后也要努力。">
-<meta name="keywords" content="weekly repo">
+<meta name="description" content="Amazon tag leetcode 42 Trapping Rain Water12345678910111213141516171819202122class Solution &amp;#123;    public int trap(int[] A) &amp;#123;        int a = 0;        int b = A.length - 1;        int max = 0;">
+<meta name="keywords" content="Amazon">
 <meta property="og:type" content="article">
-<meta property="og:title" content="W2repo">
-<meta property="og:url" content="https://nbPeterWang.github.io/ /2018/08/06/W2repo/index.html">
+<meta property="og:title" content="Rush to Amazon">
+<meta property="og:url" content="https://nbPeterWang.github.io/ /2019/12/20/Rush-to-Amazon/index.html">
 <meta property="og:site_name" content="乐味">
-<meta property="og:description" content="这周结束了实习，也算有点收获。对jsp的认识更深入了。正式准备申请了。希望之后也要努力。">
+<meta property="og:description" content="Amazon tag leetcode 42 Trapping Rain Water12345678910111213141516171819202122class Solution &amp;#123;    public int trap(int[] A) &amp;#123;        int a = 0;        int b = A.length - 1;        int max = 0;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-17T22:00:12.092Z">
+<meta property="og:updated_time" content="2019-12-21T01:32:47.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W2repo">
-<meta name="twitter:description" content="这周结束了实习，也算有点收获。对jsp的认识更深入了。正式准备申请了。希望之后也要努力。">
+<meta name="twitter:title" content="Rush to Amazon">
+<meta name="twitter:description" content="Amazon tag leetcode 42 Trapping Rain Water12345678910111213141516171819202122class Solution &amp;#123;    public int trap(int[] A) &amp;#123;        int a = 0;        int b = A.length - 1;        int max = 0;">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>W2repo | 乐味</title>
+<title>Rush to Amazon | 乐味</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -260,11 +260,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-W2repo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Rush-to-Amazon" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/08/06/W2repo/" class="article-date">
-      <time datetime="2018-08-06T12:33:09.000Z" itemprop="datePublished">2018-08-06</time>
+      <a href="/2019/12/20/Rush-to-Amazon/" class="article-date">
+      <time datetime="2019-12-20T23:38:07.000Z" itemprop="datePublished">2019-12-20</time>
 </a>
 
 
@@ -279,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      W2repo
+      Rush to Amazon
     </h1>
   
 
@@ -287,14 +287,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -304,7 +300,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>这周结束了实习，也算有点收获。<br>对jsp的认识更深入了。<br>正式准备申请了。<br>希望之后也要努力。</p>
+        <p>Amazon tag leetcode</p>
+<h3 id="42-Trapping-Rain-Water"><a href="#42-Trapping-Rain-Water" class="headerlink" title="42 Trapping Rain Water"></a>42 Trapping Rain Water</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int trap(int[] A) &#123;</span><br><span class="line">        int a = 0;</span><br><span class="line">        int b = A.length - 1;</span><br><span class="line">        int max = 0;</span><br><span class="line">        int leftmax = 0;</span><br><span class="line">        int rightmax = 0;</span><br><span class="line">        while( a &lt;= b)&#123;</span><br><span class="line">            leftmax = Math.max(leftmax, A[a]);</span><br><span class="line">            rightmax = Math.max(rightmax, A[b]);</span><br><span class="line">            if(leftmax &lt; rightmax)&#123;</span><br><span class="line">                max += (leftmax - A[a]);</span><br><span class="line">                a++;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                max += (rightmax - A[b]);</span><br><span class="line">                b--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>For every iteration, just move one of two pointers. If leftmax is less than rightmax, move left pointer. Otherwise, move right pointer. By each move, we can count the rain water at pointer’s current column.<br><a id="more"></a></p>
+<h3 id="1-two-sum"><a href="#1-two-sum" class="headerlink" title="1 two sum"></a>1 two sum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; ans = new HashMap&lt;&gt;();</span><br><span class="line">    for (int i = 0; i &lt; nums.length; ++i)&#123;</span><br><span class="line">        int diff = target - nums[i];</span><br><span class="line">            if (ans.containsKey(diff))&#123;</span><br><span class="line">                return new int[]&#123;ans.get(diff),i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        ans.put(nums[i],i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return new int[]&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Using one way hashmap.</p>
+<h3 id="1192-Critical-Connections-in-a-network"><a href="#1192-Critical-Connections-in-a-network" class="headerlink" title="1192 Critical Connections in a network"></a>1192 Critical Connections in a network</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">     public List&lt;List&lt;Integer&gt;&gt; criticalConnections(int n, List&lt;List&lt;Integer&gt;&gt; connections) &#123;</span><br><span class="line">            List&lt;Integer&gt;[] grah = new ArrayList[n];</span><br><span class="line">            for (int i = 0; i &lt; n; i++) grah[i] = new ArrayList&lt;&gt;();</span><br><span class="line">            for (List&lt;Integer&gt; e : connections) &#123;</span><br><span class="line">                int from = e.get(0);</span><br><span class="line">                int to = e.get(1);</span><br><span class="line">                grah[from].add(to);</span><br><span class="line">                grah[to].add(from);</span><br><span class="line">            &#125;</span><br><span class="line">            int[] low = new int[n];</span><br><span class="line">            int[] dfn = new int[n];</span><br><span class="line">            List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">            dfs(dfn, low, 0, -1, grah, res);</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        int seq = 0;</span><br><span class="line">        void dfs(int[] dfn, int[] low, int cur, int parent, List&lt;Integer&gt;[] graph, List&lt;List&lt;Integer&gt;&gt; res) &#123;</span><br><span class="line">            if (dfn[cur] &gt; 0) return;</span><br><span class="line">            dfn[cur] = ++seq;</span><br><span class="line">            low[cur] = seq;</span><br><span class="line">            for (int neighbour : graph[cur]) &#123;</span><br><span class="line">                if (neighbour == parent) continue;</span><br><span class="line">                if (dfn[neighbour] == 0) dfs(dfn, low, neighbour, cur, graph, res);</span><br><span class="line">                low[cur] = Math.min(low[cur], low[neighbour]);</span><br><span class="line">            &#125;</span><br><span class="line">            if (cur != 0 &amp;&amp; low[cur] &gt; dfn[parent]) &#123;</span><br><span class="line">                res.add(Arrays.asList(parent, cur));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>using dfs, Tarjin ‘s bridge algorithm.</p>
+<h3 id="200-Number-of-Islands"><a href="#200-Number-of-Islands" class="headerlink" title="200 Number of Islands"></a>200 Number of Islands</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    private int n,m;</span><br><span class="line">    public int numIslands(char[][] grid) &#123;</span><br><span class="line">        int count = 0;</span><br><span class="line">        n = grid.length;</span><br><span class="line">        if (n == 0) return 0;</span><br><span class="line">        m = grid[0].length;</span><br><span class="line">        for (int i = 0; i &lt; n; ++i)&#123;</span><br><span class="line">            for (int j = 0; j &lt; m; ++j)</span><br><span class="line">                if (grid[i][j] == &apos;1&apos;) &#123;</span><br><span class="line">                    DFSMarking(grid, i, j);</span><br><span class="line">                    ++count;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">    private void DFSMarking(char[][] grid, int i, int j)&#123;</span><br><span class="line">        if (i &lt; 0 || j&lt;0 || i &gt;= n || j &gt;=m || grid[i][j] != &apos;1&apos;) return;</span><br><span class="line">        grid[i][j] = &apos;0&apos;;</span><br><span class="line">        DFSMarking(grid, i + 1, j);</span><br><span class="line">        DFSMarking(grid, i - 1, j);</span><br><span class="line">        DFSMarking(grid, i, j + 1);</span><br><span class="line">        DFSMarking(grid, i, j - 1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Using DFS, making every “1” into “0”, so that we only meet every island once.</p>
+<h3 id="146-LRU-Cache"><a href="#146-LRU-Cache" class="headerlink" title="146 LRU Cache"></a>146 LRU Cache</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">class LRUCache &#123;</span><br><span class="line">    private class Node&#123;</span><br><span class="line">        int key, value;</span><br><span class="line">        Node prev, next;</span><br><span class="line">        Node (int k, int v)&#123;</span><br><span class="line">            this.key = k;</span><br><span class="line">            this.value = v;</span><br><span class="line">        &#125;</span><br><span class="line">        Node()&#123;</span><br><span class="line">            this(0, 0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    private int capacity, count;</span><br><span class="line">    private Map&lt;Integer, Node&gt; map;</span><br><span class="line">    private Node head, tail;</span><br><span class="line">    </span><br><span class="line">    public LRUCache(int capacity) &#123;</span><br><span class="line">        this.capacity = capacity;</span><br><span class="line">        this.count = 0;</span><br><span class="line">        map = new HashMap&lt;&gt;();</span><br><span class="line">        head = new Node();</span><br><span class="line">        tail = new Node();</span><br><span class="line">        head.next = tail;</span><br><span class="line">        tail.prev = head;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public int get(int key) &#123;</span><br><span class="line">        Node n = map.get(key);</span><br><span class="line">        if(n == null)&#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        update(n);</span><br><span class="line">        return n.value;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void put(int key, int value)&#123;</span><br><span class="line">        Node n = map.get(key);</span><br><span class="line">        if(n == null)&#123;</span><br><span class="line">            n = new Node(key, value);</span><br><span class="line">            map.put(key, n);</span><br><span class="line">            add(n);</span><br><span class="line">            ++count;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            n.value = value;</span><br><span class="line">            update(n);</span><br><span class="line">        &#125;</span><br><span class="line">        if(count &gt; capacity)&#123;</span><br><span class="line">            Node toDel = tail.prev;</span><br><span class="line">            remove(toDel);</span><br><span class="line">            map.remove(toDel.key);</span><br><span class="line">            --count;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private void update(Node node)&#123;</span><br><span class="line">        remove(node);</span><br><span class="line">        add(node);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private void add(Node node)&#123;</span><br><span class="line">        Node after = head.next;</span><br><span class="line">        head.next = node;</span><br><span class="line">        node.prev = head;</span><br><span class="line">        node.next = after;</span><br><span class="line">        after.prev = node;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private void remove(Node node)&#123;</span><br><span class="line">        Node before = node.prev, after = node.next;</span><br><span class="line">        before.next = after;</span><br><span class="line">        after.prev = before;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Using hashmap and double linked list.</p>
 
       
     </div>
@@ -313,13 +319,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/08/06/W2repo/">W2repo</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/20/Rush-to-Amazon/">Rush to Amazon</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Peter Wang</a></p>
-        <p><span>发布时间:</span>2018-08-06, 08:33:09</p>
-        <p><span>最后更新:</span>2019-11-17, 17:00:12</p>
+        <p><span>发布时间:</span>2019-12-20, 18:38:07</p>
+        <p><span>最后更新:</span>2019-12-20, 20:32:47</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/08/06/W2repo/" title="W2repo">https://nbPeterWang.github.io/ /2018/08/06/W2repo/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2018/08/06/W2repo/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/20/Rush-to-Amazon/" title="Rush to Amazon">https://nbPeterWang.github.io/ /2019/12/20/Rush-to-Amazon/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://nbPeterWang.github.io/ /2019/12/20/Rush-to-Amazon/　　作者: Peter Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -331,16 +337,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/08/12/W3repo/">
-                    W3repo
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/07/30/W1repo/">
-                    W1repo
+                <a href="/2019/12/16/Everyday-Leetcode-27/">
+                    Everyday Leetcode 27
                 </a>
             </div>
         
@@ -352,7 +352,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#42-Trapping-Rain-Water"><span class="toc-number">1.</span> <span class="toc-text">42 Trapping Rain Water</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-two-sum"><span class="toc-number">2.</span> <span class="toc-text">1 two sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1192-Critical-Connections-in-a-network"><span class="toc-number">3.</span> <span class="toc-text">1192 Critical Connections in a network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#200-Number-of-Islands"><span class="toc-number">4.</span> <span class="toc-text">200 Number of Islands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#146-LRU-Cache"><span class="toc-number">5.</span> <span class="toc-text">146 LRU Cache</span></a></li></ol>
         
     </div>
     <style>
@@ -388,7 +388,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"W2repo　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Rush to Amazon　| 乐味　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -429,15 +429,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/08/12/W3repo/" title="上一篇: W3repo">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/07/30/W1repo/" title="下一篇: W1repo">
+            <a href="/2019/12/16/Everyday-Leetcode-27/" title="下一篇: Everyday Leetcode 27">
                 <i class="fa fa-angle-right"></i>
             </a>
         
