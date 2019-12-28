@@ -88,7 +88,38 @@ second argument is comparator.
 
 ### 138 Copy List with Random Pointer
 ```
-
+public Node copyRandomList(Node head) {
+        Node iter = head, next;
+        while(iter != null){
+            next = iter.next;
+            Node temp = new Node(iter.val);
+            iter.next = temp;
+            temp.next =next;
+            iter =next;
+        }
+        iter = head;
+        while (iter !=null){
+            if (iter.random != null){
+                iter.next.random =iter.random.next;
+            }
+            iter = iter.next.next;
+        }
+        iter =head;
+        Node res = new Node(0);
+        Node copy, copyI = res;
+        while (iter !=null){
+            next = iter.next.next;
+            
+            copy =iter.next;
+            copyI.next = copy;
+            copyI = copy;
+            
+            iter.next =next;
+            iter =next;
+        }
+        
+        return res.next;
+    }
 ```
 
 ### 273  Integer to English Words
