@@ -265,6 +265,536 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Rush-to-Amazon-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/01/05/Rush-to-Amazon-8/" class="article-date">
+      <time datetime="2020-01-05T19:00:45.000Z" itemprop="datePublished">2020-01-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/05/Rush-to-Amazon-8/">Rush to Amazon 8</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="99-Recover-Binary-Search-Tree"><a href="#99-Recover-Binary-Search-Tree" class="headerlink" title="99. Recover Binary Search Tree"></a>99. Recover Binary Search Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    TreeNode x = null, y = null, pred = null;</span><br><span class="line">    </span><br><span class="line">    public void recoverTree(TreeNode root) &#123;</span><br><span class="line">        </span><br><span class="line">        findTwoSwapped(root);</span><br><span class="line">        swap(x, y);</span><br><span class="line">    &#125;</span><br><span class="line">    public void swap(TreeNode a, TreeNode b)&#123;</span><br><span class="line">        int tmp = a.val;</span><br><span class="line">        a.val = b.val;</span><br><span class="line">        b.val = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void findTwoSwapped(TreeNode root)&#123;</span><br><span class="line">        if (root == null) return;</span><br><span class="line">        findTwoSwapped(root.left);</span><br><span class="line">        if (pred != null &amp;&amp; root.val &lt; pred.val)&#123;</span><br><span class="line">           y = root;</span><br><span class="line">           if (x == null) x = pred;</span><br><span class="line">            else return;</span><br><span class="line">        &#125;</span><br><span class="line">        pred = root;</span><br><span class="line">        findTwoSwapped(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/01/05/Rush-to-Amazon-8/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rush-to-Amazon-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/01/02/Rush-to-Amazon-7/" class="article-date">
+      <time datetime="2020-01-02T18:49:10.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/02/Rush-to-Amazon-7/">Rush to Amazon 7</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="126-Word-Ladder-II"><a href="#126-Word-Ladder-II" class="headerlink" title="126   Word Ladder II"></a>126   Word Ladder II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;List&lt;String&gt;&gt; findLadders(String beginWord, String endWord, List&lt;String&gt; wordList) &#123;</span><br><span class="line">        List&lt;List&lt;String&gt;&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">        Set&lt;String&gt; words = new HashSet&lt;&gt;(wordList);</span><br><span class="line">        if(!words.contains(endWord)) return res;</span><br><span class="line">        </span><br><span class="line">        Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;(); // current word and nexts</span><br><span class="line">        Set&lt;String&gt; startSet = new HashSet&lt;&gt;();</span><br><span class="line">        Set&lt;String&gt; endSet = new HashSet&lt;&gt;();</span><br><span class="line">        startSet.add(beginWord);</span><br><span class="line">        endSet.add(endWord);</span><br><span class="line">        </span><br><span class="line">        bfs(startSet, map, words, endSet, false);</span><br><span class="line">        </span><br><span class="line">        List&lt;String&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        list.add(beginWord);</span><br><span class="line">        dfs(res, list, endWord, beginWord, map);</span><br><span class="line">        </span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private void dfs(List&lt;List&lt;String&gt;&gt; res, List&lt;String&gt; list, String endWord, String curword, Map&lt;String, List&lt;String&gt;&gt; map) &#123;</span><br><span class="line">        if(curword.equals(endWord)) &#123;</span><br><span class="line">            res.add(new ArrayList&lt;&gt;(list));</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if(map.get(curword) == null) return;</span><br><span class="line">        for(String next : map.get(curword)) &#123;</span><br><span class="line">            list.add(next);</span><br><span class="line">            dfs(res, list, endWord, next, map);</span><br><span class="line">            list.remove(list.size() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private void bfs(Set&lt;String&gt; startSet, Map&lt;String, List&lt;String&gt;&gt; map, Set&lt;String&gt; words, Set&lt;String&gt; endSet, boolean reverse) &#123;</span><br><span class="line">        if (startSet.size() == 0) return;</span><br><span class="line">        </span><br><span class="line">        if (startSet.size() &gt; endSet.size()) &#123;</span><br><span class="line">            bfs(endSet, map, words, startSet, !reverse);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Set&lt;String&gt; nextLevelSet = new HashSet&lt;&gt;();</span><br><span class="line">        boolean finish = false;</span><br><span class="line">        words.removeAll(startSet);</span><br><span class="line">        </span><br><span class="line">        for (String word : startSet) &#123;</span><br><span class="line">            char[] curword = word.toCharArray();</span><br><span class="line">            for (int i = 0; i &lt; curword.length; i++) &#123;</span><br><span class="line">                char oldchar = curword[i];</span><br><span class="line">                for (char c = &apos;a&apos;; c &lt;= &apos;z&apos;; c++) &#123;</span><br><span class="line">                    curword[i] = c;</span><br><span class="line">                    String word_after = new String(curword);</span><br><span class="line">                    </span><br><span class="line">                    if (words.contains(word_after)) &#123;</span><br><span class="line">                        if(endSet.contains(word_after)) &#123;</span><br><span class="line">                            finish = true;</span><br><span class="line">                        &#125;</span><br><span class="line">                        else &#123;</span><br><span class="line">                            nextLevelSet.add(word_after);</span><br><span class="line">                        &#125;</span><br><span class="line">                        </span><br><span class="line">                        String key = reverse ? word_after : word;</span><br><span class="line">                        String value = reverse ? word : word_after;</span><br><span class="line">                        </span><br><span class="line">                        if(map.get(key) == null) &#123;</span><br><span class="line">                            map.put(key, new ArrayList&lt;&gt;());</span><br><span class="line">                        &#125;</span><br><span class="line">                        </span><br><span class="line">                        map.get(key).add(value);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                curword[i] = oldchar;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(finish == false) &#123;</span><br><span class="line">            bfs(nextLevelSet, map, words, endSet, reverse);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/01/02/Rush-to-Amazon-7/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rush-to-Amazon-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/01/01/Rush-to-Amazon-6/" class="article-date">
+      <time datetime="2020-01-01T22:59:09.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/Rush-to-Amazon-6/">Rush to Amazon 6</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="348-Design-Tic-Tac-Toe"><a href="#348-Design-Tic-Tac-Toe" class="headerlink" title="348   Design Tic-Tac-Toe"></a>348   Design Tic-Tac-Toe</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">public class TicTacToe &#123;</span><br><span class="line">private int[] rows;</span><br><span class="line">private int[] cols;</span><br><span class="line">private int diagonal;</span><br><span class="line">private int antiDiagonal;</span><br><span class="line"></span><br><span class="line">/** Initialize your data structure here. */</span><br><span class="line">public TicTacToe(int n) &#123;</span><br><span class="line">    rows = new int[n];</span><br><span class="line">    cols = new int[n];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** Player &#123;player&#125; makes a move at (&#123;row&#125;, &#123;col&#125;).</span><br><span class="line">    @param row The row of the board.</span><br><span class="line">    @param col The column of the board.</span><br><span class="line">    @param player The player, can be either 1 or 2.</span><br><span class="line">    @return The current winning condition, can be either:</span><br><span class="line">            0: No one wins.</span><br><span class="line">            1: Player 1 wins.</span><br><span class="line">            2: Player 2 wins. */</span><br><span class="line">public int move(int row, int col, int player) &#123;</span><br><span class="line">    int toAdd = player == 1 ? 1 : -1;</span><br><span class="line">    </span><br><span class="line">    rows[row] += toAdd;</span><br><span class="line">    cols[col] += toAdd;</span><br><span class="line">    if (row == col)</span><br><span class="line">    &#123;</span><br><span class="line">        diagonal += toAdd;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    if (col == (cols.length - row - 1))</span><br><span class="line">    &#123;</span><br><span class="line">        antiDiagonal += toAdd;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int size = rows.length;</span><br><span class="line">    if (Math.abs(rows[row]) == size ||</span><br><span class="line">        Math.abs(cols[col]) == size ||</span><br><span class="line">        Math.abs(diagonal) == size  ||</span><br><span class="line">        Math.abs(antiDiagonal) == size)</span><br><span class="line">    &#123;</span><br><span class="line">        return player;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/01/01/Rush-to-Amazon-6/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rush-to-Amazon-5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/30/Rush-to-Amazon-5/" class="article-date">
+      <time datetime="2019-12-30T23:59:14.000Z" itemprop="datePublished">2019-12-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/30/Rush-to-Amazon-5/">Rush to Amazon 5</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="295-Find-Median-from-Data-Stream"><a href="#295-Find-Median-from-Data-Stream" class="headerlink" title="295  Find Median from Data Stream"></a>295  Find Median from Data Stream</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">class MedianFinder &#123;</span><br><span class="line"></span><br><span class="line">    /** initialize your data structure here. */</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">    private Queue&lt;Long&gt; small = new PriorityQueue(),</span><br><span class="line">                        large = new PriorityQueue();</span><br><span class="line"></span><br><span class="line">    public void addNum(int num) &#123;</span><br><span class="line">        large.add((long) num);</span><br><span class="line">        small.add(-large.poll());</span><br><span class="line">        if (large.size() &lt; small.size())</span><br><span class="line">            large.add(-small.poll());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public double findMedian() &#123;</span><br><span class="line">        return large.size() &gt; small.size()</span><br><span class="line">               ? large.peek()</span><br><span class="line">               : (large.peek() - small.peek()) / 2.0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MedianFinder &#123;</span><br><span class="line">    class TreeNode&#123;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode parent,left,right;</span><br><span class="line">        TreeNode(int val, TreeNode p)&#123;</span><br><span class="line">            this.val=val;</span><br><span class="line">            this.parent=p;</span><br><span class="line">            left=null;</span><br><span class="line">            right=null;</span><br><span class="line">        &#125;</span><br><span class="line">        void add(int num)&#123;</span><br><span class="line">            if(num&gt;=val)&#123;</span><br><span class="line">                if(right==null)</span><br><span class="line">                    right=new TreeNode(num,this);</span><br><span class="line">                else</span><br><span class="line">                    right.add(num);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                if(left==null)</span><br><span class="line">                    left=new TreeNode(num,this);</span><br><span class="line">                else</span><br><span class="line">                    left.add(num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode next()&#123;</span><br><span class="line">            TreeNode ret;</span><br><span class="line">            if(right!=null)&#123;</span><br><span class="line">                ret=right;</span><br><span class="line">                while(ret.left!=null)</span><br><span class="line">                    ret=ret.left;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                ret=this;</span><br><span class="line">                while(ret.parent.right==ret)</span><br><span class="line">                    ret=ret.parent;</span><br><span class="line">                ret=ret.parent;</span><br><span class="line">            &#125;</span><br><span class="line">            return ret;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode prev()&#123;</span><br><span class="line">            TreeNode ret;</span><br><span class="line">            if(left!=null)&#123;</span><br><span class="line">                ret=left;</span><br><span class="line">                while(ret.right!=null)</span><br><span class="line">                    ret=ret.right;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                ret=this;</span><br><span class="line">                while(ret.parent.left==ret)</span><br><span class="line">                    ret=ret.parent;</span><br><span class="line">                ret=ret.parent;</span><br><span class="line">            &#125;</span><br><span class="line">            return ret;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    int n;</span><br><span class="line">    TreeNode root, curr;</span><br><span class="line">    // Adds a number into the data structure.</span><br><span class="line">    public void addNum(int num) &#123;</span><br><span class="line">        if(root==null)&#123;</span><br><span class="line">            root = new TreeNode(num,null);</span><br><span class="line">            curr=root;</span><br><span class="line">            n=1;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            root.add(num);</span><br><span class="line">            n++;</span><br><span class="line">            if(n%2==1)&#123;</span><br><span class="line">                if(curr.val&lt;=num)</span><br><span class="line">                    curr=curr.next();</span><br><span class="line">            &#125;else</span><br><span class="line">                if(curr.val&gt;num)</span><br><span class="line">                    curr=curr.prev();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Returns the median of current data stream</span><br><span class="line">    public double findMedian() &#123;</span><br><span class="line">        if(n%2==0)&#123;</span><br><span class="line">            return ((double)curr.next().val+curr.val)/2;</span><br><span class="line">        &#125;else</span><br><span class="line">            return curr.val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//BST version</span><br></pre></td></tr></table></figure>
+<p>Max-heap small has the smaller half of the numbers.<br>Min-heap large has the larger half of the numbers. getting the median takes O(1) time. And adding a number takes O(log n) time.<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/30/Rush-to-Amazon-5/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rush-to-Amazon-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/30/Rush-to-Amazon-4/" class="article-date">
+      <time datetime="2019-12-30T14:57:17.000Z" itemprop="datePublished">2019-12-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/30/Rush-to-Amazon-4/">Rush to Amazon 4</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="139-Word-Break"><a href="#139-Word-Break" class="headerlink" title="139  Word Break"></a>139  Word Break</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123;</span><br><span class="line">        Set&lt;String&gt; wordDictSet=new HashSet(wordDict);</span><br><span class="line">        boolean[] dp = new boolean[s.length() + 1];</span><br><span class="line">        dp[0] = true;</span><br><span class="line">        for (int i = 1; i &lt;= s.length(); i++) &#123;</span><br><span class="line">            for(int j = i-1 ; j &gt;= 0; j--) &#123;</span><br><span class="line">                if (dp[j] &amp;&amp; wordDictSet.contains(s.substring(j, i))) &#123;</span><br><span class="line">                    dp[i] = true;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[s.length()];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/30/Rush-to-Amazon-4/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rush-to-Amazon-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/28/Rush-to-Amazon-3/" class="article-date">
+      <time datetime="2019-12-29T01:51:31.000Z" itemprop="datePublished">2019-12-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/28/Rush-to-Amazon-3/">Rush to Amazon 3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="253-Meeting-Rooms-II"><a href="#253-Meeting-Rooms-II" class="headerlink" title="253  Meeting Rooms II"></a>253  Meeting Rooms II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// method 1 using min heap</span><br><span class="line"> public int minMeetingRooms(int[][] intervals) &#123;</span><br><span class="line">        if(intervals == null || intervals.length == 0) return 0;</span><br><span class="line">        Arrays.sort(intervals, (a, b) -&gt; (a[0] - b[0]));</span><br><span class="line">        int max = 0;</span><br><span class="line">        PriorityQueue&lt;int[]&gt; queue = new PriorityQueue&lt;&gt;(intervals.length, (a, b) -&gt; (a[1] - b[1]));</span><br><span class="line">        for(int i = 0; i &lt; intervals.length; i++)&#123;</span><br><span class="line">            while(!queue.isEmpty() &amp;&amp; intervals[i][0] &gt;= queue.peek()[1])</span><br><span class="line">                queue.poll();</span><br><span class="line">            queue.offer(intervals[i]);</span><br><span class="line">            max = Math.max(max, queue.size());</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//method 2 using two pointer</span><br><span class="line"> public int minMeetingRooms(int[][] intervals) &#123;</span><br><span class="line">        int[]start = new int[intervals.length];   </span><br><span class="line">        int[]end = new int[intervals.length];</span><br><span class="line">        for(int i = 0; i &lt; intervals.length; ++i)&#123;</span><br><span class="line">            start[i] = intervals[i][0]; end[i] = intervals[i][1];</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(start); Arrays.sort(end);</span><br><span class="line">        </span><br><span class="line">        int i = 0; int j = 0; int count = 0; int len = 0;</span><br><span class="line">        while(i &lt; intervals.length &amp;&amp; j &lt; intervals.length)&#123;</span><br><span class="line">            if(start[i] &lt; end[j])&#123;</span><br><span class="line">               count++;   i++;  </span><br><span class="line">               len = Math.max(len, count);   </span><br><span class="line">            &#125;else&#123;</span><br><span class="line">               j++;  count--;  </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return len;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/28/Rush-to-Amazon-3/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rush-to-Amazon-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/27/Rush-to-Amazon-2/" class="article-date">
+      <time datetime="2019-12-28T01:07:51.000Z" itemprop="datePublished">2019-12-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/27/Rush-to-Amazon-2/">Rush to Amazon 2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="23-Merge-k-Sorted-Lists"><a href="#23-Merge-k-Sorted-Lists" class="headerlink" title="23  Merge k Sorted Lists"></a>23  Merge k Sorted Lists</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">method-1:</span><br><span class="line">   public ListNode mergeKLists(ListNode[] lists) &#123;</span><br><span class="line">        if (lists == null || lists.length == 0) return null;</span><br><span class="line">        PriorityQueue&lt;ListNode&gt; queue = new PriorityQueue&lt;ListNode&gt;(lists.length, (a,b)-&gt; a.val - b.val);</span><br><span class="line">        </span><br><span class="line">        ListNode head = new ListNode(0);</span><br><span class="line">        ListNode tail = head;</span><br><span class="line">        </span><br><span class="line">        for (ListNode node:lists)</span><br><span class="line">            if (node != null)</span><br><span class="line">                queue.add(node);</span><br><span class="line">        </span><br><span class="line">        while (!queue.isEmpty())&#123;</span><br><span class="line">            tail.next = queue.poll();</span><br><span class="line">            tail = tail.next;</span><br><span class="line">            </span><br><span class="line">            if (tail.next != null)</span><br><span class="line">                queue.add(tail.next);</span><br><span class="line">        &#125;</span><br><span class="line">        return head.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">method-2:</span><br><span class="line"> public static ListNode mergeKLists(ListNode[] lists)&#123;</span><br><span class="line">    return partion(lists,0,lists.length-1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static ListNode partion(ListNode[] lists,int head,int tail)&#123;</span><br><span class="line">    if(head==tail)  return lists[head];</span><br><span class="line">    if(head &lt; tail)&#123;</span><br><span class="line">        int mid=head+(tail-head)/2;</span><br><span class="line">        ListNode l1=partion(lists,head,mid);</span><br><span class="line">        ListNode l2=partion(lists,mid+1,tail);</span><br><span class="line">        return merge(l1,l2);</span><br><span class="line">    &#125;else</span><br><span class="line">        return null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//This function is from Merge Two Sorted Lists.</span><br><span class="line">public static ListNode merge(ListNode l1,ListNode l2)&#123;</span><br><span class="line">    if(l1==null) return l2;</span><br><span class="line">    if(l2==null) return l1;</span><br><span class="line">    if(l1.val&lt;l2.val)&#123;</span><br><span class="line">        l1.next=merge(l1.next,l2);</span><br><span class="line">        return l1;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        l2.next=merge(l1,l2.next);</span><br><span class="line">        return l2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/27/Rush-to-Amazon-2/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rush-to-Amazon-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/23/Rush-to-Amazon-1/" class="article-date">
+      <time datetime="2019-12-24T02:11:25.000Z" itemprop="datePublished">2019-12-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/Rush-to-Amazon-1/">Rush to Amazon 1</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="2-Add-Two-Numbers"><a href="#2-Add-Two-Numbers" class="headerlink" title="2  Add Two Numbers"></a>2  Add Two Numbers</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public ListNode addTwoNumbers(ListNode l1, ListNode l2) &#123;</span><br><span class="line">       int temp = 0;</span><br><span class="line">       ListNode resultNode = new ListNode(0);</span><br><span class="line">       ListNode res = resultNode;</span><br><span class="line">       </span><br><span class="line">       while (l1 != null || l2 != null || temp != 0)&#123;</span><br><span class="line">           if(l1 != null)&#123;</span><br><span class="line">               temp += l1.val;</span><br><span class="line">               l1 = l1.next;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           if(l2 != null)&#123;</span><br><span class="line">               temp += l2.val;</span><br><span class="line">               l2 = l2.next;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           resultNode.next = new ListNode(temp % 10);</span><br><span class="line">           temp /= 10;</span><br><span class="line">           resultNode = resultNode.next;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       return res.next;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>using a Node res to link headNode, in every iteration, calculate the sum of  l1 and l2 and the value left to get every node’s value. At last, return res.next.<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Amazon/">Amazon</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/23/Rush-to-Amazon-1/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Rush-to-Amazon" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -399,539 +929,9 @@
 
 
   
-    <article id="post-Everyday-Leetcode-26" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/02/Everyday-Leetcode-26/" class="article-date">
-      <time datetime="2019-12-02T19:09:08.000Z" itemprop="datePublished">2019-12-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/02/Everyday-Leetcode-26/">Everyday Leetcode 26</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="110-Balanced-Binary-Tree"><a href="#110-Balanced-Binary-Tree" class="headerlink" title="110 Balanced Binary Tree"></a>110 Balanced Binary Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isBalanced(TreeNode root) &#123;</span><br><span class="line">      if (root == null)</span><br><span class="line">          return true;</span><br><span class="line">      return helper(root)!= -1;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public int helper(TreeNode root)&#123;</span><br><span class="line">        if (root == null)</span><br><span class="line">            return 0;</span><br><span class="line">        int left = helper(root.left);</span><br><span class="line">        int right = helper(root.right);</span><br><span class="line">        if( left == -1 || right == -1 || Math.abs(left-right)&gt;1)</span><br><span class="line">            return -1;</span><br><span class="line">        return Math.max(left,right)+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Time complexity:O(n) using DFS<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/02/Everyday-Leetcode-26/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-25" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/10/24/Everyday-Leetcode-25/" class="article-date">
-      <time datetime="2019-10-25T00:08:51.000Z" itemprop="datePublished">2019-10-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/24/Everyday-Leetcode-25/">Everyday Leetcode 25</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="113-Path-Sum-II"><a href="#113-Path-Sum-II" class="headerlink" title="113    Path Sum II"></a>113    Path Sum II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;List&lt;Integer&gt;&gt; pathSum(TreeNode root, int sum) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt;ret = new ArrayList&lt;List&lt;Integer&gt;&gt;(); </span><br><span class="line">    List&lt;Integer&gt; cur = new ArrayList&lt;Integer&gt;(); </span><br><span class="line">    pathSum(root, sum, cur, ret);</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void pathSum(TreeNode root, int sum, List&lt;Integer&gt;cur, List&lt;List&lt;Integer&gt;&gt;ret)&#123;</span><br><span class="line">    if (root == null)&#123;</span><br><span class="line">        return; </span><br><span class="line">    &#125;</span><br><span class="line">    cur.add(root.val);</span><br><span class="line">    if (root.left == null &amp;&amp; root.right == null &amp;&amp; root.val == sum)&#123;</span><br><span class="line">        ret.add(new ArrayList(cur));</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        pathSum(root.left, sum - root.val, cur, ret);</span><br><span class="line">        pathSum(root.right, sum - root.val, cur, ret);</span><br><span class="line">    &#125;</span><br><span class="line">    cur.remove(cur.size()-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/10/24/Everyday-Leetcode-25/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-24" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/10/19/Everyday-Leetcode-24/" class="article-date">
-      <time datetime="2019-10-19T18:40:12.000Z" itemprop="datePublished">2019-10-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/19/Everyday-Leetcode-24/">Everyday Leetcode 24</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="100-Same-Tree"><a href="#100-Same-Tree" class="headerlink" title="100    Same Tree"></a>100    Same Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public boolean isSameTree(TreeNode p, TreeNode q) &#123;</span><br><span class="line">        if (p == null || q == null) return p == q;</span><br><span class="line">   return p.val == q.val &amp;&amp; isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/10/19/Everyday-Leetcode-24/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-23" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/09/10/Everyday-Leetcode-23/" class="article-date">
-      <time datetime="2019-09-10T18:10:31.000Z" itemprop="datePublished">2019-09-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/10/Everyday-Leetcode-23/">Everyday Leetcode 23</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="367-Valid-Perfect-Square"><a href="#367-Valid-Perfect-Square" class="headerlink" title="367    Valid Perfect Square"></a>367    Valid Perfect Square</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public boolean isPerfectSquare(int num) &#123;</span><br><span class="line">       if (num==1) return true;</span><br><span class="line">    else if(num&lt;2) return true;</span><br><span class="line">       else </span><br><span class="line">    &#123;</span><br><span class="line">           long low=1,high=num;</span><br><span class="line">           long mid,prod;</span><br><span class="line">           while(low&lt;high)</span><br><span class="line">           &#123;</span><br><span class="line">                mid=(low+high)/2;</span><br><span class="line">               prod=mid*mid;</span><br><span class="line">               if(prod==(long)num) return true;</span><br><span class="line">               else if (prod&lt;(long)num)&#123;</span><br><span class="line">                   low=mid+1;</span><br><span class="line">               &#125;else high=mid-1;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">        if (low==high) return (low*low==(long)num);</span><br><span class="line">       &#125;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/09/10/Everyday-Leetcode-23/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-22" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/08/02/Everyday-Leetcode-22/" class="article-date">
-      <time datetime="2019-08-02T17:15:29.000Z" itemprop="datePublished">2019-08-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/Everyday-Leetcode-22/">Everyday Leetcode 22</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67    Add Binary"></a>67    Add Binary</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public String addBinary(String a, String b) &#123;</span><br><span class="line">      StringBuilder sb = new StringBuilder();</span><br><span class="line">        int i=a.length()-1, j=b.length()-1, memo=0;</span><br><span class="line">        while(j&gt;=0 || i&gt;=0)&#123;</span><br><span class="line">        int sum= memo;</span><br><span class="line">        if(i&gt;=0) sum+= a.charAt(i--)-&apos;0&apos;;</span><br><span class="line">        if(j&gt;=0) sum+= b.charAt(j--)-&apos;0&apos;;</span><br><span class="line">        memo=sum/2;</span><br><span class="line">        sb.append(sum%2);</span><br><span class="line">        &#125;</span><br><span class="line">        if(memo!=0) sb.append(memo);</span><br><span class="line">        return sb.reverse().toString();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>从右往左计算，每一位算出当前位的和再对2取余，就是这一位的结果，最后把第一位的结果加入到StringBuilder再反向输出。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/08/02/Everyday-Leetcode-22/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-21" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/25/Everyday-Leetcode-21/" class="article-date">
-      <time datetime="2019-07-25T18:00:08.000Z" itemprop="datePublished">2019-07-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/Everyday-Leetcode-21/">Everyday Leetcode 21</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7    Reverse Integer"></a>7    Reverse Integer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public int reverse(int x) &#123;</span><br><span class="line">          long rev= 0;</span><br><span class="line">        while( x != 0)&#123;</span><br><span class="line">            rev= rev*10 + x % 10;</span><br><span class="line">            x= x/10;</span><br><span class="line">            if( rev &gt; Integer.MAX_VALUE || rev &lt; Integer.MIN_VALUE)</span><br><span class="line">                return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        return (int) rev;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/25/Everyday-Leetcode-21/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-20" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/22/Everyday-Leetcode-20/" class="article-date">
-      <time datetime="2019-07-22T20:23:33.000Z" itemprop="datePublished">2019-07-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/Everyday-Leetcode-20/">Everyday Leetcode 20</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="32-Longest-Valid-Parentheses"><a href="#32-Longest-Valid-Parentheses" class="headerlink" title="32    Longest Valid Parentheses"></a>32    Longest Valid Parentheses</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public int longestValidParentheses(String s) &#123;</span><br><span class="line">    char[] S = s.toCharArray();</span><br><span class="line">    int[] V = new int[S.length];</span><br><span class="line">    int open = 0;</span><br><span class="line">    int max = 0;</span><br><span class="line">    for (int i=0; i&lt;S.length; i++) &#123;</span><br><span class="line">        if (S[i] == &apos;(&apos;) open++;</span><br><span class="line">        if (S[i] == &apos;)&apos; &amp;&amp; open &gt; 0) &#123;</span><br><span class="line">            // matches found</span><br><span class="line">            V[i] = 2+ V[i-1];</span><br><span class="line">            // add matches from previous</span><br><span class="line">            if(i-V[i]&gt;0)</span><br><span class="line">                V[i] += V[i-V[i]];</span><br><span class="line">            open--;</span><br><span class="line">        &#125;</span><br><span class="line">        if (V[i] &gt; max) max = V[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/22/Everyday-Leetcode-20/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-19" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/21/Everyday-Leetcode-19/" class="article-date">
-      <time datetime="2019-07-21T22:35:50.000Z" itemprop="datePublished">2019-07-21</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/21/Everyday-Leetcode-19/">Everyday Leetcode 19</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="131-Palindrome-Partitioning"><a href="#131-Palindrome-Partitioning" class="headerlink" title="131    Palindrome Partitioning"></a>131    Palindrome Partitioning</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;List&lt;String&gt;&gt; partition(String s) &#123;</span><br><span class="line">	List&lt;List&lt;String&gt;&gt; lists=new ArrayList&lt;&gt;();</span><br><span class="line">	int len=s.length();</span><br><span class="line">	if(len==0) return lists;</span><br><span class="line">	backtrack(lists, new ArrayList&lt;&gt;(), s,0,len);</span><br><span class="line">	return lists;</span><br><span class="line">&#125;</span><br><span class="line">private void backtrack(List&lt;List&lt;String&gt;&gt; lists,List&lt;String&gt; list,String s, int l, int r) &#123;</span><br><span class="line">	if(l==r) &#123;</span><br><span class="line">		lists.add(new ArrayList&lt;&gt;(list));</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=l+1;i&lt;=r;i++) &#123;</span><br><span class="line">		if(isPalindrome(s, l, i)) &#123;</span><br><span class="line">			list.add(s.substring(l, i));</span><br><span class="line">			backtrack(lists, list, s,i,r);</span><br><span class="line">			list.remove(list.size()-1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">private boolean isPalindrome(String s, int l, int r)&#123;</span><br><span class="line">    if(l==r-1) return true;</span><br><span class="line">    while(l&lt;r-1)&#123;</span><br><span class="line">        if(s.charAt(l)!=s.charAt(r-1)) return false;</span><br><span class="line">        l++;r--;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/21/Everyday-Leetcode-19/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -940,7 +940,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2017-2019 Peter Wang
+                2017-2020 Peter Wang
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>

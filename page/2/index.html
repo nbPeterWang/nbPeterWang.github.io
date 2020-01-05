@@ -265,6 +265,536 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-26" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/02/Everyday-Leetcode-26/" class="article-date">
+      <time datetime="2019-12-02T19:09:08.000Z" itemprop="datePublished">2019-12-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/02/Everyday-Leetcode-26/">Everyday Leetcode 26</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="110-Balanced-Binary-Tree"><a href="#110-Balanced-Binary-Tree" class="headerlink" title="110 Balanced Binary Tree"></a>110 Balanced Binary Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isBalanced(TreeNode root) &#123;</span><br><span class="line">      if (root == null)</span><br><span class="line">          return true;</span><br><span class="line">      return helper(root)!= -1;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public int helper(TreeNode root)&#123;</span><br><span class="line">        if (root == null)</span><br><span class="line">            return 0;</span><br><span class="line">        int left = helper(root.left);</span><br><span class="line">        int right = helper(root.right);</span><br><span class="line">        if( left == -1 || right == -1 || Math.abs(left-right)&gt;1)</span><br><span class="line">            return -1;</span><br><span class="line">        return Math.max(left,right)+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Time complexity:O(n) using DFS<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/02/Everyday-Leetcode-26/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-25" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/24/Everyday-Leetcode-25/" class="article-date">
+      <time datetime="2019-10-25T00:08:51.000Z" itemprop="datePublished">2019-10-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/24/Everyday-Leetcode-25/">Everyday Leetcode 25</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="113-Path-Sum-II"><a href="#113-Path-Sum-II" class="headerlink" title="113    Path Sum II"></a>113    Path Sum II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;List&lt;Integer&gt;&gt; pathSum(TreeNode root, int sum) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt;ret = new ArrayList&lt;List&lt;Integer&gt;&gt;(); </span><br><span class="line">    List&lt;Integer&gt; cur = new ArrayList&lt;Integer&gt;(); </span><br><span class="line">    pathSum(root, sum, cur, ret);</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void pathSum(TreeNode root, int sum, List&lt;Integer&gt;cur, List&lt;List&lt;Integer&gt;&gt;ret)&#123;</span><br><span class="line">    if (root == null)&#123;</span><br><span class="line">        return; </span><br><span class="line">    &#125;</span><br><span class="line">    cur.add(root.val);</span><br><span class="line">    if (root.left == null &amp;&amp; root.right == null &amp;&amp; root.val == sum)&#123;</span><br><span class="line">        ret.add(new ArrayList(cur));</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        pathSum(root.left, sum - root.val, cur, ret);</span><br><span class="line">        pathSum(root.right, sum - root.val, cur, ret);</span><br><span class="line">    &#125;</span><br><span class="line">    cur.remove(cur.size()-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/10/24/Everyday-Leetcode-25/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-24" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/19/Everyday-Leetcode-24/" class="article-date">
+      <time datetime="2019-10-19T18:40:12.000Z" itemprop="datePublished">2019-10-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/19/Everyday-Leetcode-24/">Everyday Leetcode 24</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="100-Same-Tree"><a href="#100-Same-Tree" class="headerlink" title="100    Same Tree"></a>100    Same Tree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public boolean isSameTree(TreeNode p, TreeNode q) &#123;</span><br><span class="line">        if (p == null || q == null) return p == q;</span><br><span class="line">   return p.val == q.val &amp;&amp; isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/10/19/Everyday-Leetcode-24/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-23" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/10/Everyday-Leetcode-23/" class="article-date">
+      <time datetime="2019-09-10T18:10:31.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/10/Everyday-Leetcode-23/">Everyday Leetcode 23</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="367-Valid-Perfect-Square"><a href="#367-Valid-Perfect-Square" class="headerlink" title="367    Valid Perfect Square"></a>367    Valid Perfect Square</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public boolean isPerfectSquare(int num) &#123;</span><br><span class="line">       if (num==1) return true;</span><br><span class="line">    else if(num&lt;2) return true;</span><br><span class="line">       else </span><br><span class="line">    &#123;</span><br><span class="line">           long low=1,high=num;</span><br><span class="line">           long mid,prod;</span><br><span class="line">           while(low&lt;high)</span><br><span class="line">           &#123;</span><br><span class="line">                mid=(low+high)/2;</span><br><span class="line">               prod=mid*mid;</span><br><span class="line">               if(prod==(long)num) return true;</span><br><span class="line">               else if (prod&lt;(long)num)&#123;</span><br><span class="line">                   low=mid+1;</span><br><span class="line">               &#125;else high=mid-1;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">        if (low==high) return (low*low==(long)num);</span><br><span class="line">       &#125;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/09/10/Everyday-Leetcode-23/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-22" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/02/Everyday-Leetcode-22/" class="article-date">
+      <time datetime="2019-08-02T17:15:29.000Z" itemprop="datePublished">2019-08-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/02/Everyday-Leetcode-22/">Everyday Leetcode 22</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67    Add Binary"></a>67    Add Binary</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public String addBinary(String a, String b) &#123;</span><br><span class="line">      StringBuilder sb = new StringBuilder();</span><br><span class="line">        int i=a.length()-1, j=b.length()-1, memo=0;</span><br><span class="line">        while(j&gt;=0 || i&gt;=0)&#123;</span><br><span class="line">        int sum= memo;</span><br><span class="line">        if(i&gt;=0) sum+= a.charAt(i--)-&apos;0&apos;;</span><br><span class="line">        if(j&gt;=0) sum+= b.charAt(j--)-&apos;0&apos;;</span><br><span class="line">        memo=sum/2;</span><br><span class="line">        sb.append(sum%2);</span><br><span class="line">        &#125;</span><br><span class="line">        if(memo!=0) sb.append(memo);</span><br><span class="line">        return sb.reverse().toString();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>从右往左计算，每一位算出当前位的和再对2取余，就是这一位的结果，最后把第一位的结果加入到StringBuilder再反向输出。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/08/02/Everyday-Leetcode-22/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-21" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/25/Everyday-Leetcode-21/" class="article-date">
+      <time datetime="2019-07-25T18:00:08.000Z" itemprop="datePublished">2019-07-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/25/Everyday-Leetcode-21/">Everyday Leetcode 21</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7    Reverse Integer"></a>7    Reverse Integer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public int reverse(int x) &#123;</span><br><span class="line">          long rev= 0;</span><br><span class="line">        while( x != 0)&#123;</span><br><span class="line">            rev= rev*10 + x % 10;</span><br><span class="line">            x= x/10;</span><br><span class="line">            if( rev &gt; Integer.MAX_VALUE || rev &lt; Integer.MIN_VALUE)</span><br><span class="line">                return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        return (int) rev;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/25/Everyday-Leetcode-21/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-20" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/22/Everyday-Leetcode-20/" class="article-date">
+      <time datetime="2019-07-22T20:23:33.000Z" itemprop="datePublished">2019-07-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/22/Everyday-Leetcode-20/">Everyday Leetcode 20</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="32-Longest-Valid-Parentheses"><a href="#32-Longest-Valid-Parentheses" class="headerlink" title="32    Longest Valid Parentheses"></a>32    Longest Valid Parentheses</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public int longestValidParentheses(String s) &#123;</span><br><span class="line">    char[] S = s.toCharArray();</span><br><span class="line">    int[] V = new int[S.length];</span><br><span class="line">    int open = 0;</span><br><span class="line">    int max = 0;</span><br><span class="line">    for (int i=0; i&lt;S.length; i++) &#123;</span><br><span class="line">        if (S[i] == &apos;(&apos;) open++;</span><br><span class="line">        if (S[i] == &apos;)&apos; &amp;&amp; open &gt; 0) &#123;</span><br><span class="line">            // matches found</span><br><span class="line">            V[i] = 2+ V[i-1];</span><br><span class="line">            // add matches from previous</span><br><span class="line">            if(i-V[i]&gt;0)</span><br><span class="line">                V[i] += V[i-V[i]];</span><br><span class="line">            open--;</span><br><span class="line">        &#125;</span><br><span class="line">        if (V[i] &gt; max) max = V[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/22/Everyday-Leetcode-20/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-19" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/21/Everyday-Leetcode-19/" class="article-date">
+      <time datetime="2019-07-21T22:35:50.000Z" itemprop="datePublished">2019-07-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/21/Everyday-Leetcode-19/">Everyday Leetcode 19</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="131-Palindrome-Partitioning"><a href="#131-Palindrome-Partitioning" class="headerlink" title="131    Palindrome Partitioning"></a>131    Palindrome Partitioning</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;List&lt;String&gt;&gt; partition(String s) &#123;</span><br><span class="line">	List&lt;List&lt;String&gt;&gt; lists=new ArrayList&lt;&gt;();</span><br><span class="line">	int len=s.length();</span><br><span class="line">	if(len==0) return lists;</span><br><span class="line">	backtrack(lists, new ArrayList&lt;&gt;(), s,0,len);</span><br><span class="line">	return lists;</span><br><span class="line">&#125;</span><br><span class="line">private void backtrack(List&lt;List&lt;String&gt;&gt; lists,List&lt;String&gt; list,String s, int l, int r) &#123;</span><br><span class="line">	if(l==r) &#123;</span><br><span class="line">		lists.add(new ArrayList&lt;&gt;(list));</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=l+1;i&lt;=r;i++) &#123;</span><br><span class="line">		if(isPalindrome(s, l, i)) &#123;</span><br><span class="line">			list.add(s.substring(l, i));</span><br><span class="line">			backtrack(lists, list, s,i,r);</span><br><span class="line">			list.remove(list.size()-1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">private boolean isPalindrome(String s, int l, int r)&#123;</span><br><span class="line">    if(l==r-1) return true;</span><br><span class="line">    while(l&lt;r-1)&#123;</span><br><span class="line">        if(s.charAt(l)!=s.charAt(r-1)) return false;</span><br><span class="line">        l++;r--;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/21/Everyday-Leetcode-19/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Everyday-Leetcode-18" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -403,547 +933,9 @@
 
 
   
-    <article id="post-Everyday-Leetcode-16" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/26/Everyday-Leetcode-16/" class="article-date">
-      <time datetime="2019-05-26T23:17:30.000Z" itemprop="datePublished">2019-05-26</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/26/Everyday-Leetcode-16/">Everyday Leetcode 16</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="65-Valid-Number"><a href="#65-Valid-Number" class="headerlink" title="65    Valid Number"></a>65    Valid Number</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public boolean isNumber(String s) &#123;</span><br><span class="line">        s = s.trim();</span><br><span class="line">       boolean pointSeen = false;</span><br><span class="line">       boolean eSeen = false;</span><br><span class="line">       boolean numberSeen = false;</span><br><span class="line">       for(int i=0; i&lt;s.length(); i++) &#123;</span><br><span class="line">           if(&apos;0&apos; &lt;= s.charAt(i) &amp;&amp; s.charAt(i) &lt;= &apos;9&apos;) &#123;</span><br><span class="line">               numberSeen = true;</span><br><span class="line">           &#125; else if(s.charAt(i) == &apos;.&apos;) &#123;</span><br><span class="line">               if(eSeen || pointSeen)</span><br><span class="line">                   return false;</span><br><span class="line">               pointSeen = true;</span><br><span class="line">           &#125; else if(s.charAt(i) == &apos;e&apos;) &#123;</span><br><span class="line">               if(eSeen || !numberSeen)</span><br><span class="line">                   return false;</span><br><span class="line">               numberSeen = false;</span><br><span class="line">               eSeen = true;</span><br><span class="line">           &#125; else if(s.charAt(i) == &apos;-&apos; || s.charAt(i) == &apos;+&apos;) &#123;</span><br><span class="line">               if(i != 0 &amp;&amp; s.charAt(i-1) != &apos;e&apos;)</span><br><span class="line">                   return false;</span><br><span class="line">           &#125; else</span><br><span class="line">               return false;</span><br><span class="line">       &#125;</span><br><span class="line">       return numberSeen;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/26/Everyday-Leetcode-16/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-15" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/18/Everyday-Leetcode-15/" class="article-date">
-      <time datetime="2019-05-18T21:57:20.000Z" itemprop="datePublished">2019-05-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/18/Everyday-Leetcode-15/">Everyday Leetcode 15</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="12-Integer-to-Roman"><a href="#12-Integer-to-Roman" class="headerlink" title="12    Integer to Roman"></a>12    Integer to Roman</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public String intToRoman(int num) &#123;</span><br><span class="line">       int[] values = &#123;1000,900,500,400,100,90,50,40,10,9,5,4,1&#125;;</span><br><span class="line">   String[] strs = &#123;&quot;M&quot;,&quot;CM&quot;,&quot;D&quot;,&quot;CD&quot;,&quot;C&quot;,&quot;XC&quot;,&quot;L&quot;,&quot;XL&quot;,&quot;X&quot;,&quot;IX&quot;,&quot;V&quot;,&quot;IV&quot;,&quot;I&quot;&#125;;</span><br><span class="line">   </span><br><span class="line">   StringBuilder sb = new StringBuilder();</span><br><span class="line">   </span><br><span class="line">   for(int i=0;i&lt;values.length;i++) &#123;</span><br><span class="line">       while(num &gt;= values[i]) &#123;</span><br><span class="line">           num -= values[i];</span><br><span class="line">           sb.append(strs[i]);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   return sb.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>从高到低判断是否符合罗马数字大小，符合则减去一该数字并加入字符到结果。</p>
-<h3 id="273-Integer-to-English-Words"><a href="#273-Integer-to-English-Words" class="headerlink" title="273    Integer to English Words"></a>273    Integer to English Words</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">private final String[] belowTen = new String[] &#123;&quot;&quot;, &quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;, &quot;Seven&quot;, &quot;Eight&quot;, &quot;Nine&quot;&#125;;</span><br><span class="line">    private final String[] belowTwenty = new String[] &#123;&quot;Ten&quot;, &quot;Eleven&quot;, &quot;Twelve&quot;, &quot;Thirteen&quot;, &quot;Fourteen&quot;, &quot;Fifteen&quot;, &quot;Sixteen&quot;, &quot;Seventeen&quot;, &quot;Eighteen&quot;, &quot;Nineteen&quot;&#125;;</span><br><span class="line">    private final String[] belowHundred = new String[] &#123;&quot;&quot;, &quot;Ten&quot;, &quot;Twenty&quot;, &quot;Thirty&quot;, &quot;Forty&quot;, &quot;Fifty&quot;, &quot;Sixty&quot;, &quot;Seventy&quot;, &quot;Eighty&quot;, &quot;Ninety&quot;&#125;;</span><br><span class="line">    </span><br><span class="line">    public String numberToWords(int num) &#123;</span><br><span class="line">        if (num == 0) return &quot;Zero&quot;;</span><br><span class="line">        return helper(num); </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private String helper(int num) &#123;</span><br><span class="line">        String result = new String();</span><br><span class="line">        if (num &lt; 10) result = belowTen[num];</span><br><span class="line">        else if (num &lt; 20) result = belowTwenty[num -10];</span><br><span class="line">        else if (num &lt; 100) result = belowHundred[num/10] + &quot; &quot; + helper(num % 10);</span><br><span class="line">        else if (num &lt; 1000) result = helper(num/100) + &quot; Hundred &quot; +  helper(num % 100);</span><br><span class="line">        else if (num &lt; 1000000) result = helper(num/1000) + &quot; Thousand &quot; +  helper(num % 1000);</span><br><span class="line">        else if (num &lt; 1000000000) result = helper(num/1000000) + &quot; Million &quot; +  helper(num % 1000000);</span><br><span class="line">        else result = helper(num/1000000000) + &quot; Billion &quot; + helper(num % 1000000000);</span><br><span class="line">        return result.trim();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>构建单词表（记得开头有“”)，然后根据大小else if，记得可以递归调用自身。</p>
-<h3 id="246-Strobogrammatic-Number"><a href="#246-Strobogrammatic-Number" class="headerlink" title="246    Strobogrammatic Number"></a>246    Strobogrammatic Number</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bool isStrobogrammatic(string num) &#123;</span><br><span class="line">       unordered_map&lt;char, char&gt; m &#123;&#123;&apos;0&apos;, &apos;0&apos;&#125;, &#123;&apos;1&apos;, &apos;1&apos;&#125;, &#123;&apos;8&apos;, &apos;8&apos;&#125;, &#123;&apos;6&apos;, &apos;9&apos;&#125;, &#123;&apos;9&apos;, &apos;6&apos;&#125;&#125;;</span><br><span class="line">       for (int i = 0; i &lt;= num.size() / 2; ++i) &#123;</span><br><span class="line">           if (m[num[i]] != num[num.size() - i - 1]) return false;</span><br><span class="line">       &#125;</span><br><span class="line">       return true;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>如果对应两个位置不满足对称要求，返回false。</p>
-<h3 id="247-Strobogrammatic-Number-II"><a href="#247-Strobogrammatic-Number-II" class="headerlink" title="247    Strobogrammatic Number II"></a>247    Strobogrammatic Number II</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;string&gt; findStrobogrammatic(int n) &#123;</span><br><span class="line">      return find(n, n);</span><br><span class="line">  &#125;</span><br><span class="line">  vector&lt;string&gt; find(int m, int n) &#123;</span><br><span class="line">      if (m == 0) return &#123;&quot;&quot;&#125;;</span><br><span class="line">      if (m == 1) return &#123;&quot;0&quot;, &quot;1&quot;, &quot;8&quot;&#125;;</span><br><span class="line">      vector&lt;string&gt; t = find(m - 2, n), res;</span><br><span class="line">      for (auto a : t) &#123;</span><br><span class="line">          if (m != n) res.push_back(&quot;0&quot; + a + &quot;0&quot;);</span><br><span class="line">          res.push_back(&quot;1&quot; + a + &quot;1&quot;);</span><br><span class="line">          res.push_back(&quot;6&quot; + a + &quot;9&quot;);</span><br><span class="line">          res.push_back(&quot;8&quot; + a + &quot;8&quot;);</span><br><span class="line">          res.push_back(&quot;9&quot; + a + &quot;6&quot;);</span><br><span class="line">      &#125;</span><br><span class="line">      return res;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>从m=0层开始，一层一层往上加的，需要注意的是当加到了n层的时候，左右两边不能加[0 0]。</p>
-<h3 id="68-Text-Justification"><a href="#68-Text-Justification" class="headerlink" title="68    Text Justification"></a>68    Text Justification</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;String&gt; fullJustify(String[] words, int maxWidth) &#123;</span><br><span class="line">      List&lt;String&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">      int i=0;</span><br><span class="line">      while (i&lt;words.length)&#123;</span><br><span class="line">          int width=0, I=i;</span><br><span class="line">          while (I&lt;words.length &amp;&amp; width+words[I].length()+(I-i)&lt;=maxWidth)</span><br><span class="line">              width+=words[I++].length();</span><br><span class="line">          int space=1, extra=0;</span><br><span class="line">          if (I-i!=1 &amp;&amp; I!=words.length)&#123;</span><br><span class="line">              space=(maxWidth-width)/(I-i-1);</span><br><span class="line">              extra=(maxWidth-width)%(I-i-1);</span><br><span class="line">          &#125;</span><br><span class="line">          StringBuilder line= new StringBuilder(words[i++]);</span><br><span class="line">          while (i&lt;I)&#123;</span><br><span class="line">              for (int s= space; s&gt;0; s--) line.append(&quot; &quot;);</span><br><span class="line">              if (extra--&gt;0) line.append(&quot; &quot;);</span><br><span class="line">              line.append(words[i++]);</span><br><span class="line">          &#125;</span><br><span class="line">          for (int s= maxWidth-line.length(); s&gt;0; s--) line.append(&quot; &quot;);</span><br><span class="line">          res.add(line.toString());</span><br><span class="line">      &#125;</span><br><span class="line">      return res;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>当width小于maxwidth时，加word到改行，然后再后面补空格如果空格数不是2的倍数，那么左边的空间里要比右边的空间里多加入一个空格，那么我们只需要用总的空格数除以空间个数。能除尽最好，说明能平均分配，除不尽的话就多加个空格放在左边的空间里。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-14" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/17/Everyday-Leetcode-14/" class="article-date">
-      <time datetime="2019-05-17T23:05:59.000Z" itemprop="datePublished">2019-05-17</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/17/Everyday-Leetcode-14/">Everyday Leetcode 14</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="316-Remove-Duplicate-Letters"><a href="#316-Remove-Duplicate-Letters" class="headerlink" title="316    Remove Duplicate Letters"></a>316    Remove Duplicate Letters</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public String removeDuplicateLetters(String sr) &#123;   </span><br><span class="line">        int[] res = new int[26]; </span><br><span class="line">   boolean[] visited = new boolean[26]; </span><br><span class="line">   char[] ch = sr.toCharArray();</span><br><span class="line">   for(char c: ch)&#123;  </span><br><span class="line">       res[c-&apos;a&apos;]++;</span><br><span class="line">   &#125;</span><br><span class="line">   Stack&lt;Character&gt; st = new Stack&lt;&gt;();</span><br><span class="line">   int index;</span><br><span class="line">   for(char s:ch)&#123; </span><br><span class="line">       index= s-&apos;a&apos;;</span><br><span class="line">       res[index]--;   </span><br><span class="line">       if(visited[index]) </span><br><span class="line">           continue;</span><br><span class="line">       while(!st.isEmpty() &amp;&amp; s&lt;st.peek() &amp;&amp; res[st.peek()-&apos;a&apos;]!=0)&#123; </span><br><span class="line">           visited[st.pop()-&apos;a&apos;]=false;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       st.push(s); </span><br><span class="line">       visited[index]=true;</span><br><span class="line">   &#125;</span><br><span class="line">   StringBuilder sb = new StringBuilder();</span><br><span class="line">   while(!st.isEmpty())&#123;</span><br><span class="line">       sb.insert(0,st.pop());</span><br><span class="line">   &#125;</span><br><span class="line">   return sb.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/17/Everyday-Leetcode-14/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-13" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/15/Everyday-Leetcode-13/" class="article-date">
-      <time datetime="2019-05-15T23:08:26.000Z" itemprop="datePublished">2019-05-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/15/Everyday-Leetcode-13/">Everyday Leetcode 13</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="249-Group-Shifted-Strings"><a href="#249-Group-Shifted-Strings" class="headerlink" title="249    Group Shifted Strings"></a>249    Group Shifted Strings</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;string&gt;&gt; groupStrings(vector&lt;string&gt;&amp; strings) &#123;</span><br><span class="line">        vector&lt;vector&lt;string&gt; &gt; res;</span><br><span class="line">        unordered_map&lt;string, multiset&lt;string&gt;&gt; m;</span><br><span class="line">        for (auto a : strings) &#123;</span><br><span class="line">            string t = &quot;&quot;;</span><br><span class="line">            for (char c : a) &#123;</span><br><span class="line">                t += to_string((c + 26 - a[0]) % 26) + &quot;,&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            m[t].insert(a);</span><br><span class="line">        &#125;</span><br><span class="line">        for (auto it = m.begin(); it != m.end(); ++it) &#123;</span><br><span class="line">            res.push_back(vector&lt;string&gt;(it-&gt;second.begin(), it-&gt;second.end()));</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>所有互为偏移的字符串都有个unique的距离差，我们根据这个来建立映射就可以很好的进行单词分组了。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/15/Everyday-Leetcode-13/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-12" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/14/Everyday-Leetcode-12/" class="article-date">
-      <time datetime="2019-05-14T22:30:22.000Z" itemprop="datePublished">2019-05-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/14/Everyday-Leetcode-12/">Everyday Leetcode 12</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="293-Flip-Game"><a href="#293-Flip-Game" class="headerlink" title="293    Flip Game"></a>293    Flip Game</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public generatePossibleNextMoves(string s) &#123;</span><br><span class="line"> StringBuilder sb = new StringBuilder();</span><br><span class="line">        </span><br><span class="line">        for (int i = 1; i &lt; s.length(); ++i) &#123;</span><br><span class="line">            </span><br><span class="line">            if (s.charAt(i) == &apos;+&apos;&amp;&amp; scharAt(i - 1) == &apos;+&apos;) &#123;</span><br><span class="line">            sb.append(s.substring(0, i - 1) + &quot;--&quot; + s.substrting(i + 1)));</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return sb.toString(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>遍历 如果i和i-1都是加则加入字符串。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/14/Everyday-Leetcode-12/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-11" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/13/Everyday-Leetcode-11/" class="article-date">
-      <time datetime="2019-05-13T23:32:12.000Z" itemprop="datePublished">2019-05-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/13/Everyday-Leetcode-11/">Everyday Leetcode 11</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="344-Reverse-String"><a href="#344-Reverse-String" class="headerlink" title="344    Reverse String"></a>344    Reverse String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public void reverseString(char[] s) &#123;</span><br><span class="line">   for(int i=0,j=s.length-1;i&lt;j;i++,j--)&#123;</span><br><span class="line">     char temp=s[i];</span><br><span class="line">     s[i]=s[j];</span><br><span class="line">     s[j]=temp;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>头尾遍历并交换。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/13/Everyday-Leetcode-11/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-10" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/11/Everyday-Leetcode-10/" class="article-date">
-      <time datetime="2019-05-11T21:48:05.000Z" itemprop="datePublished">2019-05-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/11/Everyday-Leetcode-10/">Everyday Leetcode 10</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28    Implement strStr()"></a>28    Implement strStr()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public int strStr(String haystack, String needle) &#123;</span><br><span class="line">       if(needle==null||needle.length()==0) return 0;</span><br><span class="line">       if(haystack.length()&lt;needle.length()) return -1;</span><br><span class="line">       for(int i=0;i&lt;=haystack.length()-needle.length();++i)&#123;</span><br><span class="line">           int j=0;</span><br><span class="line">           for(;j&lt;needle.length();++j)&#123;</span><br><span class="line">                if (haystack.charAt(i + j) != needle.charAt(j)) break;</span><br><span class="line">           &#125;</span><br><span class="line">           if (j == needle.length()) return i;</span><br><span class="line">           &#125;</span><br><span class="line">       return -1;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-<p>如果有位置不等的就跳出循环，如果循环长度等于n长度就返回i。前面两个cornercase。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/11/Everyday-Leetcode-10/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Everyday-Leetcode-9" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/10/Everyday-Leetcode-9/" class="article-date">
-      <time datetime="2019-05-10T22:35:14.000Z" itemprop="datePublished">2019-05-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/Everyday-Leetcode-9/">Everyday Leetcode 9 </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="75-Sort-Colors"><a href="#75-Sort-Colors" class="headerlink" title="75    Sort Colors"></a>75    Sort Colors</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public void sortColors(int[] nums) &#123;</span><br><span class="line">    // 1-pass</span><br><span class="line">    int p1 = 0, p2 = nums.length - 1, index = 0;</span><br><span class="line">    while (index &lt;= p2) &#123;</span><br><span class="line">        if (nums[index] == 0) &#123;</span><br><span class="line">            nums[index] = nums[p1];</span><br><span class="line">            nums[p1] = 0;</span><br><span class="line">            p1++;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nums[index] == 2) &#123;</span><br><span class="line">            nums[index] = nums[p2];</span><br><span class="line">            nums[p2] = 2;</span><br><span class="line">            p2--;</span><br><span class="line">            index--;</span><br><span class="line">        &#125;</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//2pass</span><br><span class="line">public void sortColors(int[] nums) &#123;</span><br><span class="line">        int rc=0,wc=0,bc=0;</span><br><span class="line">        for(int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">            if(nums[i]==0) rc++;</span><br><span class="line">            else if(nums[i]==1) wc++;</span><br><span class="line">            else if(nums[i]==2) bc++;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int j=0;j&lt;nums.length;j++)&#123;</span><br><span class="line">        if(rc&gt;0)&#123;nums[j]=0;rc--;&#125;</span><br><span class="line">        else  if(wc&gt;0)&#123;nums[j]=1;wc--;&#125;</span><br><span class="line">        else   if(bc&gt;0)&#123;nums[j]=2;bc--;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>1pass方法，在头部插入0，在尾部插入2，其他1不动。<br>2pass，统计数目然后重新写入。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/10/Everyday-Leetcode-9/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -952,7 +944,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2017-2019 Peter Wang
+                2017-2020 Peter Wang
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>

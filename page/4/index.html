@@ -265,6 +265,555 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Everyday-Leetcode-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/05/Everyday-Leetcode-6/" class="article-date">
+      <time datetime="2019-05-05T16:57:24.000Z" itemprop="datePublished">2019-05-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/05/Everyday-Leetcode-6/">Everyday Leetcode 6</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="128-Longest-Consecutive-Sequence"><a href="#128-Longest-Consecutive-Sequence" class="headerlink" title="128    Longest Consecutive Sequence"></a>128    Longest Consecutive Sequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public int longestConsecutive(int[] nums) &#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        Set&lt;Integer&gt; s = new HashSet&lt;Integer&gt;();</span><br><span class="line">        for (int num : nums) s.add(num);</span><br><span class="line">        for (int num : nums) &#123;</span><br><span class="line">            if (s.remove(num)) &#123;</span><br><span class="line">                int pre = num - 1, next = num + 1;</span><br><span class="line">                while (s.remove(pre)) --pre;</span><br><span class="line">                while (s.remove(next)) ++next;</span><br><span class="line">                res = Math.max(res, next - pre - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>首先都加入到hashset中，遍历nums，如果有，则remove，然后一个个remove前一个和后一个数，得出最大序列长度。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/05/Everyday-Leetcode-6/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/04/Everyday-Leetcode-5/" class="article-date">
+      <time datetime="2019-05-04T22:12:24.000Z" itemprop="datePublished">2019-05-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/04/Everyday-Leetcode-5/">Everyday Leetcode 5</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="188-Best-Time-to-Buy-and-Sell-Stock-IV"><a href="#188-Best-Time-to-Buy-and-Sell-Stock-IV" class="headerlink" title="188    Best Time to Buy and Sell Stock IV"></a>188    Best Time to Buy and Sell Stock IV</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public int maxProfit(int k, int[] prices) &#123;</span><br><span class="line">int n = prices.length;</span><br><span class="line">if (n &lt;= 1)</span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">if (k &gt;=  n/2) &#123;</span><br><span class="line">	int maxPro = 0;</span><br><span class="line">	for (int i = 1; i &lt; n; i++) &#123;</span><br><span class="line">		if (prices[i] &gt; prices[i-1])</span><br><span class="line">			maxPro += prices[i] - prices[i-1];</span><br><span class="line">	&#125;</span><br><span class="line">	return maxPro;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">   int[][] dp = new int[k+1][n];</span><br><span class="line">   for (int i = 1; i &lt;= k; i++) &#123;</span><br><span class="line">   	int localMax = dp[i-1][0] - prices[0];</span><br><span class="line">   	for (int j = 1; j &lt; n; j++) &#123;</span><br><span class="line">   		dp[i][j] = Math.max(dp[i][j-1],  prices[j] + localMax);</span><br><span class="line">   		localMax = Math.max(localMax, dp[i-1][j] - prices[j]);</span><br><span class="line">   	&#125;</span><br><span class="line">   &#125;</span><br><span class="line">   return dp[k][n-1];</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>如果K大于N/2,说明可以做最多的交易次数，也就是N/2，此时只要是盈利的交易都做，得到最大的收益。 else的话进行dp。dp[i][j-1]是不交易的情况，prices[j]+localMax是在j天交易的情况。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/04/Everyday-Leetcode-5/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/03/Everyday-Leetcode-4/" class="article-date">
+      <time datetime="2019-05-03T22:41:50.000Z" itemprop="datePublished">2019-05-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/03/Everyday-Leetcode-4/">Everyday Leetcode 4</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55    Jump Game"></a>55    Jump Game</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">     public boolean canJump(int[] nums) &#123;</span><br><span class="line">        if(nums.length&lt;2)</span><br><span class="line">            return true;</span><br><span class="line">        if(nums[0]&lt;1)</span><br><span class="line">            return false;</span><br><span class="line">        int curr=nums[0];</span><br><span class="line">        for(int i =1;i&lt;nums.length;i++)&#123;</span><br><span class="line">            if(nums[i]&gt;=curr) curr=nums[i];   </span><br><span class="line">            else curr--;</span><br><span class="line">            if(curr&lt;=0&amp;&amp;i!=nums.length-1) return false;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>遍历数组，如果下一步能比current走得远就走，否则current-1（每一步花的距离）。如果current&lt;=0时还没有走到尽头，说明无法跳到。如果没有return false说明可以跳到。此处greedy比dp更好。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/03/Everyday-Leetcode-4/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/30/Everyday-Leetcode-3/" class="article-date">
+      <time datetime="2019-04-30T23:51:55.000Z" itemprop="datePublished">2019-04-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/30/Everyday-Leetcode-3/">Everyday Leetcode 3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="277-Find-the-Celebrity"><a href="#277-Find-the-Celebrity" class="headerlink" title="277    Find the Celebrity"></a>277    Find the Celebrity</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int findCelebrity(int n) &#123;</span><br><span class="line">        for (int i = 0, j = 0; i &lt; n; ++i) &#123;</span><br><span class="line">            for (j = 0; j &lt; n; ++j) &#123;</span><br><span class="line">                if (i != j &amp;&amp; (knows(i, j) || !knows(j, i))) break;</span><br><span class="line">            &#125;</span><br><span class="line">            if (j == n) return i;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>遍历，如果遇到 i认识j或者j不认识i就break，完整循环下来的就是celebrity。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/30/Everyday-Leetcode-3/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/29/Everyday-Leetcode-2/" class="article-date">
+      <time datetime="2019-04-29T22:45:00.000Z" itemprop="datePublished">2019-04-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/29/Everyday-Leetcode-2/">Everyday Leetcode 2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="41-First-Missing-Positive"><a href="#41-First-Missing-Positive" class="headerlink" title="41    First Missing Positive"></a>41    First Missing Positive</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import java.util.HashMap;</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int firstMissingPositive(int[] nums) &#123;</span><br><span class="line">        HashMap map = new HashMap&lt;&gt;();</span><br><span class="line">        for (int i:nums)&#123;</span><br><span class="line">            map.put(i,1);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int j=1;j&lt;Integer.MAX_VALUE;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (!map.containsKey(j))&#123;</span><br><span class="line">                return j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一道自己做出的Hard，可能是最简单的Hard。 faster than 83.02%，less than 86.32%.<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/29/Everyday-Leetcode-2/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Everyday-Leetcode-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/28/Everyday-Leetcode-1/" class="article-date">
+      <time datetime="2019-04-29T01:12:16.000Z" itemprop="datePublished">2019-04-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/28/Everyday-Leetcode-1/">Everyday Leetcode 1</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1 Two Sum"></a>1 Two Sum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; ans= new HashMap&lt;&gt;();</span><br><span class="line">        for (int i=0; i&lt;nums.length;i++)&#123;</span><br><span class="line">          int diff=target-nums[i];</span><br><span class="line">              if (ans.containsKey(diff))</span><br><span class="line">              &#123;</span><br><span class="line">                  </span><br><span class="line">                  return new int[]&#123;ans.get(diff),i&#125;;</span><br><span class="line">              &#125;</span><br><span class="line">            ans.put(nums[i],i);</span><br><span class="line">          </span><br><span class="line">    &#125;</span><br><span class="line">       throw new IllegalArgumentException();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用到hashmap，大大提高了效率。 可以用throw new IlleaglArgumentException的办法跳过必须return的检查。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/28/Everyday-Leetcode-1/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Leetcode-Record" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/28/Leetcode-Record/" class="article-date">
+      <time datetime="2019-04-29T01:06:44.000Z" itemprop="datePublished">2019-04-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/28/Leetcode-Record/">Leetcode Record</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <ul>
+<li>[x] 1     Two Sum</li>
+<li>[x] 27    Remove Element</li>
+<li>[x] 26    Remove Duplicates from Sorted Array</li>
+<li>[x] 80    Remove Duplicates from Sorted Array II</li>
+<li>[x] 189    Rotate Array</li>
+<li>[x] 41    First Missing Positive</li>
+<li>[x] 299    Bulls and Cows</li>
+<li>[x] 134    Gas Station</li>
+<li>[x] 274    H-Index</li>
+<li>[x] 275    H-Index II
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/28/Leetcode-Record/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-普通人的19fall-cs-master-DIY总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/15/普通人的19fall-cs-master-DIY总结/" class="article-date">
+      <time datetime="2019-04-15T17:44:03.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/普通人的19fall-cs-master-DIY总结/">普通人的19fall cs master DIY总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>先对我的情况做个说明，应该是地里的普通人样本，或者可以算是少数的偏下的样本。双非（并非中外合作的双非）、低gpa（3.3/4）、普通TG（101、320+3.5）、无科研无实习，只有一段UCR交流，绩点还很低（2.7）。所以很显而易见地，本文的读者不应该是地里那些条件比我好太多的大神们。写这篇也是为了给将来的和我一样的普通人们做个参考，同时给这段历程做个记录，如果能对别人有点帮助就好了。应该会有点长。</p>
+<p>先上结果，均为CS ms（按时间顺序）：<br>6AD：雪城，GWU，Buffalo，ASU，NCSU（最后决定去的学校），WPI<br>9Rej：UTD， Brandeis，Rochester，USC，CU-Boulder，WUSTL，Rutgers，BU，NEU（BU和NEU今天还没来拒信，算作默拒吧）<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/留学/">留学</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/申请总结/">申请总结</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/15/普通人的19fall-cs-master-DIY总结/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-W22repo" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -397,537 +946,9 @@
 
 
   
-    <article id="post-W19repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/12/02/W19repo/" class="article-date">
-      <time datetime="2018-12-02T19:18:57.000Z" itemprop="datePublished">2018-12-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/02/W19repo/">W19repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>本周学习了Go的http包相关</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W18repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/25/W18repo/" class="article-date">
-      <time datetime="2018-11-26T02:48:34.000Z" itemprop="datePublished">2018-11-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/25/W18repo/">W18repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Go的sturct，面向对象，interface， 学习完成。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W17repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/18/W17repo/" class="article-date">
-      <time datetime="2018-11-18T22:34:41.000Z" itemprop="datePublished">2018-11-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/18/W17repo/">W17repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>新的生活，新的苦练</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W16repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/11/W16repo/" class="article-date">
-      <time datetime="2018-11-12T03:05:59.000Z" itemprop="datePublished">2018-11-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/11/W16repo/">W16repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>万事俱备，只差送分。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W15repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/05/W15repo/" class="article-date">
-      <time datetime="2018-11-05T16:48:53.000Z" itemprop="datePublished">2018-11-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/W15repo/">W15repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>全力投入申请，11月必须完成。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W14repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/10/29/W14repo/" class="article-date">
-      <time datetime="2018-10-29T22:46:10.000Z" itemprop="datePublished">2018-10-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/29/W14repo/">W14repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>最后一周，加油！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W13repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/10/22/W13repo/" class="article-date">
-      <time datetime="2018-10-22T15:46:39.000Z" itemprop="datePublished">2018-10-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/W13repo/">W13repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>单词差不多背完，开始刷题。<br>加油。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-W12repo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/10/14/W12repo/" class="article-date">
-      <time datetime="2018-10-14T18:31:13.000Z" itemprop="datePublished">2018-10-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/14/W12repo/">W12repo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>暂时全力准备GRE，等考完再PS。<br>加油。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weekly-repo/">weekly repo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -936,7 +957,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2017-2019 Peter Wang
+                2017-2020 Peter Wang
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
